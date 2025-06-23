@@ -1,0 +1,53 @@
+{
+  "site": {
+    "name": "Mega Moosh",
+    "description": "Official website of Mega Moosh"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "homepage": {
+    "title": "Welcome to Mega Moosh",
+    "subtitle": "Your premier destination for innovative solutions and exceptional service.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Learn more about Mega Moosh and our mission.",
+    "content1": "Mega Moosh is dedicated to providing innovative solutions that drive success for our clients.",
+    "content2": "Founded with a vision to transform the industry, we combine cutting-edge technology with deep expertise to deliver exceptional results."
+  },
+  "services": {
+    "title": "Our Services",
+    "description": "Explore our comprehensive range of services.",
+    "consulting": {
+      "title": "Consulting",
+      "description": "Strategic consulting to help your business reach its full potential."
+    },
+    "development": {
+      "title": "Development", 
+      "description": "Custom software development tailored to your specific needs."
+    },
+    "support": {
+      "title": "Support",
+      "description": "Ongoing support and maintenance to keep your systems running smoothly."
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Get in touch with our team.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send Message"
+    }
+  },
+  "footer": {
+    "copyright": "All rights reserved."
+  }
+}

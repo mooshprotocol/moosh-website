@@ -1,0 +1,53 @@
+{
+  "site": {
+    "name": "超级慕什",
+    "description": "超级慕什官方网站"
+  },
+  "navigation": {
+    "home": "首页",
+    "about": "关于我们",
+    "services": "服务",
+    "contact": "联系我们"
+  },
+  "homepage": {
+    "title": "欢迎来到超级慕什",
+    "subtitle": "您的创新解决方案和卓越服务的首选目的地。",
+    "getStarted": "开始使用",
+    "learnMore": "了解更多"
+  },
+  "about": {
+    "title": "关于我们",
+    "description": "了解更多关于超级慕什和我们的使命。",
+    "content1": "超级慕什致力于提供创新解决方案，助力客户取得成功。",
+    "content2": "我们怀着改变行业的愿景而成立，将前沿技术与深厚专业知识相结合，提供卓越成果。"
+  },
+  "services": {
+    "title": "我们的服务",
+    "description": "探索我们全面的服务范围。",
+    "consulting": {
+      "title": "咨询服务",
+      "description": "战略咨询，帮助您的企业充分发挥潜力。"
+    },
+    "development": {
+      "title": "开发服务",
+      "description": "量身定制的软件开发，满足您的特定需求。"
+    },
+    "support": {
+      "title": "支持服务",
+      "description": "持续的支持和维护，确保您的系统平稳运行。"
+    }
+  },
+  "contact": {
+    "title": "联系我们",
+    "description": "与我们的团队取得联系。",
+    "form": {
+      "name": "姓名",
+      "email": "邮箱",
+      "message": "留言",
+      "submit": "发送消息"
+    }
+  },
+  "footer": {
+    "copyright": "版权所有。"
+  }
+}
