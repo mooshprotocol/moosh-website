@@ -3,7 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "description": "Modern, responsive website built with Next.js 14 and TypeScript",
-  "keywords": ["nextjs", "typescript", "tailwind", "website", "react"],
+  "keywords": [
+    "nextjs",
+    "typescript",
+    "tailwind",
+    "website",
+    "react"
+  ],
   "author": "Mega Moosh Team",
   "license": "MIT",
   "packageManager": "pnpm@10.12.2",
@@ -15,9 +21,14 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@react-three/drei": "^10.5.1",
+    "@react-three/fiber": "^9.2.0",
+    "@types/three": "^0.178.1",
+    "framer-motion": "^12.23.6",
     "next": "14.0.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "three": "^0.178.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
