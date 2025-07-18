@@ -6,8 +6,5 @@ export const siteConfig: SiteConfig = {
   url: 'https://moosh.finance',
   navigation: [
     { label: 'navigation.home', href: '/' },
-    { label: 'navigation.about', href: '/about' },
-    { label: 'navigation.services', href: '/services' },
-    { label: 'navigation.contact', href: '/contact' },
   ],
 };

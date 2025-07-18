@@ -1,34 +1,19 @@
-import { useTranslations } from 'next-intl';
-import { Link } from '@/routing';
-import { siteConfig } from '@/lib/site-config';
-import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
+import Link from 'next/link';
 
 export default function Header() {
-  const t = useTranslations();
 
   return (
-    <header className="border-b">
+    <header className="border-b border-gray-800 bg-black">
       <div className="container mx-auto px-4 py-4">
         <nav className="flex items-center justify-between">
-          <Link href="/" className="text-xl font-bold">
-            {t('site.name')}
+          <Link href="/" className="text-2xl moosh-logo text-white">
+            MOOSH
           </Link>
           
-          <div className="flex items-center space-x-6">
-            <ul className="flex space-x-6">
-              {siteConfig.navigation.map((item) => (
-                <li key={item.href}>
-                  <Link 
-                    href={item.href}
-                    className="text-gray-600 hover:text-gray-900 transition-colors"
-                  >
-                    {t(item.label)}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <LanguageSwitcher />
-          </div>
+          <button className="border border-white text-white px-4 py-2 rounded text-sm font-medium relative overflow-hidden group">
+            <span className="relative z-10 transition-colors duration-300 group-hover:text-black">Try Moosh</span>
+            <span className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
+          </button>
         </nav>
       </div>
     </header>
