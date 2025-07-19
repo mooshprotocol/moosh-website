@@ -190,28 +190,35 @@ export default function HomePage() {
       <section className="bg-white min-h-[400px] py-20">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-black mb-12">Built by Experts</h2>
-            <p className="text-xl leading-relaxed" style={{color: '#333333'}}>
-              Distributed DeFi Engineers & Risk Thinkers
+            <h2 className="text-[24px] md:text-[28px] font-semibold mb-6" style={{color: '#111111'}}>
+              BUIDL by Artists, Philosophers, Poets, and Composers<br/>— and Agents
+            </h2>
+            <p className="text-lg leading-relaxed max-w-[620px] mx-auto" style={{color: '#6B7280'}}>
+              Reimagining DeFi with logic, language, and autonomy.
             </p>
           </div>
           
           {/* Team avatars */}
-          <div className="flex justify-center space-x-8">
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gray-300 rounded-full mx-auto mb-4 hover:ring-2 hover:ring-black transition-all duration-300"></div>
-              <h4 className="text-black font-semibold">Engineer</h4>
-              <p className="text-sm" style={{color: '#999999'}}>Protocol Design</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+            <div className="text-center group">
+              <div className="w-20 h-20 rounded-full mx-auto mb-4 transition-all duration-300 group-hover:ring-4 group-hover:ring-blue-500/30" style={{backgroundColor: '#E5E7EB'}}></div>
+              <h4 className="text-base font-semibold mb-2" style={{color: '#111111'}}>Systems</h4>
+              <p className="text-sm leading-relaxed" style={{color: '#6B7280'}}>Architected foundations that enable composability, precision, and trust.</p>
             </div>
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gray-300 rounded-full mx-auto mb-4 hover:ring-2 hover:ring-black transition-all duration-300"></div>
-              <h4 className="text-black font-semibold">Researcher</h4>
-              <p className="text-sm" style={{color: '#999999'}}>Risk Analysis</p>
+            <div className="text-center group">
+              <div className="w-20 h-20 rounded-full mx-auto mb-4 transition-all duration-300 group-hover:ring-4 group-hover:ring-blue-500/30" style={{backgroundColor: '#E5E7EB'}}></div>
+              <h4 className="text-base font-semibold mb-2" style={{color: '#111111'}}>Research</h4>
+              <p className="text-sm leading-relaxed" style={{color: '#6B7280'}}>Models, data, and principles that shape how systems adapt and stay secure.</p>
             </div>
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gray-300 rounded-full mx-auto mb-4 hover:ring-2 hover:ring-black transition-all duration-300"></div>
-              <h4 className="text-black font-semibold">Developer</h4>
-              <p className="text-sm" style={{color: '#999999'}}>MEVM Expert</p>
+            <div className="text-center group">
+              <div className="w-20 h-20 rounded-full mx-auto mb-4 transition-all duration-300 group-hover:ring-4 group-hover:ring-blue-500/30" style={{backgroundColor: '#E5E7EB'}}></div>
+              <h4 className="text-base font-semibold mb-2" style={{color: '#111111'}}>Expression</h4>
+              <p className="text-sm leading-relaxed" style={{color: '#6B7280'}}>Where logic becomes language — modular, legible, and imbued with intent.</p>
+            </div>
+            <div className="text-center group">
+              <div className="w-20 h-20 rounded-full mx-auto mb-4 transition-all duration-300 group-hover:ring-4 group-hover:ring-blue-500/30" style={{backgroundColor: '#E5E7EB'}}></div>
+              <h4 className="text-base font-semibold mb-2" style={{color: '#111111'}}>Autonomy</h4>
+              <p className="text-sm leading-relaxed" style={{color: '#6B7280'}}>Agents that act — adaptive, decentralized, and aligned with protocol goals.</p>
             </div>
           </div>
         </div>
@@ -221,31 +228,26 @@ export default function HomePage() {
       <section style={{backgroundColor: '#1A1A1A'}} className="min-h-[600px] py-20">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">Build Modular Liquidity with Us</h2>
+            <h2 className="text-[24px] md:text-[28px] font-semibold text-white mb-6">We're Looking for People Who Build Like We Do</h2>
             <p className="text-xl text-white leading-relaxed">
-              We're looking for protocol thinkers, smart contract builders, and creative minds to shape the next generation of DeFi infrastructure.
+              People who care about systems and spirit — who build with clarity, collaborate with Agents, think long-term, and hold themselves to high standards of integrity and craft.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12">
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
             <div className="bg-white p-6 rounded-lg hover:bg-gray-100 transition-all duration-300">
-              <h3 className="text-xl font-bold text-black mb-3">Solidity Developer</h3>
-              <p className="text-black text-sm">Build the core protocol</p>
+              <h3 className="text-xl font-bold text-black mb-3">Full-Stack Engineer</h3>
+              <p className="text-black text-sm">Build modular systems from smart contracts to interfaces.</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg hover:bg-gray-100 transition-all duration-300">
-              <h3 className="text-xl font-bold text-black mb-3">Frontend Developer</h3>
-              <p className="text-black text-sm">Create beautiful interfaces</p>
+              <h3 className="text-xl font-bold text-black mb-3">Product Designer</h3>
+              <p className="text-black text-sm">Craft intuitive experiences across onchain and offchain flows.</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg hover:bg-gray-100 transition-all duration-300">
-              <h3 className="text-xl font-bold text-black mb-3">Token Designer</h3>
-              <p className="text-black text-sm">Design tokenomics</p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg hover:bg-gray-100 transition-all duration-300">
-              <h3 className="text-xl font-bold text-black mb-3">Risk Strategist</h3>
-              <p className="text-black text-sm">Manage protocol risks</p>
+              <h3 className="text-xl font-bold text-black mb-3">Community & Growth</h3>
+              <p className="text-black text-sm">Engage builders, spark conversations, grow the movement.</p>
             </div>
           </div>
           
