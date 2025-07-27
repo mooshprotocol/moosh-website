@@ -130,14 +130,15 @@ export default function HeroSection() {
 
       {/* Main content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight">
-          The Lending Layer for Modular Liquidity
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8" style={{lineHeight: '1.3', letterSpacing: '-0.02em'}}>
+          Intelligent Liquidity for<br/>
+          an Open Economy
         </h1>
         
-        <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed text-gray-300">
-          Moosh is a new-generation lending protocol built for modular execution, 
-          dynamic risk, and composable liquidity on MegaETH.
-        </p>
+        <div className="text-xl md:text-2xl mb-12 max-w-[900px] mx-auto text-gray-300" style={{fontWeight: '400', lineHeight: '1.6', letterSpacing: '0.01em'}}>
+          <div>Moosh empowers lending systems that adapt, compose, and evolve</div>
+          <div>to power liquidity across an open, modular future.</div>
+        </div>
       </div>
     </section>
   );
