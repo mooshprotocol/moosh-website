@@ -112,9 +112,6 @@ export default function HomePage() {
                 <div className="flex-1">
                   <h3 className="text-lg font-bold text-black mb-2 tracking-tight">Liquidation Engine</h3>
                   <p className="text-sm text-gray-600 mb-4 leading-relaxed">Real-time, MEVM-native execution with intelligent risk logic.</p>
-                  <a href="#" className="text-sm font-medium text-black hover:text-gray-700 transition-colors group-hover:underline">
-                    Learn more →
-                  </a>
                 </div>
               </div>
             </div>
@@ -133,9 +130,6 @@ export default function HomePage() {
                 <div className="flex-1">
                   <h3 className="text-lg font-bold text-black mb-2 tracking-tight">Risk Kernel</h3>
                   <p className="text-sm text-gray-600 mb-4 leading-relaxed">AI-assisted logic that adapts dynamically to market conditions.</p>
-                  <a href="#" className="text-sm font-medium text-black hover:text-gray-700 transition-colors group-hover:underline">
-                    Learn more →
-                  </a>
                 </div>
               </div>
             </div>
@@ -154,9 +148,6 @@ export default function HomePage() {
                 <div className="flex-1">
                   <h3 className="text-lg font-bold text-black mb-2 tracking-tight">Liquidity Mesh</h3>
                   <p className="text-sm text-gray-600 mb-4 leading-relaxed">Composable liquidity with seamless cross-module execution.</p>
-                  <a href="#" className="text-sm font-medium text-black hover:text-gray-700 transition-colors group-hover:underline">
-                    Learn more →
-                  </a>
                 </div>
               </div>
             </div>
@@ -175,9 +166,6 @@ export default function HomePage() {
                 <div className="flex-1">
                   <h3 className="text-lg font-bold text-black mb-2 tracking-tight">MegaETH Compatibility</h3>
                   <p className="text-sm text-gray-600 mb-4 leading-relaxed">Natively integrated with modular infrastructure on MegaETH.</p>
-                  <a href="#" className="text-sm font-medium text-black hover:text-gray-700 transition-colors group-hover:underline">
-                    Learn more →
-                  </a>
                 </div>
               </div>
             </div>
@@ -227,34 +215,45 @@ export default function HomePage() {
       {/* Careers Section */}
       <section style={{backgroundColor: '#1A1A1A'}} className="min-h-[600px] py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-4xl mx-auto mb-16">
-            <h2 className="text-[24px] md:text-[28px] font-semibold text-white mb-6">We're Looking for People Who Build Like We Do</h2>
-            <p className="text-xl text-white leading-relaxed">
+          <div className="text-center max-w-4xl mx-auto mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 tracking-wide">
+              We're Looking for People Who Build Like We Do
+            </h2>
+            <p className="text-lg text-gray-400 leading-relaxed max-w-[640px] mx-auto">
               People who care about systems and spirit — who build with clarity, collaborate with Agents, think long-term, and hold themselves to high standards of integrity and craft.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
-            <div className="bg-white p-6 rounded-lg hover:bg-gray-100 transition-all duration-300">
-              <h3 className="text-xl font-bold text-black mb-3">Full-Stack Engineer</h3>
-              <p className="text-black text-sm">Build modular systems from smart contracts to interfaces.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg hover:scale-105 hover:ring-1 hover:ring-blue-500/30 transition-all duration-300 group">
+              <div className="text-center mb-4">
+                <span className="text-3xl">🛠</span>
+              </div>
+              <h3 className="text-xl font-bold text-black mb-4 text-center">Full-Stack Engineer</h3>
+              <p className="text-gray-600 text-sm leading-relaxed text-center">
+                Build modular systems from smart contracts to interfaces.
+              </p>
             </div>
             
-            <div className="bg-white p-6 rounded-lg hover:bg-gray-100 transition-all duration-300">
-              <h3 className="text-xl font-bold text-black mb-3">Product Designer</h3>
-              <p className="text-black text-sm">Craft intuitive experiences across onchain and offchain flows.</p>
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg hover:scale-105 hover:ring-1 hover:ring-blue-500/30 transition-all duration-300 group">
+              <div className="text-center mb-4">
+                <span className="text-3xl">🎨</span>
+              </div>
+              <h3 className="text-xl font-bold text-black mb-4 text-center">Product Designer</h3>
+              <p className="text-gray-600 text-sm leading-relaxed text-center">
+                Craft intuitive experiences across onchain and offchain flows.
+              </p>
             </div>
             
-            <div className="bg-white p-6 rounded-lg hover:bg-gray-100 transition-all duration-300">
-              <h3 className="text-xl font-bold text-black mb-3">Community & Growth</h3>
-              <p className="text-black text-sm">Engage builders, spark conversations, grow the movement.</p>
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg hover:scale-105 hover:ring-1 hover:ring-blue-500/30 transition-all duration-300 group">
+              <div className="text-center mb-4">
+                <span className="text-3xl">🌱</span>
+              </div>
+              <h3 className="text-xl font-bold text-black mb-4 text-center">Community & Growth</h3>
+              <p className="text-gray-600 text-sm leading-relaxed text-center">
+                Engage builders, spark conversations, grow the movement.
+              </p>
             </div>
-          </div>
-          
-          <div className="text-center">
-            <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition-all duration-300">
-              View Open Roles
-            </button>
           </div>
         </div>
       </section>

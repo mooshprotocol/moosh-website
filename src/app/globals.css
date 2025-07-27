@@ -86,28 +86,45 @@ img, video {
   }
 }
 
-/* MOOSH Logo Styling */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Space+Grotesk:wght@300;500&family=Monomaniac+One&display=swap');
+
+/* MOOSH Logo Styling - Orbitron Version */
 .moosh-logo {
-  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', monospace;
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.1));
+}
+
+.moosh-logo:hover {
   font-weight: 700;
-  letter-spacing: 0.1em;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-  position: relative;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+  animation: wobble-top 0.6s ease-in-out;
 }
 
-.moosh-logo::before {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: white;
-  transition: width 0.3s ease;
-}
-
-.moosh-logo:hover::before {
-  width: 100%;
+@keyframes wobble-top {
+  0%, 100% {
+    transform: translateX(0) rotateX(0deg);
+  }
+  15% {
+    transform: translateX(-6px) rotateX(-5deg);
+  }
+  30% {
+    transform: translateX(5px) rotateX(3deg);
+  }
+  45% {
+    transform: translateX(-3px) rotateX(-3deg);
+  }
+  60% {
+    transform: translateX(2px) rotateX(2deg);
+  }
+  75% {
+    transform: translateX(-1px) rotateX(-1deg);
+  }
 }
 
 /* Floating Cubes Animation */
