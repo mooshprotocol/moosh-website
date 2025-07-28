@@ -2,6 +2,8 @@
 
 import Layout from '@/components/layout/Layout';
 import HeroSection from '@/components/HeroSection';
+import CareersSection from '@/components/CareersSection';
+import CommunitySection from '@/components/CommunitySection';
 import { motion } from 'framer-motion';
 
 export default function HomePage() {
@@ -403,179 +405,10 @@ export default function HomePage() {
       </section>
 
       {/* Careers Section */}
-      <section style={{backgroundColor: '#0A0A0B'}} className="py-20">
-        <div className="container mx-auto px-4">
-          {/* Refined Header */}
-          <div className="text-center max-w-4xl mx-auto mb-16">
-            <motion.h2 
-              className="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              Let's Build Modular Liquidity Together
-            </motion.h2>
-            <motion.p 
-              className="text-base text-slate-400 leading-relaxed max-w-2xl mx-auto mb-8"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              We're looking for builders, designers, and community minds who create with purpose and integrity.
-            </motion.p>
-            <motion.div 
-              className="w-12 h-0.5 bg-gradient-to-r from-blue-500/40 to-purple-500/40 mx-auto"
-              initial={{ opacity: 0, scaleX: 0 }}
-              whileInView={{ opacity: 1, scaleX: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-            />
-          </div>
-          
-          {/* Role Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
-            
-            {/* Full-Stack Engineer Card */}
-            <motion.div 
-              className="group"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0 }}
-              viewport={{ once: true }}
-            >
-              <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl hover:bg-white/8 transition-all duration-300 group-hover:-translate-y-1">
-                {/* Simplified Icon */}
-                <div className="w-12 h-12 mx-auto mb-6 flex items-center justify-center">
-                  <svg viewBox="0 0 48 48" className="w-full h-full">
-                    {/* Modular blocks - simplified */}
-                    <rect x="6" y="12" width="8" height="8" fill="#3B82F6" fillOpacity="0.8" rx="1.5" className="group-hover:fill-blue-400 transition-colors duration-300"/>
-                    <rect x="16" y="12" width="8" height="8" fill="#6366F1" fillOpacity="0.7" rx="1.5" className="group-hover:fill-indigo-400 transition-colors duration-300"/>
-                    <rect x="26" y="12" width="8" height="8" fill="#8B5CF6" fillOpacity="0.6" rx="1.5" className="group-hover:fill-purple-400 transition-colors duration-300"/>
-                    
-                    {/* Code flow lines */}
-                    <rect x="6" y="26" width="28" height="1" fill="#64748B" fillOpacity="0.5" rx="0.5"/>
-                    <rect x="8" y="30" width="12" height="1" fill="#64748B" fillOpacity="0.4" rx="0.5"/>
-                    <rect x="22" y="30" width="10" height="1" fill="#64748B" fillOpacity="0.4" rx="0.5"/>
-                    
-                    {/* Connection nodes */}
-                    <circle cx="10" cy="22" r="1.5" fill="#3B82F6" fillOpacity="0.7" className="group-hover:fill-blue-400 transition-colors duration-300"/>
-                    <circle cx="20" cy="22" r="1.5" fill="#6366F1" fillOpacity="0.7" className="group-hover:fill-indigo-400 transition-colors duration-300"/>
-                    <circle cx="30" cy="22" r="1.5" fill="#8B5CF6" fillOpacity="0.7" className="group-hover:fill-purple-400 transition-colors duration-300"/>
-                  </svg>
-                </div>
-                
-                <h3 className="text-lg font-semibold text-white mb-4 group-hover:text-blue-100 transition-colors duration-300">
-                  Full-Stack Engineer
-                </h3>
-                
-                <p className="text-sm text-slate-400 leading-relaxed max-w-xs mx-auto group-hover:text-slate-300 transition-colors duration-300">
-                  Build modular systems from smart contracts to interfaces. Create composable architectures that scale.
-                </p>
-              </div>
-            </motion.div>
-            
-            {/* Product Designer Card */}
-            <motion.div 
-              className="group"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl hover:bg-white/8 transition-all duration-300 group-hover:-translate-y-1">
-                {/* Simplified Icon */}
-                <div className="w-12 h-12 mx-auto mb-6 flex items-center justify-center">
-                  <svg viewBox="0 0 48 48" className="w-full h-full">
-                    {/* UI frame */}
-                    <rect x="8" y="10" width="32" height="20" fill="none" stroke="#8B5CF6" strokeWidth="1.2" strokeOpacity="0.7" rx="2" className="group-hover:stroke-purple-400 transition-colors duration-300"/>
-                    
-                    {/* Interface elements */}
-                    <rect x="12" y="14" width="24" height="3" fill="#8B5CF6" fillOpacity="0.4" rx="1" className="group-hover:fill-purple-400 transition-colors duration-300"/>
-                    <rect x="12" y="20" width="10" height="6" fill="#A855F7" fillOpacity="0.6" rx="1" className="group-hover:fill-purple-500 transition-colors duration-300"/>
-                    <rect x="26" y="20" width="10" height="2" fill="#C084FC" fillOpacity="0.5" rx="1" className="group-hover:fill-purple-300 transition-colors duration-300"/>
-                    <rect x="26" y="24" width="8" height="2" fill="#C084FC" fillOpacity="0.4" rx="1" className="group-hover:fill-purple-300 transition-colors duration-300"/>
-                    
-                    {/* Design elements */}
-                    <circle cx="16" cy="36" r="2" fill="#6366F1" fillOpacity="0.7" className="group-hover:fill-indigo-400 transition-colors duration-300"/>
-                    <circle cx="24" cy="36" r="2" fill="#8B5CF6" fillOpacity="0.7" className="group-hover:fill-purple-400 transition-colors duration-300"/>
-                    <circle cx="32" cy="36" r="2" fill="#A855F7" fillOpacity="0.7" className="group-hover:fill-purple-500 transition-colors duration-300"/>
-                  </svg>
-                </div>
-                
-                <h3 className="text-lg font-semibold text-white mb-4 group-hover:text-purple-100 transition-colors duration-300">
-                  Product Designer
-                </h3>
-                
-                <p className="text-sm text-slate-400 leading-relaxed max-w-xs mx-auto group-hover:text-slate-300 transition-colors duration-300">
-                  Craft intuitive experiences across onchain and offchain flows. Design systems that users love.
-                </p>
-              </div>
-            </motion.div>
-            
-            {/* Community & Growth Card */}
-            <motion.div 
-              className="group"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl hover:bg-white/8 transition-all duration-300 group-hover:-translate-y-1">
-                {/* Simplified Icon */}
-                <div className="w-12 h-12 mx-auto mb-6 flex items-center justify-center">
-                  <svg viewBox="0 0 48 48" className="w-full h-full">
-                    {/* Growth stem */}
-                    <path d="M24 38 Q22 28 24 20 Q26 28 24 38" stroke="#10B981" strokeWidth="2" fill="none" strokeOpacity="0.8" className="group-hover:stroke-emerald-400 transition-colors duration-300"/>
-                    
-                    {/* Leaves */}
-                    <ellipse cx="18" cy="18" rx="6" ry="4" fill="#059669" fillOpacity="0.6" className="group-hover:fill-emerald-500 transition-colors duration-300" transform="rotate(-20 18 18)"/>
-                    <ellipse cx="30" cy="18" rx="6" ry="4" fill="#059669" fillOpacity="0.6" className="group-hover:fill-emerald-500 transition-colors duration-300" transform="rotate(20 30 18)"/>
-                    <ellipse cx="20" cy="26" rx="4" ry="3" fill="#10B981" fillOpacity="0.5" className="group-hover:fill-emerald-400 transition-colors duration-300" transform="rotate(-10 20 26)"/>
-                    <ellipse cx="28" cy="26" rx="4" ry="3" fill="#10B981" fillOpacity="0.5" className="group-hover:fill-emerald-400 transition-colors duration-300" transform="rotate(10 28 26)"/>
-                    
-                    {/* Network nodes */}
-                    <circle cx="12" cy="32" r="2" fill="#34D399" fillOpacity="0.7" className="group-hover:fill-emerald-300 transition-colors duration-300"/>
-                    <circle cx="36" cy="32" r="2" fill="#34D399" fillOpacity="0.7" className="group-hover:fill-emerald-300 transition-colors duration-300"/>
-                    <circle cx="18" cy="38" r="1.5" fill="#6EE7B7" fillOpacity="0.6" className="group-hover:fill-emerald-200 transition-colors duration-300"/>
-                    <circle cx="30" cy="38" r="1.5" fill="#6EE7B7" fillOpacity="0.6" className="group-hover:fill-emerald-200 transition-colors duration-300"/>
-                    
-                    {/* Connections */}
-                    <path d="M12 32 Q18 28 24 32" stroke="#10B981" strokeWidth="1" fill="none" strokeOpacity="0.4" className="group-hover:stroke-emerald-400 transition-colors duration-300"/>
-                    <path d="M24 32 Q30 28 36 32" stroke="#10B981" strokeWidth="1" fill="none" strokeOpacity="0.4" className="group-hover:stroke-emerald-400 transition-colors duration-300"/>
-                  </svg>
-                </div>
-                
-                <h3 className="text-lg font-semibold text-white mb-4 group-hover:text-emerald-100 transition-colors duration-300">
-                  Community & Growth
-                </h3>
-                
-                <p className="text-sm text-slate-400 leading-relaxed max-w-xs mx-auto group-hover:text-slate-300 transition-colors duration-300">
-                  Engage builders, spark conversations, grow the movement. Cultivate authentic communities.
-                </p>
-              </div>
-            </motion.div>
-            
-          </div>
-          
-          {/* Call to Action */}
-          <motion.div 
-            className="text-center mt-12"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <div className="inline-flex items-center space-x-2 text-slate-300 hover:text-white transition-colors duration-300 cursor-pointer group">
-              <span className="text-sm font-medium">Build the next era with us</span>
-              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <CareersSection />
+      
+      {/* Community Section */}
+      <CommunitySection />
     </Layout>
   );
 }
