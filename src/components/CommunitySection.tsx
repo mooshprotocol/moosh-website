@@ -15,7 +15,7 @@ export default function CommunitySection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            Community First.
+            Community First. Agent First.
           </motion.h2>
           
           {/* Subheading */}
