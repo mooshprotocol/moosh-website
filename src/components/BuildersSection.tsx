@@ -95,7 +95,7 @@ export default function BuildersSection() {
   };
 
   return (
-    <section className="bg-moosh-black-dark section-padding relative overflow-hidden">
+    <section className="bg-moosh-black-dark py-16 relative overflow-hidden">
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       
@@ -113,67 +113,64 @@ export default function BuildersSection() {
         <div className="dot" style={{ top: '30%', right: '8%', width: '0.4px', height: '0.08px', animationDelay: '0.5s' }}></div>
       </div>
       
-      <div className="container-custom relative z-10">
-        {/* Enhanced Header */}
+      <div className="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header */}
         <motion.div 
-          className="text-center max-w-4xl mx-auto mb-24"
+          className="text-center mb-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-moosh-text-primary mb-6 leading-tight">
+          <h2 className="text-2xl md:text-3xl font-bold text-moosh-text-primary mb-2 leading-tight">
             <span className="whitespace-nowrap">BUIDL by Artists, Philosophers, Poets, and Composers</span>
             <br />
             — and <span className="text-gradient">Agents</span>
           </h2>
-          <p className="text-lg text-moosh-text-secondary leading-relaxed max-w-2xl mx-auto mb-8">
+          <p className="text-sm md:text-base text-neutral-400 leading-normal max-w-xl mx-auto mb-4">
             Reimagining DeFi with logic, language, and autonomy.
           </p>
-          <div className="w-32 bg-gradient-to-r from-transparent via-moosh-green to-transparent mx-auto mb-8" style={{height: '1px'}}></div>
+        
         </motion.div>
         
-                {/* Poetic Vision Text Above Cards */}
+        {/* Poetic Vision Text */}
         <motion.div 
-          className="text-center max-w-4xl mx-auto mb-8 -mt-8"
+          className="text-center mb-6"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <p className="text-xl md:text-2xl text-moosh-text-secondary leading-relaxed font-light tracking-wide">
+          <p className="text-sm md:text-base text-neutral-400 leading-normal max-w-xl mx-auto">
             Moosh is not built by builders alone. It&apos;s a protocol composed by those who think modularly, speak in primitives, and dream in composable systems.
           </p>
-          
- 
         </motion.div>
         
         {/* Creative Archetypes Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((category, index) => {
             const colorClasses = getColorClasses(category.color);
             
             return (
               <motion.div 
                 key={category.title}
-                className={`group text-center p-6 bg-moosh-black-card border border-moosh-black-lighter rounded-2xl hover:scale-[1.02] transition-all duration-300 ${colorClasses.glow} ${colorClasses.border}`}
+                className={`group text-center p-6 bg-neutral-900 border border-neutral-800 rounded-xl hover:border-neutral-700 transition-all duration-300 ${colorClasses.glow} ${colorClasses.border} h-full flex flex-col justify-between`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                {/* Enhanced Circular Avatar */}
-                <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-moosh-black-lighter rounded-full group-hover:bg-moosh-green/10 transition-colors duration-300">
-                  <div className="w-12 h-12 group-hover:scale-110 transition-transform duration-300">
+                {/* Icon */}
+                <div className="w-9 h-9 mx-auto mb-4 flex items-center justify-center bg-neutral-800 rounded-lg transition-colors duration-300">
+                  <div className="w-5 h-5 transition-transform duration-300">
                     {category.icon}
                   </div>
                 </div>
                 
-                <h4 className="text-lg font-semibold text-moosh-text-primary mb-3">
+                <h4 className="text-white font-semibold text-base md:text-lg mb-3">
                   {category.title}
                 </h4>
-                <p className="text-sm text-moosh-text-secondary leading-relaxed">
+                <p className="text-neutral-400 text-sm leading-relaxed">
                   {category.description}
                 </p>
               </motion.div>
