@@ -17,11 +17,12 @@ export default function ApplyNowButton({
       onClick={onClick}
       className={`
         group relative inline-flex items-center gap-2 px-6 py-3 rounded-lg
-        border border-moosh-green text-moosh-green bg-transparent
+        border border-[#00ff9a] text-[#00ff9a] bg-transparent
         font-medium text-sm tracking-wide
         transition-all duration-300 ease-out
-        hover:bg-moosh-green hover:text-black
-        focus:outline-none focus:ring-2 focus:ring-moosh-green/50 focus:ring-offset-2 focus:ring-offset-transparent
+        hover:bg-[#00ff9a] hover:text-black hover:scale-105
+        focus:outline-none focus:ring-2 focus:ring-[#00ff9a]/50 focus:ring-offset-2 focus:ring-offset-transparent
+        shadow-[0_0_20px_rgba(0,255,154,0.2)]
         ${className}
       `}
     >
