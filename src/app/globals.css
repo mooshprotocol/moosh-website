@@ -456,3 +456,157 @@ img, video {
   animation: float-across 19s linear infinite;
   animation-delay: 21s;
 }
+
+/* MOOSH PROTOCOL High-Resolution Hero Text */
+.moosh-protocol-text {
+  font-family: 'Orbitron', 'Space Grotesk', monospace;
+  font-size: clamp(3.5rem, 10vw, 9rem);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  background: transparent;
+  padding: 2rem 0;
+  border: none;
+  box-shadow: none;
+  transform: none;
+  filter: none;
+  transition: all 0.3s ease;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.moosh-protocol-text:hover {
+  transform: translateY(-3px);
+}
+
+/* Elegant Neon Green Shimmer with Gaussian Blur */
+.shimmer-overlay {
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 30%,
+    rgba(50, 196, 102, 0.25) 45%,
+    rgba(50, 196, 102, 0.35) 50%,
+    rgba(50, 196, 102, 0.25) 55%,
+    transparent 70%,
+    transparent 100%
+  );
+  animation: elegant-shimmer 5s ease-in-out infinite;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  filter: blur(3px);
+  border-radius: 50px;
+}
+
+@keyframes elegant-shimmer {
+  0% {
+    left: -150%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.4;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    left: 150%;
+    opacity: 0;
+  }
+}
+
+/* DeFi PROTOCOL Text with Refined Shimmer */
+.protocol-text {
+  background: linear-gradient(135deg, #32C466 0%, #00FF9D 50%, #32C466 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  font-weight: 900;
+  position: relative;
+  z-index: 2;
+}
+
+.protocol-shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(50, 196, 102, 0.2) 48%,
+    rgba(0, 255, 157, 0.25) 50%,
+    rgba(50, 196, 102, 0.2) 52%,
+    transparent 60%,
+    transparent 100%
+  );
+  animation: refined-shimmer 6s ease-in-out infinite;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  filter: blur(1px);
+  z-index: 3;
+}
+
+@keyframes refined-shimmer {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.3;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  95% {
+    opacity: 0.3;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+/* Subtle enhancement for MOOSH text */
+.text-moosh-text-primary {
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+/* Clean minimalist design - refined effects only */

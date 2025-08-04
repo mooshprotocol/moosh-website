@@ -74,7 +74,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-4xl mx-auto"
         >
-          {/* Enhanced Main Title */}
+          {/* Enhanced Main Title with Refined Shimmer */}
           <motion.h1 
             className="text-5xl md:text-7xl lg:text-8xl font-space-grotesk font-bold tracking-tight mb-6"
             initial={{ opacity: 0, y: 50 }}
@@ -83,7 +83,10 @@ export default function HeroSection() {
           >
             <span className="text-moosh-text-primary">MOOSH</span>
             <br />
-            <span className="text-gradient">PROTOCOL</span>
+            <span className="relative inline-block">
+              <span className="protocol-text">PROTOCOL</span>
+              <div className="protocol-shimmer"></div>
+            </span>
           </motion.h1>
 
           {/* Enhanced Subtitle */}
