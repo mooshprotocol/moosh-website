@@ -74,20 +74,28 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-4xl mx-auto"
         >
-          {/* Enhanced Main Title with Refined Shimmer */}
+          {/* MOOSH - Static, clean, solid white */}
           <motion.h1 
-            className="text-5xl md:text-7xl lg:text-8xl font-space-grotesk font-bold tracking-tight mb-6"
+            className="text-5xl md:text-7xl lg:text-8xl font-orbitron font-black tracking-tight leading-none"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
+            transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
           >
-            <span className="text-moosh-text-primary">MOOSH</span>
-            <br />
-            <span className="relative inline-block">
-              <span className="protocol-text">PROTOCOL</span>
-              <div className="protocol-shimmer"></div>
-            </span>
+            <span className="text-white font-black">MOOSH</span>
           </motion.h1>
+
+          {/* PROTOCOL - Larger, neon green with shimmer */}
+          <motion.div
+            className="relative inline-block"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" }}
+          >
+            <h2 className="text-6xl md:text-8xl lg:text-9xl font-orbitron font-black tracking-tight leading-none mt-2">
+              <span className="protocol-text-futuristic">PROTOCOL</span>
+              <div className="protocol-shimmer-futuristic"></div>
+            </h2>
+          </motion.div>
 
           {/* Enhanced Subtitle */}
           <motion.p 

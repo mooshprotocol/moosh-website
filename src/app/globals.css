@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -610,3 +610,84 @@ img, video {
 }
 
 /* Clean minimalist design - refined effects only */
+
+/* Ensure smooth animations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Futuristic DeFi Protocol Hero Styles */
+.font-orbitron {
+  font-family: 'Orbitron', monospace;
+}
+
+/* PROTOCOL - Bright neon green with soft shimmer */
+.protocol-text-futuristic {
+  color: #00FF9D;
+  font-weight: 900;
+  position: relative;
+  z-index: 2;
+  text-shadow: 
+    0 0 20px rgba(0, 255, 157, 0.4),
+    0 0 40px rgba(0, 255, 157, 0.2),
+    0 0 60px rgba(0, 255, 157, 0.1);
+}
+
+.protocol-shimmer-futuristic {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 25%,
+    rgba(0, 255, 157, 0.08) 35%,
+    rgba(0, 255, 157, 0.15) 50%,
+    rgba(0, 255, 157, 0.08) 65%,
+    transparent 75%,
+    transparent 100%
+  );
+  animation: futuristic-shimmer 10s ease-in-out infinite;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  filter: blur(1px);
+  z-index: 3;
+}
+
+@keyframes futuristic-shimmer {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.3;
+  }
+  15% {
+    opacity: 0.7;
+  }
+  25% {
+    opacity: 0.9;
+  }
+  75% {
+    opacity: 0.9;
+  }
+  85% {
+    opacity: 0.7;
+  }
+  92% {
+    opacity: 0.3;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+/* Neobrutalist influence - clean, high-contrast typography */
+.font-orbitron {
+  font-family: 'Orbitron', monospace;
+  letter-spacing: 0.05em;
+}

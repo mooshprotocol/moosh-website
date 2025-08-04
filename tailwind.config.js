@@ -42,6 +42,7 @@ module.exports = {
       fontFamily: {
         'inter': ['Inter', 'sans-serif'],
         'space-grotesk': ['Space Grotesk', 'sans-serif'],
+        'orbitron': ['Orbitron', 'monospace'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
