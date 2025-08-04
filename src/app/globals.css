@@ -98,6 +98,67 @@ img, video {
     @apply border border-moosh-green text-moosh-green bg-transparent px-6 py-3 rounded-lg font-medium tracking-tight transition-all duration-300 hover:bg-moosh-green hover:text-black hover:shadow-glow-green focus:outline-none focus:ring-2 focus:ring-moosh-green focus:ring-opacity-50;
   }
   
+  /* Optimized Header Button */
+  .btn-header {
+    @apply border border-white text-white bg-transparent px-4 py-2 rounded text-sm font-medium relative overflow-hidden transition-all duration-300;
+    will-change: transform;
+    backface-visibility: hidden;
+    transition-timing-function: ease;
+  }
+  
+  .btn-header .btn-text {
+    @apply relative z-10 transition-colors duration-150;
+    transition-delay: 75ms;
+    transition-timing-function: ease;
+  }
+  
+  .btn-header .btn-bg {
+    @apply absolute inset-0 bg-white transform -translate-x-full transition-transform duration-300;
+    will-change: transform;
+    transition-timing-function: ease;
+  }
+  
+  .btn-header:hover .btn-text,
+  .btn-header:focus-visible .btn-text {
+    @apply text-black;
+  }
+  
+  .btn-header:hover .btn-bg,
+  .btn-header:focus-visible .btn-bg {
+    @apply translate-x-0;
+  }
+  
+  /* 品牌色版本 */
+  .btn-header-brand {
+    @apply border border-white text-white bg-transparent px-4 py-2 rounded text-sm font-medium relative overflow-hidden transition-all duration-300;
+    will-change: transform;
+    backface-visibility: hidden;
+    transition-timing-function: ease;
+  }
+  
+  .btn-header-brand .btn-text {
+    @apply relative z-10 transition-colors duration-150;
+    transition-delay: 75ms;
+    transition-timing-function: ease;
+  }
+  
+  .btn-header-brand .btn-bg {
+    @apply absolute inset-0 transform -translate-x-full transition-transform duration-300;
+    background: #00FF99;
+    will-change: transform;
+    transition-timing-function: ease;
+  }
+  
+  .btn-header-brand:hover .btn-text,
+  .btn-header-brand:focus-visible .btn-text {
+    @apply text-black;
+  }
+  
+  .btn-header-brand:hover .btn-bg,
+  .btn-header-brand:focus-visible .btn-bg {
+    @apply translate-x-0;
+  }
+  
   .btn-secondary {
     @apply border border-moosh-text-secondary text-moosh-text-secondary bg-transparent px-6 py-3 rounded-lg font-medium tracking-tight transition-all duration-300 hover:border-moosh-green hover:text-moosh-green hover:shadow-glow-green focus:outline-none focus:ring-2 focus:ring-moosh-green focus:ring-opacity-50;
   }
@@ -189,44 +250,29 @@ img, video {
 
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Space+Grotesk:wght@300;500&family=Monomaniac+One&display=swap');
 
-/* MOOSH Logo Styling - Orbitron Version */
+/* MOOSH Logo Styling - Optimized Version */
 .moosh-logo {
   font-family: 'Orbitron', sans-serif;
   color: white;
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   transition: all 0.3s ease;
   filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.1));
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
-.moosh-logo:hover {
+.moosh-logo:hover,
+.moosh-logo:focus-visible {
   font-weight: 700;
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
-  animation: wobble-top 0.6s ease-in-out;
+  transform: scale(1.03);
+  text-shadow: 0 0 10px rgba(0, 255, 153, 0.67);
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.1));
 }
 
-@keyframes wobble-top {
-  0%, 100% {
-    transform: translateX(0) rotateX(0deg);
-  }
-  15% {
-    transform: translateX(-6px) rotateX(-5deg);
-  }
-  30% {
-    transform: translateX(5px) rotateX(3deg);
-  }
-  45% {
-    transform: translateX(-3px) rotateX(-3deg);
-  }
-  60% {
-    transform: translateX(2px) rotateX(2deg);
-  }
-  75% {
-    transform: translateX(-1px) rotateX(-1deg);
-  }
-}
+/* 移除旧的 wobble 动画 */
 
 /* Enhanced Floating Elements */
 .floating-element {

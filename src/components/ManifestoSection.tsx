@@ -44,6 +44,21 @@ export default function ManifestoSection() {
             ))}
           </div>
           
+          {/* Enhanced Decorative Line */}
+          <motion.div 
+            className="flex items-center justify-center gap-8 mb-16"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="w-24 h-px bg-gradient-to-r from-transparent to-moosh-text-muted"></div>
+            <div className="relative">
+              <div className="w-4 h-4 bg-moosh-green rounded-full animate-pulse-slow shadow-glow-green"></div>
+              <div className="absolute inset-0 w-4 h-4 bg-moosh-green rounded-full animate-ping opacity-30"></div>
+            </div>
+            <div className="w-24 h-px bg-gradient-to-l from-transparent to-moosh-text-muted"></div>
+          </motion.div>
           
           {/* Enhanced Conclusion */}
           <motion.p 
@@ -55,6 +70,15 @@ export default function ManifestoSection() {
           >
             Moosh makes it possible.
           </motion.p>
+          
+          {/* Full-width divider line - outside the max-width container */}
+          <motion.div 
+            className="w-full h-px bg-gradient-to-r from-transparent via-moosh-green to-transparent mt-8"
+            initial={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            viewport={{ once: true }}
+          ></motion.div>
         </div>
       </div>
     </section>

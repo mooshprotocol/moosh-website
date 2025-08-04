@@ -122,23 +122,21 @@ export default function BuildersSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <p className="text-xs uppercase tracking-widest text-moosh-green mb-4 font-semibold">
-            Builders & Agents
-          </p>
+
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-moosh-text-primary mb-6 leading-tight">
-            BUIDL by Artists, Philosophers, Poets, and Composers — and
+            <span className="whitespace-nowrap">BUIDL by Artists, Philosophers, Poets, and Composers</span>
             <br />
-            <span className="text-gradient">Agents</span>
+            — and <span className="text-gradient">Agents</span>
           </h2>
           <p className="text-lg text-moosh-text-secondary leading-relaxed max-w-2xl mx-auto mb-8">
             Reimagining DeFi with logic, language, and autonomy.
           </p>
-          <div className="w-32 bg-gradient-to-r from-transparent via-moosh-green to-transparent mx-auto" style={{height: '0.2px'}}></div>
+          <div className="w-32 bg-gradient-to-r from-transparent via-moosh-green to-transparent mx-auto mb-8" style={{height: '1px'}}></div>
         </motion.div>
         
-        {/* Poetic Vision Text Above Cards */}
+                {/* Poetic Vision Text Above Cards */}
         <motion.div 
-          className="text-center max-w-4xl mx-auto mb-16"
+          className="text-center max-w-4xl mx-auto mb-8 -mt-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -148,17 +146,7 @@ export default function BuildersSection() {
             Moosh is not built by builders alone. It&apos;s a protocol composed by those who think modularly, speak in primitives, and dream in composable systems.
           </p>
           
-          <motion.div 
-            className="mt-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-lg text-moosh-text-muted leading-relaxed">
-              We welcome agents of autonomy, crafters of logic, and thinkers fluent in the syntax of the future.
-            </p>
-          </motion.div>
+ 
         </motion.div>
         
         {/* Creative Archetypes Grid */}

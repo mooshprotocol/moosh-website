@@ -37,7 +37,7 @@ export default function CommunitySection() {
             viewport={{ once: true }}
           >
             <p className="text-sm text-moosh-text-muted tracking-widest mt-8 font-light">
-              This is Moosh.
+              Humans lead, agents build, communities align.
             </p>
           </motion.div>
         </div>

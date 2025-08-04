@@ -43,7 +43,7 @@ export default function ProtocolSection() {
     {
       title: "MegaETH Compatibility",
       description: "Natively integrated with modular infrastructure on MegaETH.",
-      subModules: ["Native Integration", "Modular Infrastructure", "MegaETH"],
+      subModules: ["Native Integration", "MegaETH"],
       color: "purple",
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -105,11 +105,8 @@ export default function ProtocolSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <p className="text-xs uppercase tracking-widest text-moosh-green mb-4 font-semibold">
-            Modular Infrastructure
-          </p>
           <h2 className="text-4xl md:text-5xl font-bold text-moosh-text-primary mb-8 tracking-tight">
-            Moosh Protocol
+            Core Modules
           </h2>
           <p className="text-lg text-moosh-text-secondary leading-relaxed mb-8 font-light">
             Built for ultra-low latency modular infrastructure and composable liquidity.

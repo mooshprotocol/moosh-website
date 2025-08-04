@@ -96,30 +96,11 @@ export default function HeroSection() {
             Modular liquidity infrastructure for the future of DeFi
           </motion.p>
 
-          {/* Enhanced CTA Buttons */}
-          <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-          >
-            <button className="btn-primary group text-lg px-8 py-4">
-              <span className="flex items-center gap-2">
-                Explore Protocol
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </span>
-            </button>
-            
-            <button className="btn-outline text-lg px-8 py-4">
-              View Documentation
-            </button>
-          </motion.div>
+
 
           {/* Enhanced Stats */}
           <motion.div 
-            className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto"
+            className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
@@ -148,14 +129,15 @@ export default function HeroSection() {
         transition={{ duration: 1, delay: 1.5 }}
       >
         <div className="flex flex-col items-center gap-3">
-          <span className="text-xs text-moosh-text-secondary tracking-widest font-medium">SCROLL</span>
-          <div className="relative">
-            <motion.div 
-              className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 h-3 bg-moosh-green rounded-full"
-              animate={{ y: [0, 36, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            />
-          </div>
+                      <span className="text-xs text-moosh-text-secondary tracking-widest font-medium">SCROLL</span>
+            <div className="relative">
+              <div className="w-px h-12 bg-gradient-to-b from-moosh-green to-transparent"></div>
+              <motion.div 
+                className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 h-3 bg-moosh-green rounded-full"
+                animate={{ y: [0, 36, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              />
+            </div>
           <div className="w-6 h-6 border border-moosh-green/30 rounded-full flex items-center justify-center group hover:border-moosh-green/60 transition-colors">
             <svg className="w-3 h-3 text-moosh-green group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
