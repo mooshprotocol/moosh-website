@@ -95,7 +95,7 @@ export default function BuildersSection() {
   };
 
   return (
-    <section className="bg-moosh-black-dark py-16 relative overflow-hidden">
+    <section className="bg-moosh-black-dark py-20 md:py-28 relative overflow-hidden">
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       
@@ -113,7 +113,7 @@ export default function BuildersSection() {
         <div className="dot" style={{ top: '30%', right: '8%', width: '0.4px', height: '0.08px', animationDelay: '0.5s' }}></div>
       </div>
       
-      <div className="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div 
           className="text-center mb-8"
@@ -147,7 +147,7 @@ export default function BuildersSection() {
         </motion.div>
         
         {/* Creative Archetypes Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {categories.map((category, index) => {
             const colorClasses = getColorClasses(category.color);
             
