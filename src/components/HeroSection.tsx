@@ -74,48 +74,60 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-4xl mx-auto"
         >
-          {/* Enhanced Main Title */}
+          {/* MOOSH - Static, clean, solid white */}
           <motion.h1 
-            className="text-5xl md:text-7xl lg:text-8xl font-space-grotesk font-bold tracking-tight mb-6"
+            className="text-5xl md:text-7xl lg:text-8xl font-orbitron font-black tracking-tight leading-none"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
+            transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
           >
-            <span className="text-moosh-text-primary">MOOSH</span>
-            <br />
-            <span className="text-gradient">PROTOCOL</span>
+            <span className="text-white font-black">MOOSH</span>
           </motion.h1>
 
-          {/* Enhanced Subtitle */}
-          <motion.p 
-            className="text-xl md:text-2xl text-moosh-text-secondary mb-8 font-light tracking-tight max-w-2xl mx-auto"
+          {/* PROTOCOL - Larger, neon green with shimmer */}
+          <motion.div
+            className="relative inline-block"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" }}
           >
-            Modular liquidity infrastructure for the future of DeFi
-          </motion.p>
+            <h2 className="text-6xl md:text-8xl lg:text-9xl font-orbitron font-black tracking-tight leading-none mt-2">
+              <span className="protocol-text-futuristic">PROTOCOL</span>
+              <div className="protocol-shimmer-futuristic"></div>
+            </h2>
+          </motion.div>
 
+          {/* Typewriter Subtitle */}
+          <motion.div
+            className="mt-8 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
+          >
+            <div className="typewriter-container">
+              <span className="typewriter-text">Modular liquidity infrastructure for the future of DeFi</span>
+              <span className="typewriter-cursor">|</span>
+            </div>
+          </motion.div>
 
-
-          {/* Enhanced Stats */}
+          {/* Key Metrics */}
           <motion.div 
-            className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto"
+            className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
+            transition={{ duration: 0.8, delay: 1.5, ease: "easeOut" }}
           >
             <div className="text-center group">
-              <div className="text-3xl font-bold text-moosh-green mb-2 group-hover:scale-110 transition-transform">4</div>
-              <div className="text-sm text-moosh-text-secondary tracking-wide">Modular Engines</div>
+              <div className="text-4xl md:text-5xl font-black text-moosh-green mb-3 group-hover:scale-105 transition-transform duration-300 subtle-shimmer">4</div>
+              <div className="text-xs text-gray-500 tracking-widest uppercase font-medium">Modular Engines</div>
             </div>
             <div className="text-center group">
-              <div className="text-3xl font-bold text-moosh-green mb-2 group-hover:scale-110 transition-transform">∞</div>
-              <div className="text-sm text-moosh-text-secondary tracking-wide">Composability</div>
+              <div className="text-4xl md:text-5xl font-black text-moosh-green mb-3 group-hover:scale-105 transition-transform duration-300 subtle-shimmer">∞</div>
+              <div className="text-xs text-gray-500 tracking-widest uppercase font-medium">Composability</div>
             </div>
             <div className="text-center group">
-              <div className="text-3xl font-bold text-moosh-green mb-2 group-hover:scale-110 transition-transform">0</div>
-              <div className="text-sm text-moosh-text-secondary tracking-wide">Friction</div>
+              <div className="text-4xl md:text-5xl font-black text-moosh-green mb-3 group-hover:scale-105 transition-transform duration-300 subtle-shimmer">0</div>
+              <div className="text-xs text-gray-500 tracking-widest uppercase font-medium">Friction</div>
             </div>
           </motion.div>
         </motion.div>
@@ -126,11 +138,10 @@ export default function HeroSection() {
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 1.5 }}
+        transition={{ duration: 1, delay: 2.2, ease: "easeOut" }}
       >
-        <div className="flex flex-col items-center gap-3">
-                      <span className="text-xs text-moosh-text-secondary tracking-widest font-medium">SCROLL</span>
-            <div className="relative">
+                <div className="flex flex-col items-center gap-3">
+          <div className="relative">
               <div className="w-px h-12 bg-gradient-to-b from-moosh-green to-transparent"></div>
               <motion.div 
                 className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 h-3 bg-moosh-green rounded-full"

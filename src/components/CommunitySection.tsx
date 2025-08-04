@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function CommunitySection() {
   return (
-    <section className="bg-moosh-black section-padding relative overflow-hidden">
+    <section className="bg-moosh-black py-24 md:py-32 relative overflow-hidden">
       {/* Subtle dynamic background: floating green dust */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-moosh-green/20 rounded-full animate-pulse" style={{animationDelay: '0s'}}></div>
@@ -15,7 +15,7 @@ export default function CommunitySection() {
         <div className="absolute top-1/2 right-1/6 w-1.5 h-1.5 bg-moosh-green/15 rounded-full animate-pulse" style={{animationDelay: '5s'}}></div>
       </div>
       
-      <div className="container-custom relative z-10">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
           {/* Main Tagline */}
           <motion.div
@@ -25,7 +25,7 @@ export default function CommunitySection() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-moosh-text-primary tracking-tight leading-tight">
-              Community First. <span className="text-gradient">Agent First.</span>
+              Community First. <span className="agent-first-glow">Agent First.</span>
             </h2>
           </motion.div>
           
@@ -36,7 +36,7 @@ export default function CommunitySection() {
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <p className="text-sm text-moosh-text-muted tracking-widest mt-8 font-light">
+            <p className="text-base md:text-lg text-moosh-text-muted tracking-widest mt-8 font-light">
               Humans lead, agents build, communities align.
             </p>
           </motion.div>

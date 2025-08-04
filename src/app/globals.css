@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -48,35 +48,11 @@ body {
   background: #4b5563;
 }
 
-/* Custom animation delays */
-.delay-200 {
-  animation-delay: 200ms;
-}
-
-.delay-400 {
-  animation-delay: 400ms;
-}
-
-/* Optimized transitions for specific elements only */
-button, a, .hover-effect {
-  transition: all 0.3s ease;
-}
-
-/* Improve scroll performance */
-* {
-  will-change: auto;
-}
-
 /* Performance optimizations */
 section {
   transform: translateZ(0);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-}
-
-/* Optimize images and heavy elements */
-img, video {
-  transform: translateZ(0);
 }
 
 /* Disable animations on scroll for better performance */
@@ -98,159 +74,116 @@ img, video {
     @apply border border-moosh-green text-moosh-green bg-transparent px-6 py-3 rounded-lg font-medium tracking-tight transition-all duration-300 hover:bg-moosh-green hover:text-black hover:shadow-glow-green focus:outline-none focus:ring-2 focus:ring-moosh-green focus:ring-opacity-50;
   }
   
-  /* Optimized Header Button */
-  .btn-header {
-    @apply border border-white text-white bg-transparent px-4 py-2 rounded text-sm font-medium relative overflow-hidden transition-all duration-300;
-    will-change: transform;
-    backface-visibility: hidden;
-    transition-timing-function: ease;
-  }
-  
-  .btn-header .btn-text {
-    @apply relative z-10 transition-colors duration-150;
-    transition-delay: 75ms;
-    transition-timing-function: ease;
-  }
-  
-  .btn-header .btn-bg {
-    @apply absolute inset-0 bg-white transform -translate-x-full transition-transform duration-300;
-    will-change: transform;
-    transition-timing-function: ease;
-  }
-  
-  .btn-header:hover .btn-text,
-  .btn-header:focus-visible .btn-text {
-    @apply text-black;
-  }
-  
-  .btn-header:hover .btn-bg,
-  .btn-header:focus-visible .btn-bg {
-    @apply translate-x-0;
-  }
-  
-  /* 品牌色版本 */
-  .btn-header-brand {
-    @apply border border-white text-white bg-transparent px-4 py-2 rounded text-sm font-medium relative overflow-hidden transition-all duration-300;
-    will-change: transform;
-    backface-visibility: hidden;
-    transition-timing-function: ease;
-  }
-  
-  .btn-header-brand .btn-text {
-    @apply relative z-10 transition-colors duration-150;
-    transition-delay: 75ms;
-    transition-timing-function: ease;
-  }
-  
-  .btn-header-brand .btn-bg {
-    @apply absolute inset-0 transform -translate-x-full transition-transform duration-300;
-    background: #00FF99;
-    will-change: transform;
-    transition-timing-function: ease;
-  }
-  
-  .btn-header-brand:hover .btn-text,
-  .btn-header-brand:focus-visible .btn-text {
-    @apply text-black;
-  }
-  
-  .btn-header-brand:hover .btn-bg,
-  .btn-header-brand:focus-visible .btn-bg {
-    @apply translate-x-0;
-  }
-  
   .btn-secondary {
-    @apply border border-moosh-text-secondary text-moosh-text-secondary bg-transparent px-6 py-3 rounded-lg font-medium tracking-tight transition-all duration-300 hover:border-moosh-green hover:text-moosh-green hover:shadow-glow-green focus:outline-none focus:ring-2 focus:ring-moosh-green focus:ring-opacity-50;
+    @apply bg-moosh-black-card text-moosh-text-primary px-6 py-3 rounded-lg font-medium tracking-tight transition-all duration-300 hover:bg-moosh-black-lighter focus:outline-none focus:ring-2 focus:ring-moosh-text-muted focus:ring-opacity-50;
   }
   
-  /* Enhanced Card System */
   .card-hover {
-    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:border-moosh-green/30;
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;
   }
   
   .card-glow {
-    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-glow-green hover:border-moosh-green/50;
+    @apply transition-all duration-300 hover:shadow-glow-green;
   }
   
-  /* Text Gradients */
   .text-gradient {
     @apply bg-gradient-to-r from-moosh-green to-moosh-green-bright bg-clip-text text-transparent;
   }
   
   .text-gradient-purple {
-    @apply bg-gradient-to-r from-moosh-accent-purple to-moosh-green bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-moosh-accent-purple to-moosh-accent-pink bg-clip-text text-transparent;
   }
   
   .text-gradient-blue {
-    @apply bg-gradient-to-r from-moosh-accent-blue to-moosh-green bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-moosh-accent-blue to-moosh-accent-cyan bg-clip-text text-transparent;
   }
   
   .text-gradient-cyan {
     @apply bg-gradient-to-r from-moosh-accent-cyan to-moosh-green bg-clip-text text-transparent;
   }
   
-  /* Section Layout */
   .section-padding {
-    @apply py-20 px-4 md:px-8 lg:px-16;
+    @apply py-24 md:py-32;
   }
   
   .container-custom {
-    @apply max-w-7xl mx-auto;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
   
-  /* Accent Colors */
   .text-accent {
     @apply text-moosh-green;
   }
   
   .hover\:ring-accent:hover {
-    @apply ring-moosh-green ring-opacity-50;
+    @apply ring-moosh-green;
   }
   
   .border-accent {
     @apply border-moosh-green;
   }
-  
-  
-  /* Green Dot Pattern */
-  .green-dot {
-    @apply absolute w-1 h-1 bg-moosh-green rounded-full animate-pulse-slow;
-  }
-  
-  .green-dot-large {
-    @apply absolute w-2 h-2 bg-moosh-green rounded-full animate-pulse-slow;
-  }
-  
-  /* Flow Lines */
-  .flow-line {
-    @apply absolute h-px bg-gradient-to-r from-transparent via-moosh-green/30 to-transparent;
-  }
-  
-  /* Glow Effects */
-  .glow-green {
-    @apply shadow-glow-green;
-  }
-  
-  .glow-blue {
-    @apply shadow-glow-blue;
-  }
-  
-  .glow-purple {
-    @apply shadow-glow-purple;
-  }
-  
-  .glow-cyan {
-    @apply shadow-glow-cyan;
-  }
-  
-  .glow-orange {
-    @apply shadow-glow-orange;
-  }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Space+Grotesk:wght@300;500&family=Monomaniac+One&display=swap');
+/* Header Button Styles */
+.btn-header {
+  @apply border border-white text-white bg-transparent px-4 py-2 rounded text-sm font-medium relative overflow-hidden transition-all duration-300;
+  will-change: transform;
+  backface-visibility: hidden;
+  transition-timing-function: ease;
+}
 
-/* MOOSH Logo Styling - Optimized Version */
+.btn-header .btn-text {
+  @apply relative z-10 transition-colors duration-150;
+  transition-delay: 75ms;
+  transition-timing-function: ease;
+}
+
+.btn-header .btn-bg {
+  @apply absolute inset-0 bg-white transform -translate-x-full transition-transform duration-300;
+  will-change: transform;
+  transition-timing-function: ease;
+}
+
+.btn-header:hover .btn-text,
+.btn-header:focus-visible .btn-text {
+  @apply text-black;
+}
+
+.btn-header:hover .btn-bg,
+.btn-header:focus-visible .btn-bg {
+  @apply translate-x-0;
+}
+
+.btn-header-brand {
+  @apply border border-white text-white bg-transparent px-4 py-2 rounded text-sm font-medium relative overflow-hidden transition-all duration-300;
+  will-change: transform;
+  backface-visibility: hidden;
+  transition-timing-function: ease;
+}
+
+.btn-header-brand .btn-text {
+  @apply relative z-10 transition-colors duration-150;
+  transition-delay: 75ms;
+  transition-timing-function: ease;
+}
+
+.btn-header-brand .btn-bg {
+  @apply absolute inset-0 transform -translate-x-full transition-transform duration-300;
+  background: #00FF99;
+  will-change: transform;
+  transition-timing-function: ease;
+}
+
+.btn-header-brand:hover .btn-text,
+.btn-header-brand:focus-visible .btn-text {
+  @apply text-black;
+}
+
+.btn-header-brand:hover .btn-bg,
+.btn-header-brand:focus-visible .btn-bg {
+  @apply translate-x-0;
+}
+
+/* MOOSH Logo Styling */
 .moosh-logo {
   font-family: 'Orbitron', sans-serif;
   color: white;
@@ -272,49 +205,44 @@ img, video {
   filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.1));
 }
 
-/* 移除旧的 wobble 动画 */
-
-/* Enhanced Floating Elements */
+/* Floating Elements */
 .floating-element {
   position: absolute;
-  opacity: 0.6;
-  animation: float 8s ease-in-out infinite;
+  animation: float 6s ease-in-out infinite;
 }
 
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translateY(0px);
   }
   50% {
-    transform: translateY(-20px) rotate(180deg);
+    transform: translateY(-10px);
   }
 }
 
-/* Network Mesh Animation */
+/* Network Mesh */
 .network-mesh {
   position: absolute;
   inset: 0;
-  opacity: 0.1;
+  opacity: 0.3;
   pointer-events: none;
 }
 
 .network-line {
-  stroke: #32C466;
-  stroke-width: 1;
-  opacity: 0.3;
+  opacity: 0.6;
   animation: network-pulse 4s ease-in-out infinite;
 }
 
 @keyframes network-pulse {
   0%, 100% {
-    opacity: 0.1;
+    opacity: 0.3;
   }
   50% {
-    opacity: 0.4;
+    opacity: 0.8;
   }
 }
 
-/* Enhanced Green Dot Pattern */
+/* Green Dot Pattern */
 .green-dot-pattern {
   position: absolute;
   inset: 0;
@@ -324,6 +252,7 @@ img, video {
 .green-dot-pattern .dot {
   position: absolute;
   background: #32C466;
+  border-radius: 50%;
   animation: dot-pulse 3s ease-in-out infinite;
 }
 
@@ -334,125 +263,314 @@ img, video {
   }
   50% {
     opacity: 0.8;
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 }
 
-/* Floating Cubes Animation */
-.cubes-container {
+/* PROTOCOL - Bright neon green with soft shimmer */
+.protocol-text-futuristic {
+  color: #00FF9D;
+  font-weight: 900;
+  position: relative;
+  z-index: 2;
+  text-shadow: 
+    0 0 20px rgba(0, 255, 157, 0.4),
+    0 0 40px rgba(0, 255, 157, 0.2),
+    0 0 60px rgba(0, 255, 157, 0.1);
+}
+
+.protocol-shimmer-futuristic {
   position: absolute;
-  width: 100%;
+  top: 0;
+  left: -100%;
+  width: 70%;
   height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 25%,
+    rgba(0, 255, 157, 0.08) 35%,
+    rgba(0, 255, 157, 0.15) 50%,
+    rgba(0, 255, 157, 0.08) 65%,
+    transparent 75%,
+    transparent 100%
+  );
+  animation: futuristic-shimmer 10s ease-in-out infinite;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  filter: blur(1px);
+  z-index: 3;
+}
+
+@keyframes futuristic-shimmer {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.3;
+  }
+  15% {
+    opacity: 0.7;
+  }
+  25% {
+    opacity: 0.9;
+  }
+  75% {
+    opacity: 0.9;
+  }
+  85% {
+    opacity: 0.7;
+  }
+  92% {
+    opacity: 0.3;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+/* Typewriter Animation */
+.typewriter-container {
+  display: inline-block;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  font-weight: 300;
+  letter-spacing: 0.025em;
+  color: #00ff9c;
+  text-shadow: 
+    0 0 10px rgba(0, 255, 156, 0.3),
+    0 0 20px rgba(0, 255, 156, 0.2);
+}
+
+.typewriter-text {
+  display: inline-block;
   overflow: hidden;
-  perspective: 1000px;
+  white-space: nowrap;
+  animation: typewriter 4s steps(50, end) forwards;
+  max-width: 0;
 }
 
-.floating-cube {
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  background: linear-gradient(45deg, #ffffff 0%, #e0e0e0 50%, #cccccc 100%);
-  border-radius: 2px;
-  opacity: 0.7;
-  transform-style: preserve-3d;
+.typewriter-cursor {
+  display: inline-block;
+  color: #00ff9c;
+  font-weight: bold;
+  opacity: 0;
+  margin-left: 2px;
+  animation: cursor-blink 1s infinite;
+  animation-delay: 4s;
+  animation-fill-mode: both;
+}
+
+@keyframes typewriter {
+  0% {
+    max-width: 0;
+  }
+  100% {
+    max-width: 100%;
+  }
+}
+
+@keyframes cursor-blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Responsive typewriter */
+@media (min-width: 768px) {
+  .typewriter-container {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .typewriter-container {
+    font-size: 1.5rem;
+  }
+}
+
+/* Agent First Pulsing Glow */
+.agent-first-glow {
+  color: #00ff9c;
+  font-weight: 600;
+  text-shadow: 
+    0 0 10px rgba(0, 255, 156, 0.4),
+    0 0 20px rgba(0, 255, 156, 0.3),
+    0 0 30px rgba(0, 255, 156, 0.2),
+    0 0 40px rgba(0, 255, 156, 0.1);
+  animation: agent-pulse 2s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes agent-pulse {
+  0% {
+    transform: scale(1);
+    text-shadow: 
+      0 0 10px rgba(0, 255, 156, 0.4),
+      0 0 20px rgba(0, 255, 156, 0.3),
+      0 0 30px rgba(0, 255, 156, 0.2),
+      0 0 40px rgba(0, 255, 156, 0.1);
+  }
+  50% {
+    transform: scale(1.05);
+    text-shadow: 
+      0 0 15px rgba(0, 255, 156, 0.6),
+      0 0 25px rgba(0, 255, 156, 0.4),
+      0 0 35px rgba(0, 255, 156, 0.3),
+      0 0 45px rgba(0, 255, 156, 0.2);
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 
+      0 0 10px rgba(0, 255, 156, 0.4),
+      0 0 20px rgba(0, 255, 156, 0.3),
+      0 0 30px rgba(0, 255, 156, 0.2),
+      0 0 40px rgba(0, 255, 156, 0.1);
+  }
+}
+
+/* Enhanced Card Hover Effects */
+.group:hover .group-hover\:text-gradient {
+  background: linear-gradient(135deg, #32C466 0%, #00FF9D 50%, #32C466 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  animation: gradient-shift 2s ease-in-out infinite;
+}
+
+.group:hover .group-hover\:text-gradient-blue {
+  background: linear-gradient(135deg, #3B82F6 0%, #06B6D4 50%, #3B82F6 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  animation: gradient-shift 2s ease-in-out infinite;
+}
+
+.group:hover .group-hover\:text-gradient-cyan {
+  background: linear-gradient(135deg, #06B6D4 0%, #00FF9D 50%, #06B6D4 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  animation: gradient-shift 2s ease-in-out infinite;
+}
+
+.group:hover .group-hover\:text-gradient-purple {
+  background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 50%, #8B5CF6 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  animation: gradient-shift 2s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Enhanced glow shadows */
+.hover\:shadow-glow-green:hover {
   box-shadow: 
-    0 0 0 1px rgba(255, 255, 255, 0.3),
-    4px 4px 8px rgba(0, 0, 0, 0.3),
-    8px 8px 0px rgba(200, 200, 200, 0.8),
-    12px 12px 0px rgba(150, 150, 150, 0.6);
+    0 0 20px rgba(50, 196, 102, 0.2),
+    0 0 40px rgba(50, 196, 102, 0.1),
+    0 0 60px rgba(50, 196, 102, 0.05);
 }
 
-.floating-cube::before {
-  content: '';
-  position: absolute;
-  top: -15px;
-  left: 0;
-  width: 15px;
-  height: 15px;
-  background: linear-gradient(45deg, #f0f0f0 0%, #d0d0d0 100%);
-  border-radius: 2px;
-  transform: skewX(-45deg) skewY(15deg);
-  opacity: 0.8;
+.hover\:shadow-glow-blue:hover {
+  box-shadow: 
+    0 0 20px rgba(59, 130, 246, 0.2),
+    0 0 40px rgba(59, 130, 246, 0.1),
+    0 0 60px rgba(59, 130, 246, 0.05);
 }
 
-.floating-cube::after {
+.hover\:shadow-glow-cyan:hover {
+  box-shadow: 
+    0 0 20px rgba(6, 182, 212, 0.2),
+    0 0 40px rgba(6, 182, 212, 0.1),
+    0 0 60px rgba(6, 182, 212, 0.05);
+}
+
+.hover\:shadow-glow-purple:hover {
+  box-shadow: 
+    0 0 20px rgba(139, 92, 246, 0.2),
+    0 0 40px rgba(139, 92, 246, 0.1),
+    0 0 60px rgba(139, 92, 246, 0.05);
+}
+
+.hover\:shadow-glow-orange:hover {
+  box-shadow: 
+    0 0 20px rgba(245, 158, 11, 0.2),
+    0 0 40px rgba(245, 158, 11, 0.1),
+    0 0 60px rgba(245, 158, 11, 0.05);
+}
+
+/* Subtle shimmer effect for metrics */
+.subtle-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.subtle-shimmer::before {
   content: '';
   position: absolute;
   top: 0;
-  left: -15px;
-  width: 15px;
-  height: 15px;
-  background: linear-gradient(45deg, #e0e0e0 0%, #c0c0c0 100%);
-  border-radius: 2px;
-  transform: skewX(-45deg) skewY(-15deg);
-  opacity: 0.9;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(0, 255, 157, 0.1) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+  animation: subtle-shimmer 6s ease-in-out infinite;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  filter: blur(0.5px);
 }
 
-@keyframes float-across {
+@keyframes subtle-shimmer {
   0% {
-    transform: translateX(-100px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    left: -100%;
     opacity: 0;
   }
-  10% {
-    opacity: 0.7;
+  20% {
+    opacity: 0.3;
   }
   50% {
-    transform: translateX(calc(50vw)) rotateX(180deg) rotateY(180deg) rotateZ(90deg);
+    opacity: 0.6;
   }
-  90% {
-    opacity: 0.7;
+  80% {
+    opacity: 0.3;
   }
   100% {
-    transform: translateX(calc(100vw + 100px)) rotateX(360deg) rotateY(360deg) rotateZ(180deg);
+    left: 100%;
     opacity: 0;
   }
 }
 
-/* Different cube positions and delays */
-.cube-1 {
-  top: 15%;
-  animation: float-across 20s linear infinite;
-  animation-delay: 0s;
+/* Principles Cards Enhanced Styles */
+.hover\:scale-103:hover {
+  transform: scale(1.03);
 }
 
-.cube-2 {
-  top: 25%;
-  animation: float-across 25s linear infinite;
-  animation-delay: 3s;
-}
-
-.cube-3 {
-  top: 40%;
-  animation: float-across 22s linear infinite;
-  animation-delay: 6s;
-}
-
-.cube-4 {
-  top: 55%;
-  animation: float-across 18s linear infinite;
-  animation-delay: 9s;
-}
-
-.cube-5 {
-  top: 70%;
-  animation: float-across 24s linear infinite;
-  animation-delay: 12s;
-}
-
-.cube-6 {
-  top: 85%;
-  animation: float-across 21s linear infinite;
-  animation-delay: 15s;
-}
-
-.cube-7 {
-  top: 30%;
-  animation: float-across 26s linear infinite;
-  animation-delay: 18s;
-}
-
-.cube-8 {
-  top: 50%;
-  animation: float-across 19s linear infinite;
-  animation-delay: 21s;
+/* Font utilities */
+.font-orbitron {
+  font-family: 'Orbitron', monospace;
+  letter-spacing: 0.05em;
 }

@@ -8,7 +8,7 @@ import ProtocolSection from '@/components/ProtocolSection';
 import BuildersSection from '@/components/BuildersSection';
 import CareersSection from '@/components/CareersSection';
 import CommunitySection from '@/components/CommunitySection';
-import SectionDivider from '@/components/SectionDivider';
+
 
 export default function HomePage() {
   return (
@@ -19,27 +19,17 @@ export default function HomePage() {
       {/* Manifesto Section - 深灰背景 */}
       <ManifestoSection />
 
-      <SectionDivider />
-
       {/* Principles Section - 中灰背景 */}
       <PrinciplesSection />
-
-      <SectionDivider />
 
       {/* Protocol Section - 浅灰背景 */}
       <ProtocolSection />
 
-      <SectionDivider />
-
       {/* Builders Section - 深灰背景，招聘功能 */}
       <BuildersSection />
 
-      <SectionDivider />
-
       {/* Careers Section - 中灰背景，职位详情 */}
       <CareersSection />
-
-      <SectionDivider />
 
       {/* Community Section - 黑底背景，社群参与 */}
       <CommunitySection />
