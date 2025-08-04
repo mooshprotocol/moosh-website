@@ -10,9 +10,10 @@ export default function Header() {
             MOOSH
           </Link>
           
-          <button className="border border-white text-white px-4 py-2 rounded text-sm font-medium relative overflow-hidden group">
-            <span className="relative z-10 transition-colors duration-300 group-hover:text-black">Try Moosh</span>
-            <span className="absolute inset-0 bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
+          {/* 使用品牌色版本的按钮 */}
+          <button className="btn-header-brand">
+            <span className="btn-text">Try Moosh</span>
+            <span className="btn-bg"></span>
           </button>
         </nav>
       </div>

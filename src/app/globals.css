@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -26,6 +27,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   transform: translateZ(0);
+  @apply bg-moosh-black text-moosh-text-primary;
 }
 
 /* Custom scrollbar */
@@ -86,44 +88,253 @@ img, video {
   }
 }
 
+@layer components {
+  /* Enhanced Button System */
+  .btn-primary {
+    @apply bg-moosh-green text-black px-6 py-3 rounded-lg font-medium tracking-tight transition-all duration-300 hover:shadow-glow-green hover:scale-105 focus:outline-none focus:ring-2 focus:ring-moosh-green focus:ring-opacity-50;
+  }
+  
+  .btn-outline {
+    @apply border border-moosh-green text-moosh-green bg-transparent px-6 py-3 rounded-lg font-medium tracking-tight transition-all duration-300 hover:bg-moosh-green hover:text-black hover:shadow-glow-green focus:outline-none focus:ring-2 focus:ring-moosh-green focus:ring-opacity-50;
+  }
+  
+  /* Optimized Header Button */
+  .btn-header {
+    @apply border border-white text-white bg-transparent px-4 py-2 rounded text-sm font-medium relative overflow-hidden transition-all duration-300;
+    will-change: transform;
+    backface-visibility: hidden;
+    transition-timing-function: ease;
+  }
+  
+  .btn-header .btn-text {
+    @apply relative z-10 transition-colors duration-150;
+    transition-delay: 75ms;
+    transition-timing-function: ease;
+  }
+  
+  .btn-header .btn-bg {
+    @apply absolute inset-0 bg-white transform -translate-x-full transition-transform duration-300;
+    will-change: transform;
+    transition-timing-function: ease;
+  }
+  
+  .btn-header:hover .btn-text,
+  .btn-header:focus-visible .btn-text {
+    @apply text-black;
+  }
+  
+  .btn-header:hover .btn-bg,
+  .btn-header:focus-visible .btn-bg {
+    @apply translate-x-0;
+  }
+  
+  /* 品牌色版本 */
+  .btn-header-brand {
+    @apply border border-white text-white bg-transparent px-4 py-2 rounded text-sm font-medium relative overflow-hidden transition-all duration-300;
+    will-change: transform;
+    backface-visibility: hidden;
+    transition-timing-function: ease;
+  }
+  
+  .btn-header-brand .btn-text {
+    @apply relative z-10 transition-colors duration-150;
+    transition-delay: 75ms;
+    transition-timing-function: ease;
+  }
+  
+  .btn-header-brand .btn-bg {
+    @apply absolute inset-0 transform -translate-x-full transition-transform duration-300;
+    background: #00FF99;
+    will-change: transform;
+    transition-timing-function: ease;
+  }
+  
+  .btn-header-brand:hover .btn-text,
+  .btn-header-brand:focus-visible .btn-text {
+    @apply text-black;
+  }
+  
+  .btn-header-brand:hover .btn-bg,
+  .btn-header-brand:focus-visible .btn-bg {
+    @apply translate-x-0;
+  }
+  
+  .btn-secondary {
+    @apply border border-moosh-text-secondary text-moosh-text-secondary bg-transparent px-6 py-3 rounded-lg font-medium tracking-tight transition-all duration-300 hover:border-moosh-green hover:text-moosh-green hover:shadow-glow-green focus:outline-none focus:ring-2 focus:ring-moosh-green focus:ring-opacity-50;
+  }
+  
+  /* Enhanced Card System */
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:border-moosh-green/30;
+  }
+  
+  .card-glow {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-glow-green hover:border-moosh-green/50;
+  }
+  
+  /* Text Gradients */
+  .text-gradient {
+    @apply bg-gradient-to-r from-moosh-green to-moosh-green-bright bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-purple {
+    @apply bg-gradient-to-r from-moosh-accent-purple to-moosh-green bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-blue {
+    @apply bg-gradient-to-r from-moosh-accent-blue to-moosh-green bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-cyan {
+    @apply bg-gradient-to-r from-moosh-accent-cyan to-moosh-green bg-clip-text text-transparent;
+  }
+  
+  /* Section Layout */
+  .section-padding {
+    @apply py-20 px-4 md:px-8 lg:px-16;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  /* Accent Colors */
+  .text-accent {
+    @apply text-moosh-green;
+  }
+  
+  .hover\:ring-accent:hover {
+    @apply ring-moosh-green ring-opacity-50;
+  }
+  
+  .border-accent {
+    @apply border-moosh-green;
+  }
+  
+  
+  /* Green Dot Pattern */
+  .green-dot {
+    @apply absolute w-1 h-1 bg-moosh-green rounded-full animate-pulse-slow;
+  }
+  
+  .green-dot-large {
+    @apply absolute w-2 h-2 bg-moosh-green rounded-full animate-pulse-slow;
+  }
+  
+  /* Flow Lines */
+  .flow-line {
+    @apply absolute h-px bg-gradient-to-r from-transparent via-moosh-green/30 to-transparent;
+  }
+  
+  /* Glow Effects */
+  .glow-green {
+    @apply shadow-glow-green;
+  }
+  
+  .glow-blue {
+    @apply shadow-glow-blue;
+  }
+  
+  .glow-purple {
+    @apply shadow-glow-purple;
+  }
+  
+  .glow-cyan {
+    @apply shadow-glow-cyan;
+  }
+  
+  .glow-orange {
+    @apply shadow-glow-orange;
+  }
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Space+Grotesk:wght@300;500&family=Monomaniac+One&display=swap');
 
-/* MOOSH Logo Styling - Orbitron Version */
+/* MOOSH Logo Styling - Optimized Version */
 .moosh-logo {
   font-family: 'Orbitron', sans-serif;
   color: white;
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   transition: all 0.3s ease;
   filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.1));
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
-.moosh-logo:hover {
+.moosh-logo:hover,
+.moosh-logo:focus-visible {
   font-weight: 700;
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
-  animation: wobble-top 0.6s ease-in-out;
+  transform: scale(1.03);
+  text-shadow: 0 0 10px rgba(0, 255, 153, 0.67);
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.1));
 }
 
-@keyframes wobble-top {
+/* 移除旧的 wobble 动画 */
+
+/* Enhanced Floating Elements */
+.floating-element {
+  position: absolute;
+  opacity: 0.6;
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
   0%, 100% {
-    transform: translateX(0) rotateX(0deg);
+    transform: translateY(0px) rotate(0deg);
   }
-  15% {
-    transform: translateX(-6px) rotateX(-5deg);
+  50% {
+    transform: translateY(-20px) rotate(180deg);
   }
-  30% {
-    transform: translateX(5px) rotateX(3deg);
+}
+
+/* Network Mesh Animation */
+.network-mesh {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.network-line {
+  stroke: #32C466;
+  stroke-width: 1;
+  opacity: 0.3;
+  animation: network-pulse 4s ease-in-out infinite;
+}
+
+@keyframes network-pulse {
+  0%, 100% {
+    opacity: 0.1;
   }
-  45% {
-    transform: translateX(-3px) rotateX(-3deg);
+  50% {
+    opacity: 0.4;
   }
-  60% {
-    transform: translateX(2px) rotateX(2deg);
+}
+
+/* Enhanced Green Dot Pattern */
+.green-dot-pattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.green-dot-pattern .dot {
+  position: absolute;
+  background: #32C466;
+  animation: dot-pulse 3s ease-in-out infinite;
+}
+
+@keyframes dot-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
   }
-  75% {
-    transform: translateX(-1px) rotateX(-1deg);
+  50% {
+    opacity: 0.8;
+    transform: scale(1.2);
   }
 }
 
