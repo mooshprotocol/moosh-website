@@ -25,7 +25,7 @@ export default function CommunitySection() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-moosh-text-primary tracking-tight leading-tight">
-              Community First. <span className="text-gradient">Agent First.</span>
+              Community First. <span className="agent-first-glow">Agent First.</span>
             </h2>
           </motion.div>
           

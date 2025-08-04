@@ -59,25 +59,29 @@ export default function ProtocolSection() {
         icon: "text-moosh-accent-blue",
         glow: "hover:shadow-glow-blue",
         border: "hover:border-moosh-accent-blue/30",
-        gradient: "text-gradient-blue"
+        gradient: "text-gradient-blue",
+        hoverGradient: "group-hover:text-gradient-blue"
       },
       green: {
         icon: "text-moosh-green",
         glow: "hover:shadow-glow-green",
         border: "hover:border-moosh-green/30",
-        gradient: "text-gradient"
+        gradient: "text-gradient",
+        hoverGradient: "group-hover:text-gradient"
       },
       cyan: {
         icon: "text-moosh-accent-cyan",
         glow: "hover:shadow-glow-cyan",
         border: "hover:border-moosh-accent-cyan/30",
-        gradient: "text-gradient-cyan"
+        gradient: "text-gradient-cyan",
+        hoverGradient: "group-hover:text-gradient-cyan"
       },
       purple: {
         icon: "text-moosh-accent-purple",
         glow: "hover:shadow-glow-purple",
         border: "hover:border-moosh-accent-purple/30",
-        gradient: "text-gradient-purple"
+        gradient: "text-gradient-purple",
+        hoverGradient: "group-hover:text-gradient-purple"
       }
     };
     return colorMap[color as keyof typeof colorMap] || colorMap.green;
@@ -117,7 +121,7 @@ export default function ProtocolSection() {
           </p>
         </motion.div>
         
-        {/* Protocol Modules Grid */}
+        {/* Animated Protocol Modules Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {modules.map((module, index) => {
             const colorClasses = getColorClasses(module.color);
@@ -125,38 +129,56 @@ export default function ProtocolSection() {
             return (
               <motion.div 
                 key={module.title}
-                className={`group p-8 bg-moosh-black-card rounded-2xl border border-moosh-black-lighter hover:scale-[1.02] transition-all duration-300 ${colorClasses.glow} ${colorClasses.border}`}
+                className={`group p-8 bg-moosh-black-card rounded-2xl border border-moosh-black-lighter hover:scale-105 transition-all duration-500 ease-out ${colorClasses.glow} ${colorClasses.border}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                whileHover={{ 
+                  scale: 1.05,
+                  transition: { duration: 0.3, ease: "easeOut" }
+                }}
               >
                 <div className="flex items-start space-x-6">
-                  {/* Enhanced Icon */}
-                  <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-moosh-black-lighter rounded-xl group-hover:bg-opacity-80 transition-colors duration-300">
-                    <div className={`${colorClasses.icon} group-hover:scale-110 transition-transform duration-300`}>
+                  {/* Animated Icon Container */}
+                  <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-moosh-black-lighter rounded-xl group-hover:bg-opacity-80 transition-all duration-500 ease-out">
+                    <motion.div 
+                      className={`${colorClasses.icon} ${colorClasses.hoverGradient} transition-all duration-500 ease-out`}
+                      whileHover={{ 
+                        rotate: [0, -5, 5, 0],
+                        scale: 1.1,
+                        transition: { duration: 0.6, ease: "easeInOut" }
+                      }}
+                    >
                       {module.icon}
-                    </div>
+                    </motion.div>
                   </div>
                   
                   {/* Enhanced Content */}
                   <div className="flex-1">
-                    <h3 className={`text-xl font-bold mb-3 tracking-tight ${colorClasses.gradient}`}>
+                    <h3 className={`text-xl font-bold mb-3 tracking-tight ${colorClasses.gradient} transition-all duration-500 ease-out`}>
                       {module.title}
                     </h3>
-                    <p className="text-sm text-moosh-text-secondary leading-relaxed mb-4">
+                    <p className="text-sm text-moosh-text-secondary leading-relaxed mb-4 group-hover:text-moosh-text-primary transition-colors duration-300">
                       {module.description}
                     </p>
                     
                     {/* Sub-modules */}
                     <div className="space-y-2">
                       {module.subModules.map((subModule, subIndex) => (
-                        <div key={subIndex} className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-moosh-text-muted rounded-full"></div>
-                          <span className="text-xs text-moosh-text-muted tracking-wide">
+                        <motion.div 
+                          key={subIndex} 
+                          className="flex items-center space-x-2"
+                          initial={{ opacity: 0, x: -10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.4, delay: (index * 0.1) + (subIndex * 0.1) }}
+                          viewport={{ once: true }}
+                        >
+                          <div className="w-1 h-1 bg-moosh-text-muted rounded-full group-hover:bg-moosh-green transition-colors duration-300"></div>
+                          <span className="text-xs text-moosh-text-muted tracking-wide group-hover:text-moosh-text-secondary transition-colors duration-300">
                             {subModule}
                           </span>
-                        </div>
+                        </motion.div>
                       ))}
                     </div>
                   </div>

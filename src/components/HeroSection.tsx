@@ -97,15 +97,18 @@ export default function HeroSection() {
             </h2>
           </motion.div>
 
-          {/* Clean Subtitle */}
-          <motion.p 
-            className="text-lg md:text-xl text-gray-400 mt-8 font-light tracking-wide max-w-3xl mx-auto leading-relaxed"
+          {/* Typewriter Subtitle */}
+          <motion.div
+            className="mt-8 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
           >
-            Modular liquidity infrastructure for the future of DeFi
-          </motion.p>
+            <div className="typewriter-container">
+              <span className="typewriter-text">Modular liquidity infrastructure for the future of DeFi</span>
+              <span className="typewriter-cursor">|</span>
+            </div>
+          </motion.div>
 
           {/* Key Metrics */}
           <motion.div 
