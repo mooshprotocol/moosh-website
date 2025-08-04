@@ -95,7 +95,7 @@ export default function BuildersSection() {
   };
 
   return (
-    <section className="bg-moosh-black-dark py-20 md:py-28 relative overflow-hidden">
+    <section className="bg-[#0e0e0e] py-20 md:py-28 relative overflow-hidden">
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       
@@ -116,35 +116,30 @@ export default function BuildersSection() {
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div 
-          className="text-center mb-8"
+          className="text-center max-w-screen-lg mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-moosh-text-primary mb-2 leading-tight">
-            <span className="whitespace-nowrap">BUIDL by Artists, Philosophers, Poets, and Composers</span>
-            <br />
-            — and <span className="text-gradient">Agents</span>
+          {/* Eyebrow Text */}
+          <h3 className="text-sm text-gray-500 uppercase tracking-wide mb-2">
+            Not just builders.
+          </h3>
+          
+          {/* Main Title */}
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+            BUIDL by Artists, Philosophers, Poets — and <span className="text-[#00FF9A] drop-shadow-[0_0_10px_rgba(0,255,154,0.5)]">Agents</span>
           </h2>
-          <p className="text-sm md:text-base text-neutral-400 leading-normal max-w-xl mx-auto mb-4">
-            Reimagining DeFi with logic, language, and autonomy.
-          </p>
-        
-        </motion.div>
-        
-        {/* Poetic Vision Text */}
-        <motion.div 
-          className="text-center mb-6"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <p className="text-sm md:text-base text-neutral-400 leading-normal max-w-xl mx-auto">
-            Moosh is not built by builders alone. It&apos;s a protocol composed by those who think modularly, speak in primitives, and dream in composable systems.
+          
+          {/* Subtitle */}
+          <p className="text-base text-gray-400 max-w-2xl mx-auto leading-relaxed mt-6">
+            Moosh is shaped by those who think modularly, speak in primitives, and build composable systems.
           </p>
         </motion.div>
+        
+        {/* Breathing Space */}
+        <div className="h-16"></div>
         
         {/* Creative Archetypes Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -157,7 +152,7 @@ export default function BuildersSection() {
                 className={`group text-center p-6 bg-neutral-900 border border-neutral-800 rounded-xl hover:border-neutral-700 transition-all duration-300 ${colorClasses.glow} ${colorClasses.border} h-full flex flex-col justify-between`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
                 {/* Icon */}
@@ -170,9 +165,16 @@ export default function BuildersSection() {
                 <h4 className="text-white font-semibold text-base md:text-lg mb-3">
                   {category.title}
                 </h4>
-                <p className="text-neutral-400 text-sm leading-relaxed">
+                <p className="text-neutral-400 text-sm leading-relaxed mb-4">
                   {category.description}
                 </p>
+                
+                {/* Skills Tags */}
+                <div className="h-16 flex flex-wrap gap-2 items-start content-start justify-center">
+                  <span className="bg-zinc-800 text-zinc-300 text-xs rounded-full px-3 py-1 whitespace-nowrap">
+                    {category.title}
+                  </span>
+                </div>
               </motion.div>
             );
           })}

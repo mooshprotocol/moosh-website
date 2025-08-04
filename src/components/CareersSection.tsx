@@ -67,14 +67,6 @@ export default function CareersSection() {
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       
-      {/* Enhanced Green accent lines for separation */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-1/2 bg-gradient-to-r from-transparent via-moosh-green/30 to-transparent" style={{height: '0.2px'}}></div>
-        <div className="absolute bottom-0 right-1/4 w-1/2 bg-gradient-to-l from-transparent via-moosh-green/30 to-transparent" style={{height: '0.2px'}}></div>
-        <div className="absolute top-1/3 left-0 w-1/3 bg-gradient-to-r from-transparent via-moosh-green/20 to-transparent" style={{height: '0.2px'}}></div>
-        <div className="absolute top-1/3 right-0 w-1/3 bg-gradient-to-l from-transparent via-moosh-green/20 to-transparent" style={{height: '0.2px'}}></div>
-      </div>
-      
       {/* Green accent dots */}
       <div className="green-dot-pattern">
         <div className="dot" style={{ top: '10%', left: '10%', width: '2px', height: '0.4px', animationDelay: '0s' }}></div>
@@ -96,23 +88,9 @@ export default function CareersSection() {
             Join the Modular Liquidity Movement
           </h2>
           
-          <p className="text-sm md:text-base text-neutral-400 leading-normal max-w-xl mx-auto mb-6">
+          <p className="text-sm md:text-base text-neutral-400 leading-normal max-w-xl mx-auto mb-8">
             We&apos;re building the future of lending with builders, designers, and community minds who create with purpose and integrity.
           </p>
-          
-          {/* CTA Button */}
-          <motion.div 
-            className="mt-4 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <ApplyNowButton 
-              onClick={() => console.log('Apply Now clicked')}
-              className="text-base px-5 py-2 font-normal"
-            />
-          </motion.div>
         </motion.div>
         
         {/* Job Cards Grid */}
@@ -123,6 +101,20 @@ export default function CareersSection() {
           viewport={{ once: true }}
         >
           <JobCardsGrid />
+        </motion.div>
+        
+        {/* CTA Button */}
+        <motion.div 
+          className="text-center mt-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <ApplyNowButton 
+            onClick={() => console.log('Apply Now clicked')}
+            className="text-base px-6 py-3 font-medium"
+          />
         </motion.div>
         
 
