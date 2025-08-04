@@ -917,3 +917,55 @@ img, video {
     0 0 40px rgba(139, 92, 246, 0.1),
     0 0 60px rgba(139, 92, 246, 0.05);
 }
+
+/* Principles Cards Enhanced Styles */
+.hover\:scale-103:hover {
+  transform: scale(1.03);
+}
+
+/* Enhanced icon animations for principles */
+.group:hover .group-hover\:text-gradient {
+  background: linear-gradient(135deg, #32C466 0%, #00FF9D 50%, #32C466 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  animation: gradient-shift 2s ease-in-out infinite;
+}
+
+.group:hover .group-hover\:text-gradient-blue {
+  background: linear-gradient(135deg, #3B82F6 0%, #06B6D4 50%, #3B82F6 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  animation: gradient-shift 2s ease-in-out infinite;
+}
+
+.group:hover .group-hover\:text-gradient-purple {
+  background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 50%, #8B5CF6 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  animation: gradient-shift 2s ease-in-out infinite;
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 768px) {
+  .grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

@@ -45,17 +45,20 @@ export default function PrinciplesSection() {
       green: {
         icon: "text-moosh-green",
         glow: "hover:shadow-glow-green",
-        border: "hover:border-moosh-green/30"
+        border: "hover:border-moosh-green/30",
+        gradient: "group-hover:text-gradient"
       },
       blue: {
         icon: "text-moosh-accent-blue",
         glow: "hover:shadow-glow-blue",
-        border: "hover:border-moosh-accent-blue/30"
+        border: "hover:border-moosh-accent-blue/30",
+        gradient: "group-hover:text-gradient-blue"
       },
       purple: {
         icon: "text-moosh-accent-purple",
         glow: "hover:shadow-glow-purple",
-        border: "hover:border-moosh-accent-purple/30"
+        border: "hover:border-moosh-accent-purple/30",
+        gradient: "group-hover:text-gradient-purple"
       }
     };
     return colorMap[color as keyof typeof colorMap] || colorMap.green;
@@ -94,39 +97,50 @@ export default function PrinciplesSection() {
           </p>
         </motion.div>
         
-        {/* Enhanced Three Principles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {/* Animated Principles Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {principles.map((principle, index) => {
             const colorClasses = getColorClasses(principle.color);
             
             return (
               <motion.div 
                 key={principle.title}
-                className={`group p-8 bg-moosh-black-card rounded-2xl border border-moosh-black-lighter hover:scale-[1.02] transition-all duration-300 ${colorClasses.glow} ${colorClasses.border}`}
+                className={`group p-8 bg-moosh-black-card rounded-2xl border border-moosh-black-lighter hover:scale-103 transition-all duration-300 ease-out ${colorClasses.glow} ${colorClasses.border}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
+                whileHover={{ 
+                  scale: 1.03,
+                  transition: { duration: 0.3, ease: "easeOut" }
+                }}
               >
-                {/* Enhanced Icon */}
-                <div className="w-16 h-16 mb-6 flex items-center justify-center bg-moosh-black-lighter rounded-xl group-hover:bg-moosh-green/10 transition-colors duration-300">
-                  <div className={`${colorClasses.icon} group-hover:scale-110 transition-transform duration-300`}>
+                {/* Animated Icon Container */}
+                <div className="w-16 h-16 mb-6 flex items-center justify-center bg-moosh-black-lighter rounded-xl group-hover:bg-opacity-80 transition-all duration-300 ease-out">
+                  <motion.div 
+                    className={`${colorClasses.icon} ${colorClasses.gradient} transition-all duration-300 ease-out`}
+                    whileHover={{ 
+                      rotate: [0, -3, 3, 0],
+                      scale: 1.1,
+                      transition: { duration: 0.6, ease: "easeInOut" }
+                    }}
+                  >
                     {principle.icon}
-                  </div>
+                  </motion.div>
                 </div>
                 
                 {/* Enhanced Title */}
-                <h3 className="text-xl font-semibold text-moosh-text-primary mb-3 tracking-tight">
+                <h3 className="text-xl font-semibold text-moosh-text-primary mb-3 tracking-tight group-hover:text-white transition-colors duration-300">
                   {principle.title}
                 </h3>
                 
                 {/* Enhanced Subtitle */}
-                <p className={`text-sm mb-4 font-medium ${colorClasses.icon}`}>
+                <p className={`text-sm mb-4 font-medium ${colorClasses.icon} transition-all duration-300 ease-out`}>
                   {principle.subtitle}
                 </p>
                 
                 {/* Enhanced Description */}
-                <p className="text-sm text-moosh-text-secondary leading-relaxed">
+                <p className="text-sm text-moosh-text-secondary leading-relaxed group-hover:text-moosh-text-primary transition-colors duration-300">
                   {principle.description}
                 </p>
               </motion.div>
