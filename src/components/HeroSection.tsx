@@ -150,7 +150,6 @@ export default function HeroSection() {
         <div className="flex flex-col items-center gap-3">
           <span className="text-xs text-moosh-text-secondary tracking-widest font-medium">SCROLL</span>
           <div className="relative">
-            <div className="w-px h-12 bg-gradient-to-b from-moosh-green to-transparent"></div>
             <motion.div 
               className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 h-3 bg-moosh-green rounded-full"
               animate={{ y: [0, 36, 0] }}

@@ -101,18 +101,16 @@ export default function BuildersSection() {
       
       {/* Enhanced Green pattern background for separation */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-moosh-green/8 to-transparent"></div>
-        <div className="absolute bottom-0 right-0 w-full h-32 bg-gradient-to-t from-moosh-green/8 to-transparent"></div>
-        <div className="absolute top-1/2 left-0 w-1/3 h-px bg-gradient-to-r from-transparent via-moosh-green/30 to-transparent"></div>
-        <div className="absolute top-1/2 right-0 w-1/3 h-px bg-gradient-to-l from-transparent via-moosh-green/30 to-transparent"></div>
+        <div className="absolute top-1/2 left-0 w-1/3 bg-gradient-to-r from-transparent via-moosh-green/30 to-transparent" style={{height: '0.2px'}}></div>
+        <div className="absolute top-1/2 right-0 w-1/3 bg-gradient-to-l from-transparent via-moosh-green/30 to-transparent" style={{height: '0.2px'}}></div>
       </div>
       
       {/* Green accent dots */}
       <div className="green-dot-pattern">
-        <div className="dot" style={{ top: '10%', left: '8%', width: '3px', height: '3px', animationDelay: '0s' }}></div>
-        <div className="dot" style={{ bottom: '15%', right: '12%', width: '2px', height: '2px', animationDelay: '1s' }}></div>
-        <div className="dot" style={{ top: '60%', left: '5%', width: '3px', height: '3px', animationDelay: '2s' }}></div>
-        <div className="dot" style={{ top: '30%', right: '8%', width: '2px', height: '2px', animationDelay: '0.5s' }}></div>
+        <div className="dot" style={{ top: '10%', left: '8%', width: '0.6px', height: '0.12px', animationDelay: '0s' }}></div>
+        <div className="dot" style={{ bottom: '15%', right: '12%', width: '0.4px', height: '0.08px', animationDelay: '1s' }}></div>
+        <div className="dot" style={{ top: '60%', left: '5%', width: '0.6px', height: '0.12px', animationDelay: '2s' }}></div>
+        <div className="dot" style={{ top: '30%', right: '8%', width: '0.4px', height: '0.08px', animationDelay: '0.5s' }}></div>
       </div>
       
       <div className="container-custom relative z-10">
@@ -127,19 +125,44 @@ export default function BuildersSection() {
           <p className="text-xs uppercase tracking-widest text-moosh-green mb-4 font-semibold">
             Builders & Agents
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-moosh-text-primary mb-6 leading-tight">
-            BUIDL by Artists, Philosophers, Poets, and Composers
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-moosh-text-primary mb-6 leading-tight">
+            BUIDL by Artists, Philosophers, Poets, and Composers — and
             <br />
-            <span className="text-gradient">— and Agents</span>
+            <span className="text-gradient">Agents</span>
           </h2>
           <p className="text-lg text-moosh-text-secondary leading-relaxed max-w-2xl mx-auto mb-8">
             Reimagining DeFi with logic, language, and autonomy.
           </p>
-          <div className="w-32 h-px bg-gradient-to-r from-transparent via-moosh-green to-transparent mx-auto"></div>
+          <div className="w-32 bg-gradient-to-r from-transparent via-moosh-green to-transparent mx-auto" style={{height: '0.2px'}}></div>
         </motion.div>
         
-        {/* Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto mb-20">
+        {/* Poetic Vision Text Above Cards */}
+        <motion.div 
+          className="text-center max-w-4xl mx-auto mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-xl md:text-2xl text-moosh-text-secondary leading-relaxed font-light tracking-wide">
+            Moosh is not built by builders alone. It&apos;s a protocol composed by those who think modularly, speak in primitives, and dream in composable systems.
+          </p>
+          
+          <motion.div 
+            className="mt-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-lg text-moosh-text-muted leading-relaxed">
+              We welcome agents of autonomy, crafters of logic, and thinkers fluent in the syntax of the future.
+            </p>
+          </motion.div>
+        </motion.div>
+        
+        {/* Creative Archetypes Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {categories.map((category, index) => {
             const colorClasses = getColorClasses(category.color);
             
@@ -169,32 +192,6 @@ export default function BuildersSection() {
             );
           })}
         </div>
-
-        {/* Enhanced CTA Section */}
-        <motion.div 
-          className="text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <div className="max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-moosh-text-primary mb-4">
-              Build with us
-            </h3>
-            <p className="text-moosh-text-secondary mb-8 leading-relaxed">
-              Join our team of builders, researchers, and agents shaping the future of modular DeFi infrastructure.
-            </p>
-            <button className="btn-primary group text-lg px-8 py-4">
-              <span className="flex items-center gap-3">
-                View Open Positions
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </span>
-            </button>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

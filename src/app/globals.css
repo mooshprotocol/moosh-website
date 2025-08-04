@@ -150,20 +150,6 @@ img, video {
     @apply border-moosh-green;
   }
   
-  /* Enhanced Section Dividers */
-  .section-divider {
-    @apply relative py-16;
-  }
-  
-  .section-divider::before {
-    content: '';
-    @apply absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-moosh-green/40 to-transparent;
-  }
-  
-  .section-divider::after {
-    content: '';
-    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-moosh-green rounded-full shadow-glow-green;
-  }
   
   /* Green Dot Pattern */
   .green-dot {
@@ -292,7 +278,6 @@ img, video {
 .green-dot-pattern .dot {
   position: absolute;
   background: #32C466;
-  border-radius: 50%;
   animation: dot-pulse 3s ease-in-out infinite;
 }
 

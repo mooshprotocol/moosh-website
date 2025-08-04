@@ -17,12 +17,12 @@ export default function ManifestoSection() {
       
       {/* Enhanced Green accent dots */}
       <div className="green-dot-pattern">
-        <div className="dot" style={{ top: '10%', left: '10%', width: '3px', height: '3px', animationDelay: '0s' }}></div>
-        <div className="dot" style={{ bottom: '10%', right: '10%', width: '4px', height: '4px', animationDelay: '1s' }}></div>
-        <div className="dot" style={{ top: '50%', left: '20%', width: '2px', height: '2px', animationDelay: '2s' }}></div>
-        <div className="dot" style={{ top: '30%', right: '20%', width: '3px', height: '3px', animationDelay: '0.5s' }}></div>
-        <div className="dot" style={{ bottom: '30%', left: '15%', width: '2px', height: '2px', animationDelay: '1.5s' }}></div>
-        <div className="dot" style={{ top: '70%', right: '15%', width: '3px', height: '3px', animationDelay: '0.8s' }}></div>
+        <div className="dot" style={{ top: '10%', left: '10%', width: '3px', height: '0.6px', animationDelay: '0s' }}></div>
+        <div className="dot" style={{ bottom: '10%', right: '10%', width: '4px', height: '0.8px', animationDelay: '1s' }}></div>
+        <div className="dot" style={{ top: '50%', left: '20%', width: '2px', height: '0.4px', animationDelay: '2s' }}></div>
+        <div className="dot" style={{ top: '30%', right: '20%', width: '3px', height: '0.6px', animationDelay: '0.5s' }}></div>
+        <div className="dot" style={{ bottom: '30%', left: '15%', width: '2px', height: '0.4px', animationDelay: '1.5s' }}></div>
+        <div className="dot" style={{ top: '70%', right: '15%', width: '3px', height: '0.6px', animationDelay: '0.8s' }}></div>
       </div>
 
       <div className="container-custom relative z-10">
@@ -44,21 +44,6 @@ export default function ManifestoSection() {
             ))}
           </div>
           
-          {/* Enhanced Decorative Line */}
-          <motion.div 
-            className="flex items-center justify-center gap-8 mb-16"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="w-24 h-px bg-gradient-to-r from-transparent to-moosh-text-muted"></div>
-            <div className="relative">
-              <div className="w-4 h-4 bg-moosh-green rounded-full animate-pulse-slow shadow-glow-green"></div>
-              <div className="absolute inset-0 w-4 h-4 bg-moosh-green rounded-full animate-ping opacity-30"></div>
-            </div>
-            <div className="w-24 h-px bg-gradient-to-l from-transparent to-moosh-text-muted"></div>
-          </motion.div>
           
           {/* Enhanced Conclusion */}
           <motion.p 

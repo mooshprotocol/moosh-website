@@ -90,10 +90,10 @@ export default function ProtocolSection() {
       
       {/* Green accent dots */}
       <div className="green-dot-pattern">
-        <div className="dot" style={{ top: '15%', left: '5%', width: '2px', height: '2px', animationDelay: '0s' }}></div>
-        <div className="dot" style={{ bottom: '20%', right: '10%', width: '3px', height: '3px', animationDelay: '1s' }}></div>
-        <div className="dot" style={{ top: '60%', left: '8%', width: '2px', height: '2px', animationDelay: '2s' }}></div>
-        <div className="dot" style={{ top: '40%', right: '5%', width: '2px', height: '2px', animationDelay: '0.5s' }}></div>
+        <div className="dot" style={{ top: '15%', left: '5%', width: '2px', height: '0.4px', animationDelay: '0s' }}></div>
+        <div className="dot" style={{ bottom: '20%', right: '10%', width: '3px', height: '0.6px', animationDelay: '1s' }}></div>
+        <div className="dot" style={{ top: '60%', left: '8%', width: '2px', height: '0.4px', animationDelay: '2s' }}></div>
+        <div className="dot" style={{ top: '40%', right: '5%', width: '2px', height: '0.4px', animationDelay: '0.5s' }}></div>
       </div>
       
       <div className="container-custom relative z-10">
@@ -114,7 +114,7 @@ export default function ProtocolSection() {
           <p className="text-lg text-moosh-text-secondary leading-relaxed mb-8 font-light">
             Built for ultra-low latency modular infrastructure and composable liquidity.
           </p>
-          <div className="w-32 h-px bg-gradient-to-r from-transparent via-moosh-green to-transparent mx-auto mb-6"></div>
+          <div className="w-32 bg-gradient-to-r from-transparent via-moosh-green to-transparent mx-auto mb-6" style={{height: '0.2px'}}></div>
           <p className="text-xs font-semibold text-moosh-text-muted tracking-widest uppercase">
             Explore the four modular engines that power Moosh
           </p>

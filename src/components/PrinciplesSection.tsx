@@ -68,10 +68,10 @@ export default function PrinciplesSection() {
       
       {/* Green accent dots */}
       <div className="green-dot-pattern">
-        <div className="dot" style={{ top: '15%', left: '12%', width: '3px', height: '3px', animationDelay: '0s' }}></div>
-        <div className="dot" style={{ bottom: '20%', right: '15%', width: '2px', height: '2px', animationDelay: '1s' }}></div>
-        <div className="dot" style={{ top: '60%', left: '8%', width: '3px', height: '3px', animationDelay: '2s' }}></div>
-        <div className="dot" style={{ top: '40%', right: '10%', width: '2px', height: '2px', animationDelay: '0.5s' }}></div>
+        <div className="dot" style={{ top: '15%', left: '12%', width: '3px', height: '0.6px', animationDelay: '0s' }}></div>
+        <div className="dot" style={{ bottom: '20%', right: '15%', width: '2px', height: '0.4px', animationDelay: '1s' }}></div>
+        <div className="dot" style={{ top: '60%', left: '8%', width: '3px', height: '0.6px', animationDelay: '2s' }}></div>
+        <div className="dot" style={{ top: '40%', right: '10%', width: '2px', height: '0.4px', animationDelay: '0.5s' }}></div>
       </div>
       
       <div className="container-custom relative z-10">
@@ -92,7 +92,6 @@ export default function PrinciplesSection() {
           <p className="text-lg text-moosh-text-secondary leading-relaxed max-w-2xl mx-auto mb-8">
             Each principle guides our approach to modular liquidity infrastructure.
           </p>
-          <div className="w-32 h-px bg-gradient-to-r from-transparent via-moosh-green to-transparent mx-auto"></div>
         </motion.div>
         
         {/* Enhanced Three Principles Grid */}
