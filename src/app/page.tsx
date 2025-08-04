@@ -2,412 +2,46 @@
 
 import Layout from '@/components/layout/Layout';
 import HeroSection from '@/components/HeroSection';
+import ManifestoSection from '@/components/ManifestoSection';
+import PrinciplesSection from '@/components/PrinciplesSection';
+import ProtocolSection from '@/components/ProtocolSection';
+import BuildersSection from '@/components/BuildersSection';
 import CareersSection from '@/components/CareersSection';
 import CommunitySection from '@/components/CommunitySection';
-import { motion } from 'framer-motion';
+import SectionDivider from '@/components/SectionDivider';
 
 export default function HomePage() {
-
   return (
     <Layout>
-      {/* Hero Section */}
+      {/* Hero Section - 黑底背景 */}
       <HeroSection />
 
-      {/* Core Vision/Mission Section */}
-      <section className="bg-white min-h-[500px] flex items-center justify-center py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-xl mx-auto">
-            
-            {/* 哲学宣言区域 */}
-            <div className="py-16">
-              <div className="space-y-3">
-                <motion.p 
-                  className="text-xl font-normal text-black mb-3"
-                  style={{lineHeight: '1.75'}}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0 }}
-                >
-                  The future is modular.
-                </motion.p>
-                <motion.p 
-                  className="text-xl font-normal text-black mb-3"
-                  style={{lineHeight: '1.75'}}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                >
-                  Capital must move.
-                </motion.p>
-                <motion.p 
-                  className="text-xl font-normal text-black mb-3"
-                  style={{lineHeight: '1.75'}}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                >
-                  Risk must adapt.
-                </motion.p>
-                <motion.p 
-                  className="text-xl font-normal text-black mb-3"
-                  style={{lineHeight: '1.75'}}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                >
-                  Lending must evolve.
-                </motion.p>
-              </div>
-              
-              {/* 结语 - 独立装饰 */}
-              <motion.div 
-                className="mt-16"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-              >
-                <hr className="w-12 mx-auto mb-6" style={{borderColor: '#666', borderWidth: '0.5px'}} />
-                <p className="text-sm italic" style={{color: '#666'}}>
-                  Moosh makes it possible.
-                </p>
-              </motion.div>
-            </div>
-            
-            
-          </div>
-        </div>
-      </section>
+      {/* Manifesto Section - 深灰背景 */}
+      <ManifestoSection />
 
-      {/* Brand Pillars Section */}
-      <section className="bg-white -mt-8 pb-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-6xl mx-auto">
-            
-            {/* Section Header */}
-            <div className="mb-8">
-              <p className="text-sm uppercase tracking-widest text-neutral-400 mb-6">
-                Moosh is built on three foundational principles
-              </p>
-            </div>
-            
-            {/* Three Pillars Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 max-w-6xl mx-auto pb-16">
-              
-              {/* Safety Pillar */}
-              <motion.div 
-                className="flex flex-col items-center text-center group p-8 bg-white/60 backdrop-blur-sm rounded-2xl shadow-md hover:shadow-lg transition-all duration-300"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0 }}
-                viewport={{ once: true }}
-                style={{ backgroundColor: '#F8F9FB' }}
-              >
-                {/* Image */}
-                <div className="h-40 w-full mb-8">
-                  <img 
-                    src="/images/safety.png" 
-                    alt="Safety" 
-                    className="w-full h-full object-cover rounded-2xl shadow-sm group-hover:shadow-md transition-shadow duration-300"
-                  />
-                </div>
-                
-                {/* Title */}
-                <h3 className="text-lg font-semibold text-black mb-3">Safety</h3>
-                
-                {/* Subtitle */}
-                <p className="text-sm text-neutral-600 mb-4">Resilient by design</p>
-                
-                {/* Content */}
-                <p className="text-sm text-neutral-500 leading-relaxed max-w-xs">
-                  Moosh protects capital through dynamic boundaries and adaptive execution.
-                </p>
-              </motion.div>
-              
-              {/* Flexibility Pillar */}
-              <motion.div 
-                className="flex flex-col items-center text-center group p-8 bg-white/60 backdrop-blur-sm rounded-2xl shadow-md hover:shadow-lg transition-all duration-300"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-                style={{ backgroundColor: '#F8F9FB' }}
-              >
-                {/* Image */}
-                <div className="h-40 w-full mb-8">
-                  <img 
-                    src="/images/flexibility.png" 
-                    alt="Flexibility" 
-                    className="w-full h-full object-cover rounded-2xl shadow-sm group-hover:shadow-md transition-shadow duration-300"
-                  />
-                </div>
-                
-                {/* Title */}
-                <h3 className="text-lg font-semibold text-black mb-3">Flexibility</h3>
-                
-                {/* Subtitle */}
-                <p className="text-sm text-neutral-600 mb-4">Liquidity should move freely</p>
-                
-                {/* Content */}
-                <p className="text-sm text-neutral-500 leading-relaxed max-w-xs">
-                  Moosh flows across protocols, modules, and market states without friction.
-                </p>
-              </motion.div>
-              
-              {/* Intelligence Pillar */}
-              <motion.div 
-                className="flex flex-col items-center text-center group p-8 bg-white/60 backdrop-blur-sm rounded-2xl shadow-md hover:shadow-lg transition-all duration-300"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-                style={{ backgroundColor: '#F8F9FB' }}
-              >
-                {/* Image */}
-                <div className="h-40 w-full mb-8">
-                  <img 
-                    src="/images/Intelligence.png" 
-                    alt="Intelligence" 
-                    className="w-full h-full object-cover rounded-2xl shadow-sm group-hover:shadow-md transition-shadow duration-300"
-                  />
-                </div>
-                
-                {/* Title */}
-                <h3 className="text-lg font-semibold text-black mb-3">Intelligence</h3>
-                
-                {/* Subtitle */}
-                <p className="text-sm text-neutral-600 mb-4">Modular environments demand modular thinking</p>
-                
-                {/* Content */}
-                <p className="text-sm text-neutral-500 leading-relaxed max-w-xs">
-                  Moosh adapts through logic, data, and intent-aware execution in real time.
-                </p>
-              </motion.div>
-              
-            </div>
-          </div>
-        </div>
-      </section>
+      <SectionDivider />
 
-      {/* Product Introduction Section */}
-      <section className="bg-gray-25 py-20" style={{backgroundColor: '#F7F7F7'}}>
-        <div className="container mx-auto px-6 md:px-12 lg:px-24">
-          
-          {/* 标题区 */}
-          <div className="text-center mb-20 max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-black mb-8 tracking-tight">Moosh Protocol</h2>
-            <p className="text-base text-gray-500 leading-relaxed mb-8 font-light">
-              Built for ultra-low latency modular infrastructure and composable liquidity.
-            </p>
-            
-            {/* 承接语 */}
-            <p className="text-xs font-semibold text-gray-400 tracking-widest uppercase">
-              Explore the four modular engines that power Moosh
-            </p>
-          </div>
-          
-          {/* 功能模块区 - 2x2 Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 max-w-7xl mx-auto">
-            
-            {/* 卡片 1: Liquidation Engine */}
-            <div className="bg-gradient-to-br from-white to-blue-50/30 border border-gray-200/50 rounded-2xl p-8 shadow-md hover:shadow-xl hover:scale-[1.02] hover:border-blue-300/50 transition-all duration-300 group">
-              <div className="flex items-start space-x-6">
-                {/* 图标 */}
-                <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-blue-100/60 rounded-xl group-hover:bg-blue-200/60 transition-colors duration-300">
-                  <svg className="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8 16l-1-1m0 0l-1-1 1-1 1 1m4 4l1 1m0 0l1-1-1-1-1 1" opacity={0.6} />
-                  </svg>
-                </div>
-                
-                {/* 文本内容 */}
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold text-black mb-3 tracking-tight">Liquidation Engine</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">Real-time, MEVM-native execution with intelligent risk logic.</p>
-                </div>
-              </div>
-            </div>
-            
-            {/* 卡片 2: Risk Kernel */}
-            <div className="bg-gradient-to-br from-white to-purple-50/30 border border-gray-200/50 rounded-2xl p-8 shadow-md hover:shadow-xl hover:scale-[1.02] hover:border-purple-300/50 transition-all duration-300 group">
-              <div className="flex items-start space-x-6">
-                {/* 图标 */}
-                <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-purple-100/60 rounded-xl group-hover:bg-purple-200/60 transition-colors duration-300">
-                  <svg className="w-8 h-8 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    <circle cx="12" cy="12" r="2" strokeWidth={1.8} />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v1m0 6v1" opacity={0.6} />
-                  </svg>
-                </div>
-                
-                {/* 文本内容 */}
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold text-black mb-3 tracking-tight">Risk Kernel</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">AI-assisted logic that adapts dynamically to market conditions.</p>
-                </div>
-              </div>
-            </div>
-            
-            {/* 卡片 3: Liquidity Mesh */}
-            <div className="bg-gradient-to-br from-white to-emerald-50/30 border border-gray-200/50 rounded-2xl p-8 shadow-md hover:shadow-xl hover:scale-[1.02] hover:border-emerald-300/50 transition-all duration-300 group">
-              <div className="flex items-start space-x-6">
-                {/* 图标 */}
-                <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-emerald-100/60 rounded-xl group-hover:bg-emerald-200/60 transition-colors duration-300">
-                  <svg className="w-8 h-8 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4 6h16M4 12h16M4 18h16" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M6 4v16M12 4v16M18 4v16" opacity={0.7} />
-                    <circle cx="6" cy="6" r="1" fill="currentColor" />
-                    <circle cx="12" cy="12" r="1" fill="currentColor" />
-                    <circle cx="18" cy="18" r="1" fill="currentColor" />
-                  </svg>
-                </div>
-                
-                {/* 文本内容 */}
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold text-black mb-3 tracking-tight">Liquidity Mesh</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">Composable liquidity with seamless cross-module execution.</p>
-                </div>
-              </div>
-            </div>
-            
-            {/* 卡片 4: MegaETH Compatibility */}
-            <div className="bg-gradient-to-br from-white to-amber-50/30 border border-gray-200/50 rounded-2xl p-8 shadow-md hover:shadow-xl hover:scale-[1.02] hover:border-amber-300/50 transition-all duration-300 group">
-              <div className="flex items-start space-x-6">
-                {/* 图标 */}
-                <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-amber-100/60 rounded-xl group-hover:bg-amber-200/60 transition-colors duration-300">
-                  <svg className="w-8 h-8 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8 12h8m-4-4v8" />
-                    <circle cx="9" cy="9" r="1" fill="currentColor" opacity={0.6} />
-                    <circle cx="15" cy="15" r="1" fill="currentColor" opacity={0.6} />
-                  </svg>
-                </div>
-                
-                {/* 文本内容 */}
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold text-black mb-3 tracking-tight">MegaETH Compatibility</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">Natively integrated with modular infrastructure on MegaETH.</p>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </section>
+      {/* Principles Section - 中灰背景 */}
+      <PrinciplesSection />
 
-      {/* Team & Background Section */}
-      <section className="bg-white py-24">
-        <div className="container mx-auto px-4">
-          {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-6 leading-tight">
-              BUIDL by Artists, Philosophers, Poets, and Composers<br/>— and Agents
-            </h2>
-            <p className="text-base text-muted-foreground leading-relaxed max-w-md mx-auto" style={{color: '#6B7280'}}>
-              Reimagining DeFi with logic, language, and autonomy.
-            </p>
-          </div>
-          
-          {/* Categories Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            
-            {/* Systems Card */}
-            <div className="group text-center p-6 bg-white border border-gray-200 rounded-2xl hover:shadow-lg hover:border-gray-300 transition-all duration-300">
-              {/* Abstract Systems Illustration */}
-              <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-                <svg viewBox="0 0 80 80" className="w-full h-full">
-                  <rect x="10" y="10" width="15" height="15" fill="#3B82F6" fillOpacity="0.8" rx="2"/>
-                  <rect x="30" y="10" width="15" height="15" fill="#3B82F6" fillOpacity="0.6" rx="2"/>
-                  <rect x="50" y="10" width="15" height="15" fill="#3B82F6" fillOpacity="0.4" rx="2"/>
-                  <rect x="10" y="30" width="15" height="15" fill="#3B82F6" fillOpacity="0.6" rx="2"/>
-                  <rect x="30" y="30" width="15" height="15" fill="#3B82F6" fillOpacity="0.8" rx="2"/>
-                  <rect x="50" y="30" width="15" height="15" fill="#3B82F6" fillOpacity="0.6" rx="2"/>
-                  <rect x="10" y="50" width="15" height="15" fill="#3B82F6" fillOpacity="0.4" rx="2"/>
-                  <rect x="30" y="50" width="15" height="15" fill="#3B82F6" fillOpacity="0.6" rx="2"/>
-                  <rect x="50" y="50" width="15" height="15" fill="#3B82F6" fillOpacity="0.8" rx="2"/>
-                </svg>
-              </div>
-              <h4 className="text-lg font-semibold text-black mb-3">Systems</h4>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Architected foundations that enable composability, precision, and trust.
-              </p>
-            </div>
+      <SectionDivider />
 
-            {/* Research Card */}
-            <div className="group text-center p-6 bg-white border border-gray-200 rounded-2xl hover:shadow-lg hover:border-gray-300 transition-all duration-300">
-              {/* Abstract Research Network Illustration */}
-              <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-                <svg viewBox="0 0 80 80" className="w-full h-full">
-                  <circle cx="20" cy="20" r="4" fill="#8B5CF6" fillOpacity="0.8"/>
-                  <circle cx="60" cy="25" r="4" fill="#8B5CF6" fillOpacity="0.8"/>
-                  <circle cx="40" cy="40" r="6" fill="#8B5CF6" fillOpacity="0.9"/>
-                  <circle cx="15" cy="55" r="3" fill="#8B5CF6" fillOpacity="0.6"/>
-                  <circle cx="65" cy="60" r="4" fill="#8B5CF6" fillOpacity="0.8"/>
-                  <line x1="20" y1="20" x2="40" y2="40" stroke="#8B5CF6" strokeWidth="1.5" strokeOpacity="0.6"/>
-                  <line x1="60" y1="25" x2="40" y2="40" stroke="#8B5CF6" strokeWidth="1.5" strokeOpacity="0.6"/>
-                  <line x1="40" y1="40" x2="15" y2="55" stroke="#8B5CF6" strokeWidth="1.5" strokeOpacity="0.6"/>
-                  <line x1="40" y1="40" x2="65" y2="60" stroke="#8B5CF6" strokeWidth="1.5" strokeOpacity="0.6"/>
-                  <path d="M25 30 Q35 25 45 35" stroke="#8B5CF6" strokeWidth="1" fill="none" strokeOpacity="0.4"/>
-                </svg>
-              </div>
-              <h4 className="text-lg font-semibold text-black mb-3">Research</h4>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Models, data, and principles that shape how systems adapt and stay secure.
-              </p>
-            </div>
+      {/* Protocol Section - 浅灰背景 */}
+      <ProtocolSection />
 
-            {/* Expression Card */}
-            <div className="group text-center p-6 bg-white border border-gray-200 rounded-2xl hover:shadow-lg hover:border-gray-300 transition-all duration-300">
-              {/* Abstract Expression Waveform Illustration */}
-              <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-                <svg viewBox="0 0 80 80" className="w-full h-full">
-                  <path d="M10 40 Q20 20 30 40 T50 40 T70 40" stroke="#10B981" strokeWidth="2.5" fill="none" strokeOpacity="0.8"/>
-                  <path d="M10 50 Q25 30 40 50 T70 50" stroke="#10B981" strokeWidth="2" fill="none" strokeOpacity="0.6"/>
-                  <path d="M10 30 Q15 15 25 30 T45 30 T65 30" stroke="#10B981" strokeWidth="1.5" fill="none" strokeOpacity="0.4"/>
-                  <circle cx="30" cy="40" r="2" fill="#10B981" fillOpacity="0.8"/>
-                  <circle cx="50" cy="40" r="2" fill="#10B981" fillOpacity="0.8"/>
-                  <rect x="12" y="55" width="3" height="8" fill="#10B981" fillOpacity="0.6" rx="1"/>
-                  <rect x="18" y="52" width="3" height="11" fill="#10B981" fillOpacity="0.7" rx="1"/>
-                  <rect x="24" y="58" width="3" height="5" fill="#10B981" fillOpacity="0.5" rx="1"/>
-                </svg>
-              </div>
-              <h4 className="text-lg font-semibold text-black mb-3">Expression</h4>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Where logic becomes language — modular, legible, and imbued with intent.
-              </p>
-            </div>
+      <SectionDivider />
 
-            {/* Autonomy Card */}
-            <div className="group text-center p-6 bg-white border border-gray-200 rounded-2xl hover:shadow-lg hover:border-gray-300 transition-all duration-300">
-              {/* Abstract Autonomy Circular Nodes Illustration */}
-              <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-                <svg viewBox="0 0 80 80" className="w-full h-full">
-                  <circle cx="40" cy="40" r="8" fill="#F59E0B" fillOpacity="0.9"/>
-                  <circle cx="25" cy="25" r="5" fill="#F59E0B" fillOpacity="0.7"/>
-                  <circle cx="55" cy="25" r="5" fill="#F59E0B" fillOpacity="0.7"/>
-                  <circle cx="25" cy="55" r="5" fill="#F59E0B" fillOpacity="0.7"/>
-                  <circle cx="55" cy="55" r="5" fill="#F59E0B" fillOpacity="0.7"/>
-                  <path d="M32 32 A12 12 0 0 1 48 32" stroke="#F59E0B" strokeWidth="1.5" fill="none" strokeOpacity="0.6"/>
-                  <path d="M32 48 A12 12 0 0 1 48 48" stroke="#F59E0B" strokeWidth="1.5" fill="none" strokeOpacity="0.6"/>
-                  <circle cx="40" cy="20" r="2" fill="#F59E0B" fillOpacity="0.5"/>
-                  <circle cx="40" cy="60" r="2" fill="#F59E0B" fillOpacity="0.5"/>
-                  <circle cx="20" cy="40" r="2" fill="#F59E0B" fillOpacity="0.5"/>
-                  <circle cx="60" cy="40" r="2" fill="#F59E0B" fillOpacity="0.5"/>
-                </svg>
-              </div>
-              <h4 className="text-lg font-semibold text-black mb-3">Autonomy</h4>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Agents that act — adaptive, decentralized, and aligned with protocol goals.
-              </p>
-            </div>
-            
-          </div>
-        </div>
-      </section>
+      {/* Builders Section - 深灰背景，招聘功能 */}
+      <BuildersSection />
 
-      {/* Careers Section */}
+      <SectionDivider />
+
+      {/* Careers Section - 中灰背景，职位详情 */}
       <CareersSection />
-      
-      {/* Community Section */}
+
+      <SectionDivider />
+
+      {/* Community Section - 黑底背景，社群参与 */}
       <CommunitySection />
     </Layout>
   );
