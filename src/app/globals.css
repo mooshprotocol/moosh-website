@@ -691,3 +691,50 @@ img, video {
   font-family: 'Orbitron', monospace;
   letter-spacing: 0.05em;
 }
+
+/* Subtle shimmer effect for metrics numbers */
+.subtle-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.subtle-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(0, 255, 157, 0.1) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+  animation: subtle-shimmer 6s ease-in-out infinite;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  filter: blur(0.5px);
+}
+
+@keyframes subtle-shimmer {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
