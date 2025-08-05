@@ -1,8 +1,9 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 export default function BuildersSection() {
+  const shouldReduceMotion = useReducedMotion();
   const categories = [
     {
       title: "Systems",
@@ -75,20 +76,36 @@ export default function BuildersSection() {
   const getColorClasses = (color: string) => {
     const colorMap = {
       blue: {
-        glow: "hover:shadow-glow-blue",
-        border: "hover:border-moosh-accent-blue/30"
+        icon: "text-moosh-accent-blue",
+        iconBg: "bg-moosh-accent-blue/10",
+        glow: "hover:shadow-[0_0_20px_rgba(59,130,246,0.15)]",
+        border: "hover:border-moosh-accent-blue/20",
+        tagBg: "bg-moosh-accent-blue/10",
+        tagBorder: "border-moosh-accent-blue/20"
       },
       purple: {
-        glow: "hover:shadow-glow-purple",
-        border: "hover:border-moosh-accent-purple/30"
+        icon: "text-moosh-accent-purple",
+        iconBg: "bg-moosh-accent-purple/10",
+        glow: "hover:shadow-[0_0_20px_rgba(139,92,246,0.15)]",
+        border: "hover:border-moosh-accent-purple/20",
+        tagBg: "bg-moosh-accent-purple/10",
+        tagBorder: "border-moosh-accent-purple/20"
       },
       green: {
-        glow: "hover:shadow-glow-green",
-        border: "hover:border-moosh-green/30"
+        icon: "text-moosh-green",
+        iconBg: "bg-moosh-green/10",
+        glow: "hover:shadow-[0_0_20px_rgba(16,185,129,0.15)]",
+        border: "hover:border-moosh-green/20",
+        tagBg: "bg-moosh-green/10",
+        tagBorder: "border-moosh-green/20"
       },
       orange: {
-        glow: "hover:shadow-glow-orange",
-        border: "hover:border-moosh-accent-orange/30"
+        icon: "text-moosh-accent-orange",
+        iconBg: "bg-moosh-accent-orange/10",
+        glow: "hover:shadow-[0_0_20px_rgba(245,158,11,0.15)]",
+        border: "hover:border-moosh-accent-orange/20",
+        tagBg: "bg-moosh-accent-orange/10",
+        tagBorder: "border-moosh-accent-orange/20"
       }
     };
     return colorMap[color as keyof typeof colorMap] || colorMap.green;
@@ -139,42 +156,125 @@ export default function BuildersSection() {
         </motion.div>
         
         {/* Breathing Space */}
-        <div className="h-16"></div>
+        <div className="h-20"></div>
         
         {/* Creative Archetypes Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {categories.map((category, index) => {
             const colorClasses = getColorClasses(category.color);
             
             return (
               <motion.div 
                 key={category.title}
-                className={`group text-center p-6 bg-neutral-900 border border-neutral-800 rounded-xl hover:border-neutral-700 transition-all duration-300 ${colorClasses.glow} ${colorClasses.border} h-full flex flex-col justify-between`}
+                className={`group relative text-center p-8 bg-gradient-to-br from-neutral-900/80 to-neutral-800/60 backdrop-blur-sm rounded-xl border transition-all duration-500 ${colorClasses.glow} ${colorClasses.border} h-full flex flex-col justify-between overflow-hidden ${
+                  category.title === "Systems" ? "hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]" :
+                  category.title === "Research" ? "hover:shadow-[0_0_20px_rgba(139,92,246,0.2)]" :
+                  category.title === "Expression" ? "hover:shadow-[0_0_20px_rgba(16,185,129,0.2)]" :
+                  category.title === "Autonomy" ? "hover:shadow-[0_0_20px_rgba(245,158,11,0.2)]" : ""
+                }`}
+                style={{
+                  boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05), 0 4px 6px -1px rgba(0,0,0,0.1)',
+                  borderColor: category.title === "Systems" ? 'rgba(59,130,246,0.3)' : 
+                              category.title === "Research" ? 'rgba(139,92,246,0.3)' : 
+                              category.title === "Expression" ? 'rgba(16,185,129,0.3)' : 
+                              category.title === "Autonomy" ? 'rgba(245,158,11,0.3)' : 'rgba(115,115,115,0.5)'
+                }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
+                whileHover={!shouldReduceMotion ? {
+                  y: category.title === "Research" ? -4 : 0,
+                  scale: 1.03,
+                  transition: { duration: 0.4 }
+                } : {}}
               >
-                {/* Icon */}
-                <div className="w-9 h-9 mx-auto mb-4 flex items-center justify-center bg-neutral-800 rounded-lg transition-colors duration-300">
-                  <div className="w-5 h-5 transition-transform duration-300">
-                    {category.icon}
+                {/* Dynamic background overlay */}
+                <motion.div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{
+                    background: category.title === "Systems" ? 
+                      'linear-gradient(45deg, transparent 30%, rgba(59,130,246,0.08) 50%, transparent 70%)' :
+                      category.title === "Research" ? 
+                      'linear-gradient(0deg, transparent 20%, rgba(139,92,246,0.06) 50%, transparent 80%)' :
+                      category.title === "Expression" ? 
+                      'linear-gradient(90deg, transparent 30%, rgba(16,185,129,0.07) 50%, transparent 70%)' :
+                      category.title === "Autonomy" ? 
+                      'radial-gradient(circle at center, rgba(245,158,11,0.06) 0%, transparent 70%)' :
+                      'linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.02) 50%, transparent 70%)'
+                  }}
+                  animate={!shouldReduceMotion && category.title === "Autonomy" ? {
+                    scale: [1, 1.2, 1],
+                    opacity: [0, 0.15, 0]
+                  } : {}}
+                  transition={{
+                    duration: category.title === "Autonomy" ? 2.5 : 0.5,
+                    repeat: category.title === "Autonomy" ? Infinity : 0,
+                    ease: "easeInOut"
+                  }}
+                />
+                
+                {/* Icon with enhanced styling */}
+                <div className="relative z-10">
+                  <div className={`w-16 h-16 mx-auto mb-6 flex items-center justify-center ${colorClasses.iconBg} rounded-xl transition-all duration-500 group-hover:scale-105`}
+                       style={{
+                         boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1), 0 2px 4px rgba(0,0,0,0.2)',
+                       }}>
+                    <motion.div 
+                      className={`w-8 h-8 transition-all duration-500 group-hover:drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]`}
+                      whileHover={!shouldReduceMotion ? { 
+                        rotate: category.title === "Systems" ? 45 : 
+                               category.title === "Research" ? 0 : 
+                               category.title === "Expression" ? 0 : 
+                               category.title === "Autonomy" ? 0 : 0,
+                        y: category.title === "Research" ? [-4, 4, -4] : -2,
+                        scale: category.title === "Autonomy" ? [1, 1.1, 1] : 1
+                      } : {}}
+                      animate={!shouldReduceMotion && category.title === "Autonomy" ? {
+                        scale: [1, 1.05, 1],
+                        transition: {
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }
+                      } : {}}
+                      animate={!shouldReduceMotion && category.title === "Research" ? {
+                        y: [-2, 2, -2],
+                        transition: {
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }
+                      } : {}}
+                      transition={{ 
+                        duration: category.title === "Research" ? 2 : 0.5,
+                        repeat: category.title === "Research" ? Infinity : 0,
+                        ease: "easeInOut"
+                      }}
+                    >
+                      {category.icon}
+                    </motion.div>
                   </div>
                 </div>
                 
-                <h4 className="text-white font-semibold text-base md:text-lg mb-3">
+                <h4 className="relative z-10 text-white font-semibold text-lg md:text-xl mb-4 group-hover:text-white/90 transition-colors duration-300">
                   {category.title}
                 </h4>
-                <p className="text-neutral-400 text-sm leading-relaxed mb-4">
+                <motion.p 
+                  className="relative z-10 text-neutral-400 text-base leading-relaxed group-hover:text-neutral-300 transition-colors duration-300"
+                                  whileHover={!shouldReduceMotion && category.title === "Expression" ? {
+                  x: [-2, 2, -2],
+                  transition: {
+                    duration: 1.5,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }
+                } : {}}
+                >
                   {category.description}
-                </p>
+                </motion.p>
                 
-                {/* Skills Tags */}
-                <div className="h-16 flex flex-wrap gap-2 items-start content-start justify-center">
-                  <span className="bg-zinc-800 text-zinc-300 text-xs rounded-full px-3 py-1 whitespace-nowrap">
-                    {category.title}
-                  </span>
-                </div>
+
               </motion.div>
             );
           })}
