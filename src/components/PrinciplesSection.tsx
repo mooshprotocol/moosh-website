@@ -65,7 +65,7 @@ export default function PrinciplesSection() {
   };
 
   return (
-    <section className="bg-moosh-black-medium pt-6 md:pt-8 pb-24 md:pb-32 relative overflow-hidden">
+    <section className="bg-moosh-black-medium pt-0 md:pt-2 pb-24 md:pb-32 relative overflow-hidden">
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-8"></div>
       
