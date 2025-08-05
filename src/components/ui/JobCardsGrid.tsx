@@ -5,9 +5,9 @@ import JobCard from './JobCard';
 export default function JobCardsGrid() {
   const jobs = [
     {
-      title: "Full-Stack Engineer",
+      title: "Agent Architect",
       description: "Build modular systems from smart contracts to interfaces.",
-      skills: ["Solidity", "React/TypeScript", "System Design"],
+      skills: ["System Thinking", "Strategic Judgment", "Problem Seeking"],
       color: "blue" as const,
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -18,7 +18,7 @@ export default function JobCardsGrid() {
     {
       title: "Product Designer", 
       description: "Craft intuitive experiences across onchain and offchain flows.",
-      skills: ["UX/UI Design", "Prototyping", "User Research"],
+      skills: ["Intent Sensitivity", "Collaborative Flow", "Emotional Clarity"],
       color: "purple" as const,
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -27,9 +27,9 @@ export default function JobCardsGrid() {
       )
     },
     {
-      title: "Community Architect",
+      title: "Community & Growth",
       description: "Engage builders, spark conversations, grow the movement.",
-      skills: ["Community", "Content", "Growth"],
+      skills: ["Narrative Sense", "Social Engineering", "System Instinct"],
       color: "green" as const,
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

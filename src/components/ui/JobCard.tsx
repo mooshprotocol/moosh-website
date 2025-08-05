@@ -74,9 +74,9 @@ export default function JobCard({
       </p>
       
       {/* Skills */}
-      <div className="h-16 flex flex-wrap gap-2 items-start content-start justify-center">
+      <div className="grid grid-cols-3 gap-1.5">
         {skills.map((skill, skillIndex) => (
-          <span key={skillIndex} className="bg-zinc-800 text-zinc-300 text-xs rounded-full px-3 py-1 whitespace-nowrap">
+          <span key={skillIndex} className="bg-zinc-800 text-zinc-300 text-xs rounded-md px-1.5 py-1 text-center">
             {skill}
           </span>
         ))}
