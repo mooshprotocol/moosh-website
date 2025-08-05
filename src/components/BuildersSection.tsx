@@ -4,6 +4,20 @@ import { motion, useReducedMotion } from 'framer-motion';
 
 export default function BuildersSection() {
   const shouldReduceMotion = useReducedMotion();
+  
+  // Performance optimized animation configs
+  const fadeInUp = {
+    initial: { opacity: 0, y: 30 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6, ease: "easeOut" }
+  };
+  
+  const iconAnimations = {
+    systems: { rotate: 45 },
+    research: { y: [-4, 4, -4] },
+    expression: { x: [-2, 2, -2] },
+    autonomy: { scale: [1, 1.05, 1] }
+  };
   const categories = [
     {
       title: "Systems",
@@ -134,8 +148,7 @@ export default function BuildersSection() {
         {/* Header */}
         <motion.div 
           className="text-center max-w-screen-lg mx-auto"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          {...fadeInUp}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
@@ -170,7 +183,7 @@ export default function BuildersSection() {
                   category.title === "Systems" ? "hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]" :
                   category.title === "Research" ? "hover:shadow-[0_0_20px_rgba(139,92,246,0.2)]" :
                   category.title === "Expression" ? "hover:shadow-[0_0_20px_rgba(16,185,129,0.2)]" :
-                  category.title === "Autonomy" ? "hover:shadow-[0_0_20px_rgba(245,158,11,0.2)]" : ""
+                  category.title === "Autonomy" ? "hover:shadow-[0_0_25px_rgba(245,158,11,0.3)]" : ""
                 }`}
                 style={{
                   boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05), 0 4px 6px -1px rgba(0,0,0,0.1)',
@@ -200,12 +213,12 @@ export default function BuildersSection() {
                       category.title === "Expression" ? 
                       'linear-gradient(90deg, transparent 30%, rgba(16,185,129,0.07) 50%, transparent 70%)' :
                       category.title === "Autonomy" ? 
-                      'radial-gradient(circle at center, rgba(245,158,11,0.06) 0%, transparent 70%)' :
+                      'linear-gradient(135deg, transparent 30%, rgba(245,158,11,0.08) 50%, transparent 70%)' :
                       'linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.02) 50%, transparent 70%)'
                   }}
                   animate={!shouldReduceMotion && category.title === "Autonomy" ? {
-                    scale: [1, 1.2, 1],
-                    opacity: [0, 0.15, 0]
+                    scale: [1, 1.3, 1],
+                    opacity: [0, 0.25, 0]
                   } : {}}
                   transition={{
                     duration: category.title === "Autonomy" ? 2.5 : 0.5,
@@ -230,22 +243,27 @@ export default function BuildersSection() {
                         y: category.title === "Research" ? [-4, 4, -4] : -2,
                         scale: category.title === "Autonomy" ? [1, 1.1, 1] : 1
                       } : {}}
-                      animate={!shouldReduceMotion && category.title === "Autonomy" ? {
-                        scale: [1, 1.05, 1],
-                        transition: {
-                          duration: 2,
-                          repeat: Infinity,
-                          ease: "easeInOut"
-                        }
-                      } : {}}
-                      animate={!shouldReduceMotion && category.title === "Research" ? {
-                        y: [-2, 2, -2],
-                        transition: {
-                          duration: 2,
-                          repeat: Infinity,
-                          ease: "easeInOut"
-                        }
-                      } : {}}
+                      animate={!shouldReduceMotion ? 
+                        category.title === "Autonomy" ? {
+                          scale: [1, 1.05, 1],
+                          transition: {
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                          }
+                        } :
+                        category.title === "Research" ? {
+                          y: [-2, 2, -2],
+                          transition: {
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                          }
+                        } : {}
+                      : {}}
+                      style={{
+                        willChange: 'transform'
+                      }}
                       transition={{ 
                         duration: category.title === "Research" ? 2 : 0.5,
                         repeat: category.title === "Research" ? Infinity : 0,

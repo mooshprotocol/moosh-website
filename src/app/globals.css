@@ -53,6 +53,24 @@ section {
   transform: translateZ(0);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  will-change: auto;
+}
+
+/* Optimize animations for better performance */
+.motion-safe\:animate-fade-in {
+  will-change: opacity, transform;
+}
+
+.motion-safe\:animate-slide-up {
+  will-change: transform;
+}
+
+/* Reduce motion for better performance on low-end devices */
+@media (max-width: 768px) {
+  .motion-safe\:animate-fade-in,
+  .motion-safe\:animate-slide-up {
+    will-change: auto;
+  }
 }
 
 /* Disable animations on scroll for better performance */
@@ -124,38 +142,9 @@ section {
 }
 
 /* Header Button Styles */
-.btn-header {
-  @apply border border-white text-white bg-transparent px-4 py-2 rounded text-sm font-medium relative overflow-hidden transition-all duration-300;
-  will-change: transform;
-  backface-visibility: hidden;
-  transition-timing-function: ease;
-}
-
-.btn-header .btn-text {
-  @apply relative z-10 transition-colors duration-150;
-  transition-delay: 75ms;
-  transition-timing-function: ease;
-}
-
-.btn-header .btn-bg {
-  @apply absolute inset-0 bg-white transform -translate-x-full transition-transform duration-300;
-  will-change: transform;
-  transition-timing-function: ease;
-}
-
-.btn-header:hover .btn-text,
-.btn-header:focus-visible .btn-text {
-  @apply text-black;
-}
-
-.btn-header:hover .btn-bg,
-.btn-header:focus-visible .btn-bg {
-  @apply translate-x-0;
-}
 
 .btn-header-brand {
   @apply border border-white text-white bg-transparent px-4 py-2 rounded text-sm font-medium relative overflow-hidden transition-all duration-300;
-  will-change: transform;
   backface-visibility: hidden;
   transition-timing-function: ease;
 }
@@ -169,7 +158,6 @@ section {
 .btn-header-brand .btn-bg {
   @apply absolute inset-0 transform -translate-x-full transition-transform duration-300;
   background: #00FF99;
-  will-change: transform;
   transition-timing-function: ease;
 }
 
@@ -193,7 +181,6 @@ section {
   text-transform: uppercase;
   transition: all 0.3s ease;
   filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.1));
-  will-change: transform;
   backface-visibility: hidden;
 }
 
@@ -213,10 +200,10 @@ section {
 
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translate3d(0, 0, 0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translate3d(0, -10px, 0);
   }
 }
 
@@ -259,11 +246,11 @@ section {
 @keyframes dot-pulse {
   0%, 100% {
     opacity: 0.3;
-    transform: scale(1);
+    transform: scale3d(1, 1, 1);
   }
   50% {
     opacity: 0.8;
-    transform: scale(1.1);
+    transform: scale3d(1.1, 1.1, 1);
   }
 }
 

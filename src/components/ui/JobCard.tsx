@@ -21,6 +21,18 @@ export default function JobCard({
   onClick,
   index = 0
 }: JobCardProps) {
+  // Performance optimized animation configs
+  const cardAnimation = {
+    initial: { opacity: 0, y: 30 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6, delay: index * 0.2, ease: "easeOut" }
+  };
+  
+  const tagAnimation = {
+    initial: { opacity: 0, y: 10 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.4, ease: "easeOut" }
+  };
   const getColorClasses = (color: string) => {
     const colorMap = {
       blue: {
@@ -56,9 +68,8 @@ export default function JobCard({
   return (
     <motion.div 
       className="group"
-      initial={{ opacity: 0, y: 30 }}
+      {...cardAnimation}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.2 }}
       viewport={{ once: true }}
     >
       <div 
@@ -99,13 +110,12 @@ export default function JobCard({
             <motion.span 
               key={skillIndex} 
               className="bg-white/5 backdrop-blur-sm text-white/60 text-sm font-light rounded-full px-3 py-1.5 transition-all duration-300 group-hover:bg-white/10 group-hover:text-white/80 group-hover:shadow-[0_0_8px_rgba(255,255,255,0.1)]"
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              {...tagAnimation}
               transition={{ 
-                duration: 0.4, 
-                delay: skillIndex * 0.1,
-                ease: "easeOut"
+                ...tagAnimation.transition,
+                delay: skillIndex * 0.1
               }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               style={{
                 willChange: 'opacity, transform, background-color, color, box-shadow'
