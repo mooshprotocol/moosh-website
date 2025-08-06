@@ -25,13 +25,13 @@ export default function JobCard({
   const cardAnimation = {
     initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, delay: index * 0.2, ease: "easeOut" }
+    transition: { duration: 0.6, delay: index * 0.2, ease: "easeOut" as const }
   };
   
   const tagAnimation = {
     initial: { opacity: 0, y: 10 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.4, ease: "easeOut" }
+    transition: { duration: 0.4, ease: "easeOut" as const }
   };
   const getColorClasses = (color: string) => {
     const colorMap = {
