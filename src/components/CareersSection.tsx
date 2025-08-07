@@ -5,62 +5,6 @@ import ApplyNowButton from './ui/ApplyNowButton';
 import JobCardsGrid from './ui/JobCardsGrid';
 
 export default function CareersSection() {
-  const positions = [
-    {
-      title: "Agent Architect",
-      summary: "Build modular systems from smart contracts to interfaces.",
-      skills: ["System Thinking", "Strategic Judgment", "Problem Seeking"],
-      color: "blue",
-      icon: (
-        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-        </svg>
-      )
-    },
-    {
-      title: "Product Designer",
-      summary: "Craft intuitive experiences across onchain and offchain flows.",
-      skills: ["Intent Sensitivity", "Collaborative Flow", "Emotional Clarity"],
-      color: "purple",
-      icon: (
-        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
-        </svg>
-      )
-    },
-    {
-      title: "Community & Growth",
-      summary: "Engage builders, spark conversations, grow the movement.",
-      skills: ["Narrative Sense", "Social Engineering", "System Instinct"],
-      color: "green",
-      icon: (
-        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-      )
-    }
-  ];
-
-  const getColorClasses = (color: string) => {
-    const colorMap = {
-      blue: {
-        icon: "text-moosh-accent-blue",
-        glow: "hover:shadow-glow-blue",
-        border: "hover:border-moosh-accent-blue/30"
-      },
-      purple: {
-        icon: "text-moosh-accent-purple",
-        glow: "hover:shadow-glow-purple",
-        border: "hover:border-moosh-accent-purple/30"
-      },
-      green: {
-        icon: "text-moosh-green",
-        glow: "hover:shadow-glow-green",
-        border: "hover:border-moosh-green/30"
-      }
-    };
-    return colorMap[color as keyof typeof colorMap] || colorMap.green;
-  };
 
   return (
     <section className="bg-moosh-black-light py-16 relative overflow-hidden">

@@ -179,7 +179,7 @@ export default function BuildersSection() {
             return (
               <motion.div 
                 key={category.title}
-                className={`group relative text-center p-8 bg-gradient-to-br from-neutral-900/80 to-neutral-800/60 backdrop-blur-sm rounded-xl border transition-all duration-500 ${colorClasses.glow} ${colorClasses.border} h-full flex flex-col justify-between overflow-hidden ${
+                className={`group relative text-center p-8 bg-gradient-to-br from-neutral-900/80 to-neutral-800/60 backdrop-blur-sm rounded-xl border transition-all duration-500 ${colorClasses.glow} ${colorClasses.border} h-full flex flex-col overflow-hidden ${
                   category.title === "Systems" ? "hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]" :
                   category.title === "Research" ? "hover:shadow-[0_0_20px_rgba(139,92,246,0.2)]" :
                   category.title === "Expression" ? "hover:shadow-[0_0_20px_rgba(16,185,129,0.2)]" :
@@ -213,12 +213,12 @@ export default function BuildersSection() {
                       category.title === "Expression" ? 
                       'linear-gradient(90deg, transparent 30%, rgba(16,185,129,0.07) 50%, transparent 70%)' :
                       category.title === "Autonomy" ? 
-                      'linear-gradient(135deg, transparent 30%, rgba(245,158,11,0.08) 50%, transparent 70%)' :
+                      'linear-gradient(135deg, transparent 30%, rgba(245,158,11,0.15) 50%, transparent 70%)' :
                       'linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.02) 50%, transparent 70%)'
                   }}
                   animate={!shouldReduceMotion && category.title === "Autonomy" ? {
                     scale: [1, 1.3, 1],
-                    opacity: [0, 0.25, 0]
+                    opacity: [0, 0.4, 0]
                   } : {}}
                   transition={{
                     duration: category.title === "Autonomy" ? 2.5 : 0.5,
@@ -275,11 +275,11 @@ export default function BuildersSection() {
                   </div>
                 </div>
                 
-                <h4 className="relative z-10 text-white font-semibold text-lg md:text-xl mb-4 group-hover:text-white/90 transition-colors duration-300">
+                <h4 className="relative z-10 text-white font-semibold text-lg md:text-xl mb-6 group-hover:text-white/90 transition-colors duration-300">
                   {category.title}
                 </h4>
                 <motion.p 
-                  className="relative z-10 text-neutral-400 text-base leading-relaxed group-hover:text-neutral-300 transition-colors duration-300"
+                  className="relative z-10 text-neutral-400 text-base leading-relaxed group-hover:text-neutral-300 transition-colors duration-300 flex-1"
                                   whileHover={!shouldReduceMotion && category.title === "Expression" ? {
                   x: [-2, 2, -2],
                   transition: {

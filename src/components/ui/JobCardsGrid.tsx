@@ -5,7 +5,7 @@ import JobCard from './JobCard';
 export default function JobCardsGrid() {
   const jobs = [
     {
-      title: "Agent Architect",
+      title: "Systems Architect",
       description: "Build modular systems from smart contracts to interfaces.",
       skills: ["System Thinking", "Strategic Judgment", "Problem Seeking"],
       color: "blue" as const,
@@ -27,7 +27,7 @@ export default function JobCardsGrid() {
       )
     },
     {
-      title: "Community & Growth",
+      title: "Operation & Growth",
       description: "Engage builders, spark conversations, grow the movement.",
       skills: ["Narrative Sense", "Social Engineering", "System Instinct"],
       color: "green" as const,

@@ -38,7 +38,7 @@ export default function JobCard({
       blue: {
         icon: "text-moosh-accent-blue",
         iconBg: "bg-moosh-accent-blue/10",
-        glow: "hover:shadow-[0_0_20px_rgba(59,130,246,0.15)]",
+        glow: "hover:shadow-[0_0_25px_rgba(59,130,246,0.25)]",
         border: "hover:border-moosh-accent-blue/20",
         tagBg: "bg-moosh-accent-blue/10",
         tagBorder: "border-moosh-accent-blue/20"
@@ -46,7 +46,7 @@ export default function JobCard({
       purple: {
         icon: "text-moosh-accent-purple",
         iconBg: "bg-moosh-accent-purple/10",
-        glow: "hover:shadow-[0_0_20px_rgba(139,92,246,0.15)]",
+        glow: "hover:shadow-[0_0_25px_rgba(139,92,246,0.25)]",
         border: "hover:border-moosh-accent-purple/20",
         tagBg: "bg-moosh-accent-purple/10",
         tagBorder: "border-moosh-accent-purple/20"
@@ -54,7 +54,7 @@ export default function JobCard({
       green: {
         icon: "text-moosh-green",
         iconBg: "bg-moosh-green/10",
-        glow: "hover:shadow-[0_0_20px_rgba(16,185,129,0.15)]",
+        glow: "hover:shadow-[0_0_25px_rgba(16,185,129,0.25)]",
         border: "hover:border-moosh-green/20",
         tagBg: "bg-moosh-green/10",
         tagBorder: "border-moosh-green/20"
