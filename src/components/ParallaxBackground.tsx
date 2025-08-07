@@ -17,7 +17,11 @@ export default function ParallaxBackground() {
     <motion.div 
       ref={ref}
       className="absolute inset-0 overflow-hidden pointer-events-none"
-      style={{ y, opacity }}
+      style={{ 
+        y, 
+        opacity,
+        willChange: 'transform, opacity'
+      }}
     >
       {/* Floating geometric elements */}
       <div className="absolute top-1/4 left-1/6 w-8 h-8 border border-moosh-green/20 rotate-45"></div>

@@ -1,8 +1,6 @@
-import { AppPathnames } from '@/routing';
-
 export interface NavigationItem {
   label: string;
-  href: AppPathnames;
+  href: string;
   external?: boolean;
 }
 
