@@ -1,6 +1,5 @@
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
-import IdlePrefetch from '@/components/utils/IdlePrefetch';
 import Layout from '@/components/layout/Layout';
 
 const HeroSection = dynamic(() => import('@/components/HeroSection'));
@@ -49,7 +48,6 @@ export default function HomePage() {
       <Suspense fallback={null}>
         <CommunitySection />
       </Suspense>
-      <IdlePrefetch />
     </Layout>
   );
 }
