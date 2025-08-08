@@ -10,7 +10,7 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4">
         <nav className="flex items-center justify-between">
           <Link href="/" className="text-2xl moosh-logo text-white">
-            {t('site.name', 'MOOSH')}
+            MOOSH
           </Link>
           
           {/* 使用品牌色版本的按钮 */}
