@@ -19,6 +19,7 @@
 - [x] Abstract common UI primitives (Button, Card, SectionHeader) and refactor usage (initial pass)
 - [x] Introduce I18nProvider and useI18n hook; replace hardcoded strings with message keys
 - [ ] CSP + next/script nonce strategy scaffolding for future third-party scripts (optional)
+  - [x] Add getRequestNonce() and SafeScript wrapper to pass CSP nonce into next/script
 - [x] Replace eligible images with next/image and audit asset caching (optional) — evaluated: no <img> usages to convert; caching headers added for static assets
 - [x] Performance: Defer non-critical sections with idle prefetch (no visual changes)
 - [ ] Build: ensure productionBrowserSourceMaps disabled
