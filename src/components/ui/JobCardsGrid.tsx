@@ -1,13 +1,15 @@
 // JobCardsGrid.tsx
 import React from 'react';
+import { useI18n } from '@/components/I18nProvider';
 import JobCard from './JobCard';
 
 export default function JobCardsGrid() {
+  const { t } = useI18n();
   const jobs = [
     {
-      title: "Systems Architect",
-      description: "Build modular systems from smart contracts to interfaces.",
-      skills: ["System Thinking", "Strategic Judgment", "Problem Seeking"],
+      title: t('jobs.systemsArchitect.title', 'Systems Architect'),
+      description: t('jobs.systemsArchitect.description', 'Build modular systems from smart contracts to interfaces.'),
+      skills: t<string[]>('jobs.systemsArchitect.skills', ["System Thinking", "Strategic Judgment", "Problem Seeking"]),
       color: "blue" as const,
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -16,9 +18,9 @@ export default function JobCardsGrid() {
       )
     },
     {
-      title: "Product Designer", 
-      description: "Craft intuitive experiences across onchain and offchain flows.",
-      skills: ["Intent Sensitivity", "Collaborative Flow", "Emotional Clarity"],
+      title: t('jobs.productDesigner.title', 'Product Designer'), 
+      description: t('jobs.productDesigner.description', 'Craft intuitive experiences across onchain and offchain flows.'),
+      skills: t<string[]>('jobs.productDesigner.skills', ["Intent Sensitivity", "Collaborative Flow", "Emotional Clarity"]),
       color: "purple" as const,
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -27,9 +29,9 @@ export default function JobCardsGrid() {
       )
     },
     {
-      title: "Operation & Growth",
-      description: "Engage builders, spark conversations, grow the movement.",
-      skills: ["Narrative Sense", "Social Engineering", "System Instinct"],
+      title: t('jobs.opsGrowth.title', 'Operation & Growth'),
+      description: t('jobs.opsGrowth.description', 'Engage builders, spark conversations, grow the movement.'),
+      skills: t<string[]>('jobs.opsGrowth.skills', ["Narrative Sense", "Social Engineering", "System Instinct"]),
       color: "green" as const,
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">

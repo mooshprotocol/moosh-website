@@ -7,7 +7,10 @@
     "home": "首页",
     "about": "关于我们",
     "services": "服务",
-    "contact": "联系我们"
+    "contact": "联系我们",
+    "docs": "文档",
+    "twitter": "推特",
+    "github": "GitHub"
   },
   "homepage": {
     "title": "欢迎来到超级慕什",
@@ -48,6 +51,78 @@
     }
   },
   "footer": {
-    "copyright": "版权所有。"
+    "copyright": "© 2025 Moosh 协议。保留所有权利。"
+  },
+  "community": {
+    "title": "社群优先。Agent 优先。",
+    "subtitle": "人类引领，智能体构建，社群协同。"
+  },
+  "hero": {
+    "subtitle": "面向 DeFi 未来的模块化流动性基础设施",
+    "metrics": {
+      "modularEngines": "模块引擎",
+      "composability": "可组合性",
+      "friction": "摩擦"
+    }
+  },
+  "manifesto": {
+    "line1": "未来是模块化的。",
+    "line2": "资本必须流动。",
+    "line3": "风险必须适应。",
+    "line4": "出借必须进化。",
+    "conclusion": "Moosh 让这一切成为可能。"
+  },
+  "principles": {
+    "header": {
+      "eyebrow": "基础",
+      "title": "Moosh 建立在三大基础原则之上",
+      "subtitle": "这些原则指导我们构建模块化流动性基础设施的方式。"
+    },
+    "cards": {
+      "safety": {
+        "title": "安全",
+        "subtitle": "以韧性为设计初衷",
+        "description": "Moosh 通过动态边界与自适应执行保护资本。"
+      },
+      "flexibility": {
+        "title": "灵活",
+        "subtitle": "流动性应自由流动",
+        "description": "Moosh 无摩擦地跨协议、跨模块、跨市场状态流动。"
+      },
+      "intelligence": {
+        "title": "智能",
+        "subtitle": "模块化环境需要模块化思维",
+        "description": "Moosh 基于逻辑与数据实时自适应、有意图地执行。"
+      }
+    }
+  },
+  "protocol": {
+    "header": {
+      "title": "核心模块",
+      "subtitle": "为超低延迟的模块化基础设施与可组合流动性而生。",
+      "tagline": "探索驱动 Moosh 的四个模块引擎"
+    },
+    "modules": {
+      "liquidation": {
+        "title": "清算引擎",
+        "description": "实时、原生 MEVM 的执行与智能风险逻辑。",
+        "sub": ["风险评估", "执行引擎", "MEVM 集成"]
+      },
+      "risk": {
+        "title": "风险内核",
+        "description": "随市场动态调整的 AI 辅助逻辑。",
+        "sub": ["AI 模型", "市场分析", "自适应逻辑"]
+      },
+      "liquidity": {
+        "title": "流动性网格",
+        "description": "可组合的流动性与跨模块无缝执行。",
+        "sub": ["可组合性", "跨模块", "无缝执行"]
+      },
+      "megaeth": {
+        "title": "MegaETH 兼容",
+        "description": "与 MegaETH 上的模块化基础设施原生集成。",
+        "sub": ["原生集成", "MegaETH"]
+      }
+    }
   }
 }

@@ -1,5 +1,6 @@
 // ApplyNowButton.tsx
 import React from 'react';
+import Button from './Button';
 
 interface ApplyNowButtonProps {
   onClick?: () => void;
@@ -9,37 +10,28 @@ interface ApplyNowButtonProps {
 
 export default function ApplyNowButton({ 
   onClick, 
-  className = "", 
+  className = '', 
   children 
 }: ApplyNowButtonProps) {
   return (
-    <button
+    <Button
       onClick={onClick}
-      className={`
-        group relative inline-flex items-center gap-2 px-6 py-3 rounded-lg
-        border border-[#00ff9a] text-[#00ff9a] bg-transparent
-        font-medium text-sm tracking-wide
-        transition-all duration-300 ease-out
-        hover:bg-[#00ff9a] hover:text-black hover:scale-105
-        focus:outline-none focus:ring-2 focus:ring-[#00ff9a]/50 focus:ring-offset-2 focus:ring-offset-transparent
-        shadow-[0_0_20px_rgba(0,255,154,0.2)]
-        ${className}
-      `}
+      variant="accent"
+      size="md"
+      className={className}
+      iconRight={(
+        <svg 
+          className="w-4 h-4" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      )}
     >
-      {/* Button text */}
-      <span className="transition-colors duration-300 ease-out">
-        {children || "Apply Now"}
-      </span>
-      
-      {/* Single arrow icon with hover animation */}
-      <svg 
-        className="w-4 h-4 transition-transform duration-300 ease-out group-hover:translate-x-1" 
-        fill="none" 
-        stroke="currentColor" 
-        viewBox="0 0 24 24"
-      >
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-      </svg>
-    </button>
+      {children || 'Apply Now'}
+    </Button>
   );
-} 
+}

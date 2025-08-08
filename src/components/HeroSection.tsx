@@ -1,16 +1,21 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m, useInView } from 'framer-motion';
 import ParallaxBackground from './ParallaxBackground';
+import { useI18n } from '@/components/I18nProvider';
+import { useRef } from 'react';
 
 export default function HeroSection() {
+  const { t } = useI18n();
+  const viewRef = useRef<HTMLDivElement | null>(null);
+  const inView = useInView(viewRef, { amount: 0.2, margin: '0px 0px -10% 0px' });
   return (
-    <section className="relative min-h-screen bg-moosh-black flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen bg-moosh-black flex items-center justify-center overflow-hidden" ref={viewRef}>
       {/* Enhanced Animated Background Grid */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
+      <div className="absolute inset-0 bg-grid-pattern opacity-20" aria-hidden="true"></div>
       
       {/* Green Dots Pattern */}
-      <div className="green-dot-pattern">
+      <div className="green-dot-pattern" aria-hidden="true">
         <div className="dot" style={{ top: '15%', left: '10%', width: '4px', height: '4px', animationDelay: '0s' }}></div>
         <div className="dot" style={{ top: '25%', right: '15%', width: '3px', height: '3px', animationDelay: '1s' }}></div>
         <div className="dot" style={{ bottom: '30%', left: '20%', width: '2px', height: '2px', animationDelay: '2s' }}></div>
@@ -25,8 +30,8 @@ export default function HeroSection() {
       <ParallaxBackground />
       
       {/* Enhanced Network Mesh */}
-      <div className="network-mesh">
-        <svg className="w-full h-full" viewBox="0 0 1000 1000">
+      <div className="network-mesh" aria-hidden="true">
+        <svg className="w-full h-full" viewBox="0 0 1000 1000" aria-hidden="true">
           <defs>
             <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#32C466" stopOpacity="0.2" />
@@ -61,31 +66,31 @@ export default function HeroSection() {
       </div>
       
       {/* Floating geometric shapes */}
-      <div className="floating-element" style={{ top: '20%', right: '15%', width: '20px', height: '20px', border: '1px solid rgba(50, 196, 102, 0.3)', transform: 'rotate(45deg)' }}></div>
-      <div className="floating-element" style={{ bottom: '30%', left: '10%', width: '15px', height: '15px', background: 'rgba(50, 196, 102, 0.2)', borderRadius: '50%', animationDelay: '2s' }}></div>
-      <div className="floating-element" style={{ top: '70%', right: '25%', width: '12px', height: '12px', border: '1px solid rgba(50, 196, 102, 0.4)', transform: 'rotate(45deg)', animationDelay: '4s' }}></div>
-      <div className="floating-element" style={{ top: '50%', left: '20%', width: '18px', height: '18px', background: 'rgba(50, 196, 102, 0.15)', borderRadius: '50%', animationDelay: '1s' }}></div>
+      <div className="floating-element" aria-hidden="true" style={{ top: '20%', right: '15%', width: '20px', height: '20px', border: '1px solid rgba(50, 196, 102, 0.3)', transform: 'rotate(45deg)' }}></div>
+      <div className="floating-element" aria-hidden="true" style={{ bottom: '30%', left: '10%', width: '15px', height: '15px', background: 'rgba(50, 196, 102, 0.2)', borderRadius: '50%', animationDelay: '2s' }}></div>
+      <div className="floating-element" aria-hidden="true" style={{ top: '70%', right: '25%', width: '12px', height: '12px', border: '1px solid rgba(50, 196, 102, 0.4)', transform: 'rotate(45deg)', animationDelay: '4s' }}></div>
+      <div className="floating-element" aria-hidden="true" style={{ top: '50%', left: '20%', width: '18px', height: '18px', background: 'rgba(50, 196, 102, 0.15)', borderRadius: '50%', animationDelay: '1s' }}></div>
 
       {/* Main Content */}
       <div className="relative z-10 container-custom text-center px-4">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-4xl mx-auto"
         >
           {/* MOOSH - Static, clean, solid white */}
-          <motion.h1 
+          <m.h1 
             className="text-5xl md:text-7xl lg:text-8xl font-orbitron font-black tracking-tight leading-none"
             initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
           >
             <span className="text-white font-black">MOOSH</span>
-          </motion.h1>
+          </m.h1>
 
           {/* PROTOCOL - Larger, neon green with shimmer */}
-          <motion.div
+          <m.div
             className="relative inline-block"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -95,23 +100,23 @@ export default function HeroSection() {
               <span className="protocol-text-futuristic">PROTOCOL</span>
               <div className="protocol-shimmer-futuristic"></div>
             </h2>
-          </motion.div>
+          </m.div>
 
           {/* Typewriter Subtitle */}
-          <motion.div
+          <m.div
             className="mt-8 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
           >
             <div className="typewriter-container">
-              <span className="typewriter-text">Modular liquidity infrastructure for the future of DeFi</span>
+              <span className="typewriter-text">{t('hero.subtitle', 'Modular liquidity infrastructure for the future of DeFi')}</span>
               <span className="typewriter-cursor">|</span>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Key Metrics */}
-          <motion.div 
+          <m.div 
             className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -119,22 +124,22 @@ export default function HeroSection() {
           >
             <div className="text-center group">
               <div className="text-4xl md:text-5xl font-black text-moosh-green mb-3 group-hover:scale-105 transition-transform duration-300 subtle-shimmer">4</div>
-              <div className="text-xs text-gray-500 tracking-widest uppercase font-medium">Modular Engines</div>
+              <div className="text-xs text-gray-500 tracking-widest uppercase font-medium">{t('hero.metrics.modularEngines', 'Modular Engines')}</div>
             </div>
             <div className="text-center group">
               <div className="text-4xl md:text-5xl font-black text-moosh-green mb-3 group-hover:scale-105 transition-transform duration-300 subtle-shimmer">∞</div>
-              <div className="text-xs text-gray-500 tracking-widest uppercase font-medium">Composability</div>
+              <div className="text-xs text-gray-500 tracking-widest uppercase font-medium">{t('hero.metrics.composability', 'Composability')}</div>
             </div>
             <div className="text-center group">
               <div className="text-4xl md:text-5xl font-black text-moosh-green mb-3 group-hover:scale-105 transition-transform duration-300 subtle-shimmer">0</div>
-              <div className="text-xs text-gray-500 tracking-widest uppercase font-medium">Friction</div>
+              <div className="text-xs text-gray-500 tracking-widest uppercase font-medium">{t('hero.metrics.friction', 'Friction')}</div>
             </div>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       </div>
 
       {/* Enhanced Scroll Indicator */}
-      <motion.div 
+      <m.div 
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -143,7 +148,7 @@ export default function HeroSection() {
                 <div className="flex flex-col items-center gap-3">
           <div className="relative">
               <div className="w-px h-12 bg-gradient-to-b from-moosh-green to-transparent"></div>
-              <motion.div 
+              <m.div 
                 className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 h-3 bg-moosh-green rounded-full"
                 animate={{ y: [0, 36, 0] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
@@ -155,7 +160,7 @@ export default function HeroSection() {
             </svg>
           </div>
         </div>
-      </motion.div>
+      </m.div>
     </section>
   );
 } 
