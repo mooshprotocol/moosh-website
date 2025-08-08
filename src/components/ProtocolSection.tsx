@@ -116,7 +116,6 @@ export default function ProtocolSection() {
             title={<span className="text-4xl md:text-5xl">{t('protocol.header.title', 'Core Modules')}</span>}
             subtitle={<span className="font-light">{t('protocol.header.subtitle', 'Built for ultra-low latency modular infrastructure and composable liquidity.')}</span>}
           >
-            <div className="w-32 bg-gradient-to-r from-transparent via-moosh-green to-transparent mx-auto mb-6" style={{height: '0.2px'}}></div>
             <p className="text-xs font-semibold text-moosh-text-muted tracking-widest uppercase">
               {t('protocol.header.tagline', 'Explore the four modular engines that power Moosh')}
             </p>
