@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   productionBrowserSourceMaps: false,
+  experimental: {
+    optimizePackageImports: ['framer-motion'],
+  },
   images: {
     remotePatterns: [
       {
