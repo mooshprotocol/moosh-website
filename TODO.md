@@ -23,5 +23,6 @@
 - [x] Performance: Defer non-critical sections with idle prefetch (no visual changes)
 - [ ] Build: ensure productionBrowserSourceMaps disabled
 - [ ] Dependencies: prune unused heavy deps (three, @react-three/*) if confirmed unused
+  - [x] Removed: three, @types/three, @react-three/fiber, @react-three/drei
 
 
