@@ -5,6 +5,24 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [
+    // hover glow shadows used dynamically
+    'hover:shadow-glow-green',
+    'hover:shadow-glow-blue',
+    'hover:shadow-glow-cyan',
+    'hover:shadow-glow-purple',
+    'hover:shadow-glow-orange',
+    // gradient text classes
+    'text-gradient',
+    'text-gradient-blue',
+    'text-gradient-cyan',
+    'text-gradient-purple',
+    // group-hover variants
+    'group-hover:text-gradient',
+    'group-hover:text-gradient-blue',
+    'group-hover:text-gradient-cyan',
+    'group-hover:text-gradient-purple',
+  ],
   theme: {
     extend: {
       colors: {

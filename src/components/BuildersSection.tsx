@@ -1,9 +1,13 @@
 'use client';
 
-import { motion, useReducedMotion } from 'framer-motion';
+import { m, useReducedMotion, useInView } from 'framer-motion';
+import { useRef } from 'react';
+import Card from './ui/Card';
 
 export default function BuildersSection() {
   const shouldReduceMotion = useReducedMotion();
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const sectionInView = useInView(sectionRef, { amount: 0.2 });
   
   // Performance optimized animation configs
   const fadeInUp = {
@@ -126,18 +130,18 @@ export default function BuildersSection() {
   };
 
   return (
-    <section className="bg-[#0e0e0e] py-20 md:py-28 relative overflow-hidden">
+    <section className="bg-[#0e0e0e] py-20 md:py-28 relative overflow-hidden" ref={sectionRef}>
       {/* Enhanced Background Pattern */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+      <div className="absolute inset-0 bg-grid-pattern opacity-5" aria-hidden="true"></div>
       
       {/* Enhanced Green pattern background for separation */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0" aria-hidden="true">
         <div className="absolute top-1/2 left-0 w-1/3 bg-gradient-to-r from-transparent via-moosh-green/30 to-transparent" style={{height: '0.2px'}}></div>
         <div className="absolute top-1/2 right-0 w-1/3 bg-gradient-to-l from-transparent via-moosh-green/30 to-transparent" style={{height: '0.2px'}}></div>
       </div>
       
       {/* Green accent dots */}
-      <div className="green-dot-pattern">
+      <div className="green-dot-pattern" aria-hidden="true">
         <div className="dot" style={{ top: '10%', left: '8%', width: '0.6px', height: '0.12px', animationDelay: '0s' }}></div>
         <div className="dot" style={{ bottom: '15%', right: '12%', width: '0.4px', height: '0.08px', animationDelay: '1s' }}></div>
         <div className="dot" style={{ top: '60%', left: '5%', width: '0.6px', height: '0.12px', animationDelay: '2s' }}></div>
@@ -146,7 +150,7 @@ export default function BuildersSection() {
       
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <motion.div 
+        <m.div 
           className="text-center max-w-screen-lg mx-auto"
           {...fadeInUp}
           transition={{ duration: 0.8 }}
@@ -166,7 +170,7 @@ export default function BuildersSection() {
           <p className="text-base text-gray-400 max-w-2xl mx-auto leading-relaxed mt-6">
             Moosh is shaped by those who think modularly, speak in primitives, and build composable systems.
           </p>
-        </motion.div>
+        </m.div>
         
         {/* Breathing Space */}
         <div className="h-20"></div>
@@ -177,21 +181,8 @@ export default function BuildersSection() {
             const colorClasses = getColorClasses(category.color);
             
             return (
-              <motion.div 
+              <m.div 
                 key={category.title}
-                className={`group relative text-center p-8 bg-gradient-to-br from-neutral-900/80 to-neutral-800/60 backdrop-blur-sm rounded-xl border transition-all duration-500 ${colorClasses.glow} ${colorClasses.border} h-full flex flex-col overflow-hidden ${
-                  category.title === "Systems" ? "hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]" :
-                  category.title === "Research" ? "hover:shadow-[0_0_20px_rgba(139,92,246,0.2)]" :
-                  category.title === "Expression" ? "hover:shadow-[0_0_20px_rgba(16,185,129,0.2)]" :
-                  category.title === "Autonomy" ? "hover:shadow-[0_0_25px_rgba(245,158,11,0.3)]" : ""
-                }`}
-                style={{
-                  boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05), 0 4px 6px -1px rgba(0,0,0,0.1)',
-                  borderColor: category.title === "Systems" ? 'rgba(59,130,246,0.3)' : 
-                              category.title === "Research" ? 'rgba(139,92,246,0.3)' : 
-                              category.title === "Expression" ? 'rgba(16,185,129,0.3)' : 
-                              category.title === "Autonomy" ? 'rgba(245,158,11,0.3)' : 'rgba(115,115,115,0.5)'
-                }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -202,8 +193,25 @@ export default function BuildersSection() {
                   transition: { duration: 0.4 }
                 } : {}}
               >
+                <Card
+                  className={`text-center ${
+                    category.title === "Systems" ? "hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]" :
+                    category.title === "Research" ? "hover:shadow-[0_0_20px_rgba(139,92,246,0.2)]" :
+                    category.title === "Expression" ? "hover:shadow-[0_0_20px_rgba(16,185,129,0.2)]" :
+                    category.title === "Autonomy" ? "hover:shadow-[0_0_25px_rgba(245,158,11,0.3)]" : ""
+                  }`}
+                  glowClass={colorClasses.glow}
+                  withOverlay
+                  style={{
+                    boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05), 0 4px 6px -1px rgba(0,0,0,0.1)',
+                    borderColor: category.title === "Systems" ? 'rgba(59,130,246,0.3)' : 
+                                category.title === "Research" ? 'rgba(139,92,246,0.3)' : 
+                                category.title === "Expression" ? 'rgba(16,185,129,0.3)' : 
+                                category.title === "Autonomy" ? 'rgba(245,158,11,0.3)' : 'rgba(115,115,115,0.5)'
+                  }}
+                >
                 {/* Dynamic background overlay */}
-                <motion.div 
+                <m.div 
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   style={{
                     background: category.title === "Systems" ? 
@@ -216,7 +224,7 @@ export default function BuildersSection() {
                       'linear-gradient(135deg, transparent 30%, rgba(245,158,11,0.15) 50%, transparent 70%)' :
                       'linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.02) 50%, transparent 70%)'
                   }}
-                  animate={!shouldReduceMotion && category.title === "Autonomy" ? {
+                  animate={!shouldReduceMotion && sectionInView && category.title === "Autonomy" ? {
                     scale: [1, 1.3, 1],
                     opacity: [0, 0.4, 0]
                   } : {}}
@@ -233,7 +241,7 @@ export default function BuildersSection() {
                        style={{
                          boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1), 0 2px 4px rgba(0,0,0,0.2)',
                        }}>
-                    <motion.div 
+                    <m.div 
                       className={`w-8 h-8 transition-all duration-500 group-hover:drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]`}
                       whileHover={!shouldReduceMotion ? { 
                         rotate: category.title === "Systems" ? 45 : 
@@ -243,7 +251,7 @@ export default function BuildersSection() {
                         y: category.title === "Research" ? [-4, 4, -4] : -2,
                         scale: category.title === "Autonomy" ? [1, 1.1, 1] : 1
                       } : {}}
-                      animate={!shouldReduceMotion ? 
+                       animate={!shouldReduceMotion && sectionInView ? 
                         category.title === "Autonomy" ? {
                           scale: [1, 1.05, 1],
                           transition: {
@@ -260,7 +268,7 @@ export default function BuildersSection() {
                             ease: "easeInOut"
                           }
                         } : {}
-                      : {}}
+                       : {}}
                       style={{
                         willChange: 'transform'
                       }}
@@ -271,14 +279,14 @@ export default function BuildersSection() {
                       }}
                     >
                       {category.icon}
-                    </motion.div>
+                    </m.div>
                   </div>
                 </div>
                 
                 <h4 className="relative z-10 text-white font-semibold text-lg md:text-xl mb-6 group-hover:text-white/90 transition-colors duration-300">
                   {category.title}
                 </h4>
-                <motion.p 
+                <m.p 
                   className="relative z-10 text-neutral-400 text-base leading-relaxed group-hover:text-neutral-300 transition-colors duration-300 flex-1"
                                   whileHover={!shouldReduceMotion && category.title === "Expression" ? {
                   x: [-2, 2, -2],
@@ -290,10 +298,11 @@ export default function BuildersSection() {
                 } : {}}
                 >
                   {category.description}
-                </motion.p>
+                </m.p>
                 
 
-              </motion.div>
+                </Card>
+              </m.div>
             );
           })}
         </div>

@@ -7,7 +7,10 @@
     "home": "Home",
     "about": "About",
     "services": "Services",
-    "contact": "Contact"
+    "contact": "Contact",
+    "docs": "Docs",
+    "twitter": "Twitter",
+    "github": "GitHub"
   },
   "homepage": {
     "title": "Welcome to Mega Moosh",
@@ -47,7 +50,125 @@
       "submit": "Send Message"
     }
   },
+  "careers": {
+    "title": "Join the Modular Liquidity Movement",
+    "subtitle": "We're building the future of lending with builders, designers, and community minds who create with purpose and integrity.",
+    "applyNow": "Apply Now"
+  },
   "footer": {
-    "copyright": "All rights reserved."
+    "copyright": "© 2025 Moosh Protocol. All rights reserved."
+  },
+  "community": {
+    "title": "Community First. Agent First.",
+    "subtitle": "Humans lead, agents build, communities align."
+  },
+  "hero": {
+    "subtitle": "Modular liquidity infrastructure for the future of DeFi",
+    "metrics": {
+      "modularEngines": "Modular Engines",
+      "composability": "Composability",
+      "friction": "Friction"
+    }
+  },
+  "manifesto": {
+    "line1": "The future is modular.",
+    "line2": "Capital must move.",
+    "line3": "Risk must adapt.",
+    "line4": "Lending must evolve.",
+    "conclusion": "Moosh makes it possible."
+  },
+  "principles": {
+    "header": {
+      "eyebrow": "Foundation",
+      "title": "Moosh is built on three foundational principles",
+      "subtitle": "Each principle guides our approach to modular liquidity infrastructure."
+    },
+    "cards": {
+      "safety": {
+        "title": "Safety",
+        "subtitle": "Resilient by design",
+        "description": "Moosh protects capital through dynamic boundaries and adaptive execution."
+      },
+      "flexibility": {
+        "title": "Flexibility",
+        "subtitle": "Liquidity should move freely",
+        "description": "Moosh flows across protocols, modules, and market states without friction."
+      },
+      "intelligence": {
+        "title": "Intelligence",
+        "subtitle": "Modular environments demand modular thinking",
+        "description": "Moosh adapts through logic, data, and intent-aware execution in real time."
+      }
+    }
+  },
+  "protocol": {
+    "header": {
+      "title": "Core Modules",
+      "subtitle": "Built for ultra-low latency modular infrastructure and composable liquidity.",
+      "tagline": "Explore the four modular engines that power Moosh"
+    },
+    "modules": {
+      "liquidation": {
+        "title": "Liquidation Engine",
+        "description": "Real-time, MEVM-native execution with intelligent risk logic.",
+        "sub": ["Risk Assessment", "Execution Engine", "MEVM Integration"]
+      },
+      "risk": {
+        "title": "Risk Kernel",
+        "description": "AI-assisted logic that adapts dynamically to market conditions.",
+        "sub": ["AI Models", "Market Analysis", "Adaptive Logic"]
+      },
+      "liquidity": {
+        "title": "Liquidity Mesh",
+        "description": "Composable liquidity with seamless cross-module execution.",
+        "sub": ["Composability", "Cross-Module", "Seamless Execution"]
+      },
+      "megaeth": {
+        "title": "MegaETH Compatibility",
+        "description": "Natively integrated with modular infrastructure on MegaETH.",
+        "sub": ["Native Integration", "MegaETH"]
+      }
+    }
+  },
+  "builders": {
+    "eyebrow": "Not just builders.",
+    "title": "BUIDL by Artists, Philosophers, Poets — and Agents",
+    "subtitle": "Moosh is shaped by those who think modularly, speak in primitives, and build composable systems.",
+    "categories": {
+      "systems": {
+        "title": "Systems",
+        "description": "Architected foundations that enable composability, precision, and trust."
+      },
+      "research": {
+        "title": "Research",
+        "description": "Models, data, and principles that shape how systems adapt and stay secure."
+      },
+      "expression": {
+        "title": "Expression",
+        "description": "Where logic becomes language — modular, legible, and imbued with intent."
+      },
+      "autonomy": {
+        "title": "Autonomy",
+        "description": "Agents that act — adaptive, decentralized, and aligned with protocol goals."
+      }
+    }
+  }
+  ,
+  "jobs": {
+    "systemsArchitect": {
+      "title": "Systems Architect",
+      "description": "Build modular systems from smart contracts to interfaces.",
+      "skills": ["System Thinking", "Strategic Judgment", "Problem Seeking"]
+    },
+    "productDesigner": {
+      "title": "Product Designer",
+      "description": "Craft intuitive experiences across onchain and offchain flows.",
+      "skills": ["Intent Sensitivity", "Collaborative Flow", "Emotional Clarity"]
+    },
+    "opsGrowth": {
+      "title": "Operation & Growth",
+      "description": "Engage builders, spark conversations, grow the movement.",
+      "skills": ["Narrative Sense", "Social Engineering", "System Instinct"]
+    }
   }
 }

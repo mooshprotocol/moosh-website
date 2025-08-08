@@ -1,3 +1,4 @@
+import ClientText from '@/components/ui/ClientText';
 export default function Footer() {
   return (
     <footer className="bg-moosh-black border-t border-moosh-black-lighter">
@@ -14,35 +15,43 @@ export default function Footer() {
           
           {/* Navigation links - Right */}
           <nav className="flex flex-col md:flex-row gap-4 md:gap-8">
-            <a 
-              href="#" 
-              className="text-moosh-text-secondary hover:text-moosh-text-primary text-sm font-medium tracking-wide transition-all duration-300 ease-out"
-            >
-              Docs
-            </a>
-            <a 
-              href="#" 
-              className="text-moosh-text-secondary hover:text-moosh-text-primary text-sm font-medium tracking-wide transition-all duration-300 ease-out"
-            >
-              Twitter
-            </a>
-            <a 
-              href="#" 
-              className="text-moosh-text-secondary hover:text-moosh-text-primary text-sm font-medium tracking-wide transition-all duration-300 ease-out"
-            >
-              GitHub
-            </a>
+            <FooterLink labelKey="navigation.docs" />
+            <FooterLink labelKey="navigation.twitter" />
+            <FooterLink labelKey="navigation.github" />
           </nav>
           
         </div>
         
         {/* Copyright - Bottom center */}
         <div className="text-center pt-8 border-t border-moosh-black-lighter">
-          <p className="text-moosh-text-muted text-xs font-medium tracking-wider">
-            © 2025 Moosh Protocol. All rights reserved.
-          </p>
+          <FooterCopyright />
         </div>
       </div>
     </footer>
+  );
+}
+
+function FooterLink({ labelKey }: { labelKey: string }) {
+  // Keep Footer as server component and move i18n formatting client-side to a subcomponent
+  return (
+    <a
+      href="#"
+      className="text-moosh-text-secondary hover:text-moosh-text-primary text-sm font-medium tracking-wide transition-all duration-300 ease-out"
+    >
+      {/* render client text with hydration suppression to avoid mismatch */}
+      <span suppressHydrationWarning>
+        <ClientText k={labelKey} />
+      </span>
+    </a>
+  );
+}
+
+function FooterCopyright() {
+  return (
+    <p className="text-moosh-text-muted text-xs font-medium tracking-wider">
+      <span suppressHydrationWarning>
+        <ClientText k="footer.copyright" />
+      </span>
+    </p>
   );
 }

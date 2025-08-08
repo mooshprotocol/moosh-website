@@ -1,6 +1,7 @@
 // JobCard.tsx
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
+import Card from './Card';
 
 interface JobCardProps {
   title: string;
@@ -66,22 +67,19 @@ export default function JobCard({
   const colorClasses = getColorClasses(color);
 
   return (
-    <motion.div 
+    <m.div 
       className="group"
       {...cardAnimation}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
-      <div 
-        className={`relative text-center p-8 bg-gradient-to-br from-neutral-900/80 to-neutral-800/60 backdrop-blur-sm rounded-xl border border-neutral-700/50 hover:border-neutral-600/50 transition-all duration-500 ${colorClasses.glow} ${colorClasses.border} h-full flex flex-col justify-between overflow-hidden`}
+      <Card
+        className={`text-center flex flex-col justify-between ${colorClasses.border}`}
+        glowClass={colorClasses.glow}
+        interactiveHover
         onClick={onClick}
-        style={{
-          boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05), 0 4px 6px -1px rgba(0,0,0,0.1)',
-        }}
+        style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05), 0 4px 6px -1px rgba(0,0,0,0.1)' }}
       >
-        {/* Subtle gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-neutral-800/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        
         {/* Icon with enhanced styling */}
         <div className="relative z-10">
           <div className={`w-16 h-16 mx-auto mb-6 flex items-center justify-center ${colorClasses.iconBg} rounded-xl transition-all duration-500 group-hover:scale-105`}
@@ -107,7 +105,7 @@ export default function JobCard({
         {/* Skills with enhanced styling */}
         <div className="relative z-10 flex flex-wrap gap-2 justify-center">
           {skills.map((skill, skillIndex) => (
-            <motion.span 
+            <m.span 
               key={skillIndex} 
               className="bg-white/5 backdrop-blur-sm text-white/60 text-sm font-light rounded-full px-3 py-1.5 transition-all duration-300 group-hover:bg-white/10 group-hover:text-white/80 group-hover:shadow-[0_0_8px_rgba(255,255,255,0.1)]"
               {...tagAnimation}
@@ -122,10 +120,10 @@ export default function JobCard({
               }}
             >
               {skill}
-            </motion.span>
+            </m.span>
           ))}
         </div>
-      </div>
-    </motion.div>
+      </Card>
+    </m.div>
   );
 } 
