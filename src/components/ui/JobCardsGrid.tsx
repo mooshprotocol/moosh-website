@@ -93,7 +93,6 @@ export default function JobCardsGrid({ loading = false, items }: JobCardsGridPro
           icon={job.icon}
           color={job.color}
           index={index}
-          onClick={() => console.log(`Clicked on ${job.title}`)}
         />
       ))}
     </div>

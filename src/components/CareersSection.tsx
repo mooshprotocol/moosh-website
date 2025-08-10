@@ -56,7 +56,6 @@ export default function CareersSection() {
           viewport={{ once: true }}
         >
           <ApplyNowButton 
-            onClick={() => console.log('Apply Now clicked')}
             className="text-base px-6 py-3 font-medium"
           >
             {t('careers.applyNow', 'Apply Now')}

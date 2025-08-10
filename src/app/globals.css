@@ -83,27 +83,7 @@ section {
 }
 
 @layer components {
-  /* Enhanced Button System */
-  .btn-primary {
-    @apply bg-moosh-green text-black px-6 py-3 rounded-lg font-medium tracking-tight transition-all duration-300 hover:shadow-glow-green hover:scale-105 focus:outline-none focus:ring-2 focus:ring-moosh-green focus:ring-opacity-50;
-  }
-  
-  .btn-outline {
-    @apply border border-moosh-green text-moosh-green bg-transparent px-6 py-3 rounded-lg font-medium tracking-tight transition-all duration-300 hover:bg-moosh-green hover:text-black hover:shadow-glow-green focus:outline-none focus:ring-2 focus:ring-moosh-green focus:ring-opacity-50;
-  }
-  
-  .btn-secondary {
-    @apply bg-moosh-black-card text-moosh-text-primary px-6 py-3 rounded-lg font-medium tracking-tight transition-all duration-300 hover:bg-moosh-black-lighter focus:outline-none focus:ring-2 focus:ring-moosh-text-muted focus:ring-opacity-50;
-  }
-  
-  .card-hover {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;
-  }
-  
-  .card-glow {
-    @apply transition-all duration-300 hover:shadow-glow-green;
-  }
-  
+  /* Deprecated utility classes removed: buttons/card hovers now use UI components */
   .text-gradient {
     @apply bg-gradient-to-r from-moosh-green to-moosh-green-bright bg-clip-text text-transparent;
   }
@@ -132,45 +112,11 @@ section {
     @apply text-moosh-green;
   }
   
-  .hover\:ring-accent:hover {
-    @apply ring-moosh-green;
-  }
-  
-  .border-accent {
-    @apply border-moosh-green;
-  }
 }
 
 /* Header Button Styles */
 
-.btn-header-brand {
-  @apply border border-white text-white bg-transparent px-4 py-2 rounded text-sm font-medium relative overflow-hidden transition-all duration-300;
-  backface-visibility: hidden;
-  transition-timing-function: ease;
-}
-
-.btn-header-brand .btn-text {
-  @apply relative z-10 transition-colors duration-150;
-  transition-delay: 75ms;
-  transition-timing-function: ease;
-}
-
-.btn-header-brand .btn-bg {
-  @apply absolute inset-0 transform -translate-x-full transition-transform duration-300;
-  background: #00FF99;
-  transition-timing-function: ease;
-  will-change: transform;
-}
-
-.btn-header-brand:hover .btn-text,
-.btn-header-brand:focus-visible .btn-text {
-  @apply text-black;
-}
-
-.btn-header-brand:hover .btn-bg,
-.btn-header-brand:focus-visible .btn-bg {
-  @apply translate-x-0;
-}
+/* Deprecated .btn-header-brand replaced by TryMooshButton */
 
 /* MOOSH Logo Styling */
 .moosh-logo {
@@ -384,44 +330,7 @@ section {
 }
 
 /* Agent First Pulsing Glow */
-.agent-first-glow {
-  color: #00ff9c;
-  font-weight: 600;
-  text-shadow: 
-    0 0 10px rgba(0, 255, 156, 0.4),
-    0 0 20px rgba(0, 255, 156, 0.3),
-    0 0 30px rgba(0, 255, 156, 0.2),
-    0 0 40px rgba(0, 255, 156, 0.1);
-  animation: agent-pulse 2s ease-in-out infinite;
-  display: inline-block;
-}
-
-@keyframes agent-pulse {
-  0% {
-    transform: scale(1);
-    text-shadow: 
-      0 0 10px rgba(0, 255, 156, 0.4),
-      0 0 20px rgba(0, 255, 156, 0.3),
-      0 0 30px rgba(0, 255, 156, 0.2),
-      0 0 40px rgba(0, 255, 156, 0.1);
-  }
-  50% {
-    transform: scale(1.05);
-    text-shadow: 
-      0 0 15px rgba(0, 255, 156, 0.6),
-      0 0 25px rgba(0, 255, 156, 0.4),
-      0 0 35px rgba(0, 255, 156, 0.3),
-      0 0 45px rgba(0, 255, 156, 0.2);
-  }
-  100% {
-    transform: scale(1);
-    text-shadow: 
-      0 0 10px rgba(0, 255, 156, 0.4),
-      0 0 20px rgba(0, 255, 156, 0.3),
-      0 0 30px rgba(0, 255, 156, 0.2),
-      0 0 40px rgba(0, 255, 156, 0.1);
-  }
-}
+/* Deprecated .agent-first-glow removed */
 
 /* Enhanced Card Hover Effects */
 .group:hover .group-hover\:text-gradient {
