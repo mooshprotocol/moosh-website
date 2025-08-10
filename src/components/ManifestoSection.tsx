@@ -46,20 +46,27 @@ export default function ManifestoSection() {
             ))}
           </div>
           
-          {/* Enhanced Decorative Line */}
+          {/* Refined Divider - neutral line with subtle moving green highlight */}
           <m.div 
-            className="flex items-center justify-center gap-8 mb-16"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            className="relative my-16"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="w-24 h-px bg-gradient-to-r from-transparent to-moosh-text-muted"></div>
-            <div className="relative">
-              <div className="w-4 h-4 bg-moosh-green rounded-full animate-pulse-slow shadow-glow-green"></div>
-              <div className="absolute inset-0 w-4 h-4 bg-moosh-green rounded-full animate-ping opacity-30"></div>
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-moosh-text-muted/30 to-transparent"></div>
+            {/* moving highlight */}
+            <div className="absolute inset-0 overflow-hidden">
+              <m.div
+                className="absolute top-0 h-px bg-gradient-to-r from-transparent via-moosh-green/60 to-transparent"
+                style={{ width: '20%' }}
+                initial={{ left: '-20%' }}
+                animate={{ left: ['-20%', '100%'] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
+              />
             </div>
-            <div className="w-24 h-px bg-gradient-to-l from-transparent to-moosh-text-muted"></div>
+            {/* tiny center marker for visual anchor */}
+            <div className="absolute left-1/2 -translate-x-1/2 -top-1 w-1 h-1 rounded-full bg-moosh-green/60"></div>
           </m.div>
           
           {/* Enhanced Conclusion */}
@@ -73,14 +80,7 @@ export default function ManifestoSection() {
             {t('manifesto.conclusion', 'Moosh makes it possible.')}
           </m.p>
           
-          {/* Full-width divider line - outside the max-width container */}
-          <m.div 
-            className="w-full h-px bg-gradient-to-r from-transparent via-moosh-green to-transparent mt-8"
-            initial={{ opacity: 0, scaleX: 0 }}
-            whileInView={{ opacity: 1, scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            viewport={{ once: true }}
-          ></m.div>
+          {/* Removed the previous strong green full-width divider for a more subtle aesthetic */}
         </div>
       </div>
     </section>
