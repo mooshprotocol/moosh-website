@@ -1,4 +1,5 @@
 import React from 'react';
+import { Typography } from './Typography';
 
 interface SectionHeaderProps {
   eyebrow?: string;
@@ -21,19 +22,17 @@ function SectionHeader({
   return (
     <div className={`${isCenter ? 'text-center' : ''} ${className}`}>
       {eyebrow ? (
-        <p className="text-xs uppercase tracking-widest text-moosh-green mb-4 font-semibold">
-          {eyebrow}
-        </p>
+        <Typography.Eyebrow className="mb-4">{eyebrow}</Typography.Eyebrow>
       ) : null}
 
-      <h2 className={`text-3xl md:text-4xl font-bold text-moosh-text-primary tracking-tight ${subtitle ? 'mb-8' : ''}`}>
+      <Typography.H2 align={align} className={subtitle ? 'mb-8' : ''}>
         {title}
-      </h2>
+      </Typography.H2>
 
       {subtitle ? (
-        <p className={`text-lg text-moosh-text-secondary leading-relaxed ${isCenter ? 'max-w-2xl mx-auto' : ''}`}>
+        <Typography.Text align={align} className={isCenter ? 'max-w-2xl mx-auto' : ''}>
           {subtitle}
-        </p>
+        </Typography.Text>
       ) : null}
 
       {children}

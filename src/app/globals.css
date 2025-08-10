@@ -159,6 +159,7 @@ section {
   @apply absolute inset-0 transform -translate-x-full transition-transform duration-300;
   background: #00FF99;
   transition-timing-function: ease;
+  will-change: transform;
 }
 
 .btn-header-brand:hover .btn-text,

@@ -3,6 +3,7 @@
 import { m } from 'framer-motion';
 import SectionHeader from './ui/SectionHeader';
 import { useI18n } from '@/components/I18nProvider';
+import { Typography } from './ui/Typography';
 
 export default function PrinciplesSection() {
   const { t } = useI18n();
@@ -129,19 +130,19 @@ export default function PrinciplesSection() {
                 </div>
                 
                 {/* Enhanced Title */}
-                <h3 className="text-xl font-semibold text-moosh-text-primary mb-3 tracking-tight group-hover:text-white transition-colors duration-300">
+                <Typography.H3 className="text-xl font-semibold text-moosh-text-primary mb-3 tracking-tight group-hover:text-white transition-colors duration-300">
                   {principle.title}
-                </h3>
+                </Typography.H3>
                 
                 {/* Enhanced Subtitle */}
-                <p className={`text-sm mb-4 font-medium ${colorClasses.icon} transition-all duration-300 ease-out`}>
+                <Typography.Text className={`text-sm mb-4 font-medium ${colorClasses.icon} transition-all duration-300 ease-out`}>
                   {principle.subtitle}
-                </p>
+                </Typography.Text>
                 
                 {/* Enhanced Description */}
-                <p className="text-sm text-moosh-text-secondary leading-relaxed group-hover:text-moosh-text-primary transition-colors duration-300">
+                <Typography.Text className="text-sm text-moosh-text-secondary leading-relaxed group-hover:text-moosh-text-primary transition-colors duration-300">
                   {principle.description}
-                </p>
+                </Typography.Text>
               </m.div>
             );
           })}

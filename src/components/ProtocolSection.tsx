@@ -3,6 +3,7 @@
 import { m } from 'framer-motion';
 import SectionHeader from './ui/SectionHeader';
 import { useI18n } from '@/components/I18nProvider';
+import { Typography } from './ui/Typography';
 
 export default function ProtocolSection() {
   const { t } = useI18n();
@@ -157,12 +158,12 @@ export default function ProtocolSection() {
                   
                   {/* Enhanced Content */}
                   <div className="flex-1">
-                    <h3 className={`text-xl font-bold mb-3 tracking-tight ${colorClasses.gradient} transition-all duration-500 ease-out`}>
+                    <Typography.H3 className={`text-xl font-bold mb-3 tracking-tight ${colorClasses.gradient} transition-all duration-500 ease-out`}>
                       {module.title}
-                    </h3>
-                    <p className="text-sm text-moosh-text-secondary leading-relaxed mb-4 group-hover:text-moosh-text-primary transition-colors duration-300">
+                    </Typography.H3>
+                    <Typography.Text className="text-sm text-moosh-text-secondary leading-relaxed mb-4 group-hover:text-moosh-text-primary transition-colors duration-300">
                       {module.description}
-                    </p>
+                    </Typography.Text>
                     
                     {/* Sub-modules */}
                     <div className="space-y-2">
@@ -176,9 +177,9 @@ export default function ProtocolSection() {
                           viewport={{ once: true }}
                         >
                           <div className="w-1 h-1 bg-moosh-text-muted rounded-full group-hover:bg-moosh-green transition-colors duration-300"></div>
-                          <span className="text-xs text-moosh-text-muted tracking-wide group-hover:text-moosh-text-secondary transition-colors duration-300">
+                          <Typography.Text className="text-xs text-moosh-text-muted tracking-wide group-hover:text-moosh-text-secondary transition-colors duration-300">
                             {subModule}
-                          </span>
+                          </Typography.Text>
                         </m.div>
                       ))}
                     </div>

@@ -3,6 +3,7 @@
 import { m, useReducedMotion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Card from './ui/Card';
+import { Typography } from './ui/Typography';
 
 export default function BuildersSection() {
   const shouldReduceMotion = useReducedMotion();
@@ -130,7 +131,7 @@ export default function BuildersSection() {
   };
 
   return (
-    <section className="bg-[#0e0e0e] py-20 md:py-28 relative overflow-hidden" ref={sectionRef}>
+    <section className="bg-moosh-black-medium py-20 md:py-28 relative overflow-hidden" ref={sectionRef}>
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5" aria-hidden="true"></div>
       
@@ -157,19 +158,17 @@ export default function BuildersSection() {
           viewport={{ once: true }}
         >
           {/* Eyebrow Text */}
-          <h3 className="text-sm text-gray-500 uppercase tracking-wide mb-2">
-            Not just builders.
-          </h3>
-          
+          <Typography.Eyebrow className="mb-2">Not just builders.</Typography.Eyebrow>
+
           {/* Main Title */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
-            BUIDL by Artists, Philosophers, Poets — and <span className="text-[#00FF9A] drop-shadow-[0_0_10px_rgba(0,255,154,0.5)]">Agents</span>
-          </h2>
-          
+          <Typography.H2 align="center" className="mb-4">
+            BUIDL by Artists, Philosophers, Poets — and <span className="text-moosh-green">Agents</span>
+          </Typography.H2>
+
           {/* Subtitle */}
-          <p className="text-base text-gray-400 max-w-2xl mx-auto leading-relaxed mt-6">
+          <Typography.Text align="center" className="max-w-2xl mx-auto mt-6">
             Moosh is shaped by those who think modularly, speak in primitives, and build composable systems.
-          </p>
+          </Typography.Text>
         </m.div>
         
         {/* Breathing Space */}
@@ -194,11 +193,11 @@ export default function BuildersSection() {
                 } : {}}
               >
                 <Card
-                  className={`text-center ${
-                    category.title === "Systems" ? "hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]" :
-                    category.title === "Research" ? "hover:shadow-[0_0_20px_rgba(139,92,246,0.2)]" :
-                    category.title === "Expression" ? "hover:shadow-[0_0_20px_rgba(16,185,129,0.2)]" :
-                    category.title === "Autonomy" ? "hover:shadow-[0_0_25px_rgba(245,158,11,0.3)]" : ""
+          className={`text-center ${
+                    category.title === "Systems" ? "hover:shadow-glow-blue" :
+                    category.title === "Research" ? "hover:shadow-glow-purple" :
+                    category.title === "Expression" ? "hover:shadow-glow-green" :
+                    category.title === "Autonomy" ? "hover:shadow-glow-orange" : ""
                   }`}
                   glowClass={colorClasses.glow}
                   withOverlay
@@ -242,7 +241,7 @@ export default function BuildersSection() {
                          boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1), 0 2px 4px rgba(0,0,0,0.2)',
                        }}>
                     <m.div 
-                      className={`w-8 h-8 transition-all duration-500 group-hover:drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]`}
+                      className={`w-8 h-8 transition-all duration-500`}
                       whileHover={!shouldReduceMotion ? { 
                         rotate: category.title === "Systems" ? 45 : 
                                category.title === "Research" ? 0 : 
@@ -287,7 +286,7 @@ export default function BuildersSection() {
                   {category.title}
                 </h4>
                 <m.p 
-                  className="relative z-10 text-neutral-400 text-base leading-relaxed group-hover:text-neutral-300 transition-colors duration-300 flex-1"
+                  className="relative z-10 text-moosh-text-secondary text-base leading-relaxed group-hover:text-moosh-text-primary transition-colors duration-300 flex-1"
                                   whileHover={!shouldReduceMotion && category.title === "Expression" ? {
                   x: [-2, 2, -2],
                   transition: {
