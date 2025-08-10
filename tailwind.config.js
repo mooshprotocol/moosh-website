@@ -25,6 +25,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        // Typography scale for consistent usage across pages
+        display: ['3rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }], // 48px
+        h1: ['2.5rem', { lineHeight: '1.15', letterSpacing: '-0.01em' }], // 40px
+        h2: ['2rem', { lineHeight: '1.2' }], // 32px
+        h3: ['1.5rem', { lineHeight: '1.35' }], // 24px
+        body: ['1rem', { lineHeight: '1.75' }], // 16px
+        small: ['0.875rem', { lineHeight: '1.6' }], // 14px
+        xsmall: ['0.75rem', { lineHeight: '1.45' }], // 12px
+      },
       colors: {
         // Enhanced color palette for Moosh
         moosh: {

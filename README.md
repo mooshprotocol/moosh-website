@@ -140,6 +140,30 @@ The project uses Tailwind CSS. Configuration can be found in:
 - `tailwind.config.js` - Tailwind configuration
 - `src/app/globals.css` - Global styles
 
+#### Typography & UI Consistency
+
+- Use `src/components/ui/Typography.tsx` for page headings and text: `H1`, `H2`, `H3`, `Text`, `Eyebrow`.
+- Use tokens under `moosh.*` (colors/shadows/spacing) from `tailwind.config.js`.
+- Prefer primitives in `src/components/ui`: `Button`, `Card`, `Input`, `Label`, `Textarea`, `Skeleton`, `Spinner`, `EmptyState`.
+- Avoid raw CSS values in components; if a token is missing, add it to Tailwind config first.
+
+Examples:
+
+```tsx
+import { Typography } from '@/components/ui/Typography';
+import { Label } from '@/components/ui/Label';
+import { Input } from '@/components/ui/Input';
+import { EmptyState } from '@/components/ui/EmptyState';
+
+<Typography.H2 align="center" className="mb-6">Section Title</Typography.H2>
+<Typography.Text tone="secondary">Some paragraph...</Typography.Text>
+
+<Label required>Email</Label>
+<Input type="email" placeholder="you@example.com" />
+
+<EmptyState title="No data yet" description="Please add your first item." />
+```
+
 ## Contributing
 
 1. Fork the repository

@@ -1,4 +1,5 @@
 import React from 'react';
+import { mergeClassNames } from '@/lib/classnames';
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   glowClass?: string; // extra hover shadow class
@@ -6,9 +7,7 @@ interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   withOverlay?: boolean; // show subtle gradient overlay on hover
 }
 
-function cn(...classes: Array<string | undefined | false>) {
-  return classes.filter(Boolean).join(' ');
-}
+// Use shared mergeClassNames to keep class merging consistent across the codebase
 
 export default function Card({
   glowClass,
@@ -20,7 +19,7 @@ export default function Card({
 }: CardProps) {
   return (
     <div
-      className={cn(
+      className={mergeClassNames(
         'group relative p-8 bg-gradient-to-br from-neutral-900/80 to-neutral-800/60 backdrop-blur-sm rounded-xl',
         'border border-neutral-700/50 hover:border-neutral-600/50',
         'transition-all duration-500 h-full overflow-hidden',

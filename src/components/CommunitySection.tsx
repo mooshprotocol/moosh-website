@@ -2,6 +2,8 @@
 
 import { m } from 'framer-motion';
 import { useI18n } from '@/components/I18nProvider';
+import { Typography } from './ui/Typography';
+import CommunityBackgroundFX from './CommunityBackgroundFX';
 
 export default function CommunitySection() {
   const { t } = useI18n();
@@ -17,18 +19,20 @@ export default function CommunitySection() {
         <div className="absolute top-1/2 right-1/6 w-1.5 h-1.5 bg-moosh-green/15 rounded-full animate-pulse" style={{animationDelay: '5s'}}></div>
       </div>
       
+      <CommunityBackgroundFX density={0.9} speed={0.8} brightness={0.18} />
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
           {/* Main Tagline */}
           <m.div
+            className="inline-block"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-moosh-text-primary tracking-tight leading-tight">
+            <Typography.H2 align="center" className="text-4xl md:text-5xl">
               {t('community.title', 'Community First. Agent First.')}
-            </h2>
+            </Typography.H2>
           </m.div>
           
           {/* Optional microcopy */}
@@ -38,9 +42,9 @@ export default function CommunitySection() {
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <p className="text-base md:text-lg text-moosh-text-muted tracking-widest mt-8 font-light">
+            <Typography.Text align="center" size="lg" className="mt-8 tracking-widest font-light">
               {t('community.subtitle', 'Humans lead, agents build, communities align.')}
-            </p>
+            </Typography.Text>
           </m.div>
         </div>
       </div>

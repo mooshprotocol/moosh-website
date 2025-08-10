@@ -2,6 +2,7 @@
 
 import { m, useInView } from 'framer-motion';
 import ParallaxBackground from './ParallaxBackground';
+import { Typography } from './ui/Typography';
 import { useI18n } from '@/components/I18nProvider';
 import { useRef } from 'react';
 
@@ -109,10 +110,12 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
           >
-            <div className="typewriter-container">
-              <span className="typewriter-text">{t('hero.subtitle', 'Modular liquidity infrastructure for the future of DeFi')}</span>
-              <span className="typewriter-cursor">|</span>
-            </div>
+            <Typography.Text align="center" tone="secondary" size="lg">
+              <span className="typewriter-container">
+                <span className="typewriter-text">{t('hero.subtitle', 'Modular liquidity infrastructure for the future of DeFi')}</span>
+                <span className="typewriter-cursor">|</span>
+              </span>
+            </Typography.Text>
           </m.div>
 
           {/* Key Metrics */}
@@ -124,15 +127,15 @@ export default function HeroSection() {
           >
             <div className="text-center group">
               <div className="text-4xl md:text-5xl font-black text-moosh-green mb-3 group-hover:scale-105 transition-transform duration-300 subtle-shimmer">4</div>
-              <div className="text-xs text-gray-500 tracking-widest uppercase font-medium">{t('hero.metrics.modularEngines', 'Modular Engines')}</div>
+              <div className="text-xs text-moosh-text-muted tracking-widest uppercase font-medium">{t('hero.metrics.modularEngines', 'Modular Engines')}</div>
             </div>
             <div className="text-center group">
               <div className="text-4xl md:text-5xl font-black text-moosh-green mb-3 group-hover:scale-105 transition-transform duration-300 subtle-shimmer">∞</div>
-              <div className="text-xs text-gray-500 tracking-widest uppercase font-medium">{t('hero.metrics.composability', 'Composability')}</div>
+              <div className="text-xs text-moosh-text-muted tracking-widest uppercase font-medium">{t('hero.metrics.composability', 'Composability')}</div>
             </div>
             <div className="text-center group">
               <div className="text-4xl md:text-5xl font-black text-moosh-green mb-3 group-hover:scale-105 transition-transform duration-300 subtle-shimmer">0</div>
-              <div className="text-xs text-gray-500 tracking-widest uppercase font-medium">{t('hero.metrics.friction', 'Friction')}</div>
+              <div className="text-xs text-moosh-text-muted tracking-widest uppercase font-medium">{t('hero.metrics.friction', 'Friction')}</div>
             </div>
           </m.div>
         </m.div>

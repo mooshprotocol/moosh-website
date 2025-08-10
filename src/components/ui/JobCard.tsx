@@ -39,7 +39,7 @@ export default function JobCard({
       blue: {
         icon: "text-moosh-accent-blue",
         iconBg: "bg-moosh-accent-blue/10",
-        glow: "hover:shadow-[0_0_25px_rgba(59,130,246,0.25)]",
+        glow: "hover:shadow-glow-blue",
         border: "hover:border-moosh-accent-blue/20",
         tagBg: "bg-moosh-accent-blue/10",
         tagBorder: "border-moosh-accent-blue/20"
@@ -47,7 +47,7 @@ export default function JobCard({
       purple: {
         icon: "text-moosh-accent-purple",
         iconBg: "bg-moosh-accent-purple/10",
-        glow: "hover:shadow-[0_0_25px_rgba(139,92,246,0.25)]",
+        glow: "hover:shadow-glow-purple",
         border: "hover:border-moosh-accent-purple/20",
         tagBg: "bg-moosh-accent-purple/10",
         tagBorder: "border-moosh-accent-purple/20"
@@ -55,7 +55,7 @@ export default function JobCard({
       green: {
         icon: "text-moosh-green",
         iconBg: "bg-moosh-green/10",
-        glow: "hover:shadow-[0_0_25px_rgba(16,185,129,0.25)]",
+        glow: "hover:shadow-glow-green",
         border: "hover:border-moosh-green/20",
         tagBg: "bg-moosh-green/10",
         tagBorder: "border-moosh-green/20"
@@ -86,7 +86,7 @@ export default function JobCard({
                style={{
                  boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1), 0 2px 4px rgba(0,0,0,0.2)',
                }}>
-            <div className={`${colorClasses.icon} w-8 h-8 transition-all duration-500 group-hover:translate-y-[-2px] group-hover:drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]`}>
+            <div className={`${colorClasses.icon} w-8 h-8 transition-all duration-500 group-hover:translate-y-[-2px]`}>
               {icon}
             </div>
           </div>
@@ -98,7 +98,7 @@ export default function JobCard({
         </h3>
         
         {/* Description */}
-        <p className="relative z-10 text-neutral-400 text-base leading-relaxed mb-6 group-hover:text-neutral-300 transition-colors duration-300">
+        <p className="relative z-10 text-moosh-text-secondary text-base leading-relaxed mb-6 group-hover:text-moosh-text-primary transition-colors duration-300">
           {description}
         </p>
         
@@ -107,7 +107,7 @@ export default function JobCard({
           {skills.map((skill, skillIndex) => (
             <m.span 
               key={skillIndex} 
-              className="bg-white/5 backdrop-blur-sm text-white/60 text-sm font-light rounded-full px-3 py-1.5 transition-all duration-300 group-hover:bg-white/10 group-hover:text-white/80 group-hover:shadow-[0_0_8px_rgba(255,255,255,0.1)]"
+              className="bg-white/5 backdrop-blur-sm text-white/60 text-sm font-light rounded-full px-3 py-1.5 transition-all duration-300 group-hover:bg-white/10 group-hover:text-white/80"
               {...tagAnimation}
               transition={{ 
                 ...tagAnimation.transition,

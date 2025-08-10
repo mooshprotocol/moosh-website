@@ -1,11 +1,22 @@
 // JobCardsGrid.tsx
 import React from 'react';
+import { Skeleton } from './Skeleton';
+import { EmptyState } from './EmptyState';
 import { useI18n } from '@/components/I18nProvider';
 import JobCard from './JobCard';
 
-export default function JobCardsGrid() {
+interface JobCardsGridProps {
+  loading?: boolean;
+  items?: typeof defaultJobs;
+}
+
+const defaultJobs = [
+  // populated in component to keep i18n lookup
+] as const;
+
+export default function JobCardsGrid({ loading = false, items }: JobCardsGridProps) {
   const { t } = useI18n();
-  const jobs = [
+  const jobs = items ?? [
     {
       title: t('jobs.systemsArchitect.title', 'Systems Architect'),
       description: t('jobs.systemsArchitect.description', 'Build modular systems from smart contracts to interfaces.'),
@@ -41,6 +52,36 @@ export default function JobCardsGrid() {
     }
   ];
 
+  if (loading) {
+    return (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        {Array.from({ length: 3 }).map((_, idx) => (
+          <div key={idx} className="p-8 rounded-2xl border border-white/10 bg-white/5">
+            <div className="flex flex-col items-center gap-4">
+              <Skeleton className="w-16 h-16 rounded-xl" />
+              <Skeleton className="w-40 h-5" />
+              <Skeleton className="w-64 h-4" />
+              <div className="flex gap-2 mt-2">
+                <Skeleton className="w-16 h-6 rounded-full" />
+                <Skeleton className="w-20 h-6 rounded-full" />
+                <Skeleton className="w-12 h-6 rounded-full" />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  if (!jobs.length) {
+    return (
+      <EmptyState
+        title={t('jobs.empty.title', 'No openings for now')}
+        description={t('jobs.empty.description', 'We are always open to exceptional talent. Check back soon.')}
+      />
+    );
+  }
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
       {jobs.map((job, index) => (
@@ -52,7 +93,6 @@ export default function JobCardsGrid() {
           icon={job.icon}
           color={job.color}
           index={index}
-          onClick={() => console.log(`Clicked on ${job.title}`)}
         />
       ))}
     </div>

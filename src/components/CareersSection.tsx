@@ -33,7 +33,7 @@ export default function CareersSection() {
         >
           <SectionHeader
             title={<span className="text-2xl md:text-3xl">{t('careers.title', 'Join the Modular Liquidity Movement')}</span>}
-            subtitle={<span className="text-neutral-400">{t('careers.subtitle', "We're building the future of lending with builders, designers, and community minds who create with purpose and integrity.")}</span>}
+            subtitle={<span className="text-moosh-text-secondary">{t('careers.subtitle', "We're building the future of lending with builders, designers, and community minds who create with purpose and integrity.")}</span>}
           />
         </m.div>
         
@@ -56,7 +56,6 @@ export default function CareersSection() {
           viewport={{ once: true }}
         >
           <ApplyNowButton 
-            onClick={() => console.log('Apply Now clicked')}
             className="text-base px-6 py-3 font-medium"
           >
             {t('careers.applyNow', 'Apply Now')}
