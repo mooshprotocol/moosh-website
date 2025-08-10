@@ -15,7 +15,6 @@ export default function Footer() {
           
           {/* Navigation links - Right */}
           <nav className="flex flex-col md:flex-row gap-4 md:gap-8">
-            <FooterLink labelKey="navigation.docs" />
             <FooterLink labelKey="navigation.twitter" />
             <FooterLink labelKey="navigation.github" />
           </nav>
