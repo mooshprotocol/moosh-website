@@ -8,7 +8,7 @@ export default function Footer() {
           
           {/* Brand name - Left */}
           <div className="mb-8 md:mb-0">
-            <h2 className="text-2xl font-medium text-moosh-text-primary tracking-wide">
+            <h2 className="text-3xl font-black text-white tracking-tight font-orbitron">
               Moosh
             </h2>
           </div>
@@ -36,7 +36,7 @@ function FooterLink({ labelKey }: { labelKey: string }) {
   return (
     <a
       href="#"
-      className="text-moosh-text-secondary hover:text-moosh-text-primary text-sm font-medium tracking-wide transition-all duration-300 ease-out"
+      className="text-moosh-text-secondary hover:text-white text-base font-semibold tracking-wider transition-all duration-300 ease-out uppercase"
     >
       {/* render client text with hydration suppression to avoid mismatch */}
       <span suppressHydrationWarning>
@@ -48,7 +48,7 @@ function FooterLink({ labelKey }: { labelKey: string }) {
 
 function FooterCopyright() {
   return (
-    <p className="text-moosh-text-muted text-xs font-medium tracking-wider">
+    <p className="text-moosh-text-muted text-sm font-light tracking-widest">
       <span suppressHydrationWarning>
         <ClientText k="footer.copyright" />
       </span>

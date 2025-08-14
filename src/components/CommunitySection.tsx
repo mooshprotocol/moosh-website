@@ -20,9 +20,12 @@ export default function CommunitySection() {
       </div>
       
       <CommunityBackgroundFX density={0.9} speed={0.8} brightness={0.18} />
+      
+
+      
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
-          {/* Main Tagline */}
+          {/* Main Tagline with enhanced styling */}
           <m.div
             className="inline-block"
             initial={{ opacity: 0, y: 30 }}
@@ -30,21 +33,48 @@ export default function CommunitySection() {
             transition={{ duration: 1.2, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <Typography.H2 align="center" className="text-4xl md:text-5xl">
-              {t('community.title', 'Community First. Agent First.')}
+            <Typography.H2 align="center" className="text-4xl md:text-5xl text-white font-black">
+              {t('community.title', 'Community First.')}
             </Typography.H2>
           </m.div>
           
-          {/* Optional microcopy */}
+          {/* Enhanced subtitle with individual phrase styling */}
           <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
+            className="mt-6"
           >
-            <Typography.Text align="center" size="lg" className="mt-8 tracking-widest font-light">
-              {t('community.subtitle', 'Humans lead, agents build, communities align.')}
-            </Typography.Text>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-lg md:text-xl tracking-wider font-light">
+              <m.span 
+                className="text-moosh-text-secondary hover:text-white hover:scale-105 transition-all duration-300 cursor-default"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                viewport={{ once: true }}
+              >
+                Humans lead.
+              </m.span>
+              <m.span 
+                className="text-moosh-text-secondary hover:text-white hover:scale-105 transition-all duration-300 cursor-default"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.0 }}
+                viewport={{ once: true }}
+              >
+                Agents build.
+              </m.span>
+              <m.span 
+                className="text-moosh-text-secondary hover:text-white hover:scale-105 transition-all duration-300 cursor-default"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 1.2 }}
+                viewport={{ once: true }}
+              >
+                Communities align.
+              </m.span>
+            </div>
           </m.div>
         </div>
       </div>
