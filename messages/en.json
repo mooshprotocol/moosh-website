@@ -53,7 +53,7 @@
   },
   "careers": {
     "title": "Join the Modular Liquidity Movement",
-    "subtitle": "We're building the future of lending with builders, designers, and community minds who create with purpose and integrity.",
+          "subtitle": "We're reimagining lending with those who build with intent — systems thinkers, designers, and community catalysts.",
     "applyNow": "Apply Now"
   },
   "footer": {
@@ -110,47 +110,47 @@
     },
     "modules": {
       "liquidation": {
-        "title": "Liquidation Engine",
-        "description": "Real-time, MEVM-native execution with intelligent risk logic.",
-        "sub": ["Risk Assessment", "Execution Engine", "MEVM Integration"]
+        "title": "Controller Engine",
+        "description": "Real-time, orchestration-native execution with intelligent routing logic.",
+        "sub": ["Route Management", "Execution Engine", "Orchestration Integration"]
       },
       "risk": {
-        "title": "Risk Kernel",
-        "description": "AI-assisted logic that adapts dynamically to market conditions.",
-        "sub": ["AI Models", "Market Analysis", "Adaptive Logic"]
+        "title": "Vault Kernel",
+        "description": "AI-assisted logic that adapts dynamically to liquidity conditions.",
+        "sub": ["Asset Models", "Liquidity Analysis", "Adaptive Logic"]
       },
       "liquidity": {
-        "title": "Liquidity Mesh",
-        "description": "Composable liquidity with seamless cross-module execution.",
-        "sub": ["Composability", "Cross-Module", "Seamless Execution"]
+        "title": "Risk Mesh",
+        "description": "Composable risk management with seamless cross-module validation.",
+        "sub": ["Multi-Factor", "Cross-Validation", "Seamless Execution"]
       },
       "megaeth": {
-        "title": "MegaETH Compatibility",
-        "description": "Natively integrated with modular infrastructure on MegaETH.",
-        "sub": ["Native Integration", "MegaETH"]
+        "title": "Liquidation Core",
+        "description": "Natively integrated with dynamic risk models on modular architecture.",
+        "sub": ["Risk Models", "Liquidation Optimization", "Native Integration"]
       }
     }
   },
   "builders": {
     "eyebrow": "Not just builders.",
-    "title": "BUIDL by Artists, Philosophers, Poets — and Agents",
-    "subtitle": "Moosh is shaped by those who think modularly, speak in primitives, and build composable systems.",
+    "title": "BUIDL by artists, philosophers, poets — and agents.",
+    "subtitle": "Moosh is shaped by modular minds: those who think in primitives, speak in logic, and build systems that compose.",
     "categories": {
       "systems": {
         "title": "Systems",
-        "description": "Architected foundations that enable composability, precision, and trust."
+        "description": "Architected foundations for precision, composability, and trust."
       },
       "research": {
         "title": "Research",
-        "description": "Models, data, and principles that shape how systems adapt and stay secure."
+        "description": "Models, data, and principles that make systems adaptive — and secure by design."
       },
       "expression": {
         "title": "Expression",
-        "description": "Where logic becomes language — modular, legible, and imbued with intent."
+        "description": "Where logic becomes language — modular, legible, and shaped by intent."
       },
       "autonomy": {
         "title": "Autonomy",
-        "description": "Agents that act — adaptive, decentralized, and aligned with protocol goals."
+        "description": "Agents that act — autonomous, aligned, and adaptive to protocol intent."
       }
     }
   }
@@ -158,8 +158,8 @@
   "jobs": {
     "systemsArchitect": {
       "title": "Systems Architect",
-      "description": "Build modular systems from smart contracts to interfaces.",
-      "skills": ["System Thinking", "Strategic Judgment", "Problem Seeking"]
+      "description": "Build modular systems from contracts to interfaces.",
+      "skills": ["Systemic Thinking", "Strategic Design", "Solidity-to-UI Awareness"]
     },
     "productDesigner": {
       "title": "Product Designer",
@@ -167,9 +167,9 @@
       "skills": ["Intent Sensitivity", "Collaborative Flow", "Emotional Clarity"]
     },
     "opsGrowth": {
-      "title": "Operation & Growth",
-      "description": "Engage builders, spark conversations, grow the movement.",
-      "skills": ["Narrative Sense", "Social Engineering", "System Instinct"]
+      "title": "Operations & Growth",
+      "description": "Engage builders, shape narratives, and grow the movement.",
+      "skills": ["Narrative Sense", "Social Engineering", "Protocol Intuition"]
     }
   }
 }

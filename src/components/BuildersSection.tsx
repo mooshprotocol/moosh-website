@@ -26,7 +26,7 @@ export default function BuildersSection() {
   const categories = [
     {
       title: "Systems",
-      description: "Architected foundations that enable composability, precision, and trust.",
+      description: "Architected foundations for precision, composability, and trust.",
       color: "blue",
       icon: (
         <svg viewBox="0 0 80 80" className="w-full h-full">
@@ -44,7 +44,7 @@ export default function BuildersSection() {
     },
     {
       title: "Research",
-      description: "Models, data, and principles that shape how systems adapt and stay secure.",
+      description: "Models, data, and principles that make systems adaptive — and secure by design.",
       color: "purple",
       icon: (
         <svg viewBox="0 0 80 80" className="w-full h-full">
@@ -62,7 +62,7 @@ export default function BuildersSection() {
     },
     {
       title: "Expression",
-      description: "Where logic becomes language — modular, legible, and imbued with intent.",
+      description: "Where logic becomes language — modular, legible, and shaped by intent.",
       color: "green",
       icon: (
         <svg viewBox="0 0 80 80" className="w-full h-full">
@@ -76,7 +76,7 @@ export default function BuildersSection() {
     },
     {
       title: "Autonomy",
-      description: "Agents that act — adaptive, decentralized, and aligned with protocol goals.",
+      description: "Agents that act — autonomous, aligned, and adaptive to protocol intent.",
       color: "orange",
       icon: (
         <svg viewBox="0 0 80 80" className="w-full h-full">
@@ -162,12 +162,12 @@ export default function BuildersSection() {
 
           {/* Main Title */}
           <Typography.H2 align="center" className="mb-4">
-            BUIDL by Artists, Philosophers, Poets — and <span className="text-moosh-green">Agents</span>
+            BUIDL by artists, philosophers, poets — and <span className="text-moosh-green">agents</span>.
           </Typography.H2>
 
           {/* Subtitle */}
           <Typography.Text align="center" className="max-w-2xl mx-auto mt-6">
-            Moosh is shaped by those who think modularly, speak in primitives, and build composable systems.
+            Moosh is shaped by modular minds: those who think in primitives, speak in logic, and build systems that compose.
           </Typography.Text>
         </m.div>
         

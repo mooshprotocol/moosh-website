@@ -105,24 +105,24 @@
     },
     "modules": {
       "liquidation": {
-        "title": "清算引擎",
-        "description": "实时、原生 MEVM 的执行与智能风险逻辑。",
-        "sub": ["风险评估", "执行引擎", "MEVM 集成"]
+        "title": "控制器引擎",
+        "description": "实时、编排原生的执行与智能路由逻辑。",
+        "sub": ["路由管理", "执行引擎", "编排集成"]
       },
       "risk": {
-        "title": "风险内核",
-        "description": "随市场动态调整的 AI 辅助逻辑。",
-        "sub": ["AI 模型", "市场分析", "自适应逻辑"]
+        "title": "金库内核",
+        "description": "随流动性条件动态调整的 AI 辅助逻辑。",
+        "sub": ["资产模型", "流动性分析", "自适应逻辑"]
       },
       "liquidity": {
-        "title": "流动性网格",
-        "description": "可组合的流动性与跨模块无缝执行。",
-        "sub": ["可组合性", "跨模块", "无缝执行"]
+        "title": "风险网格",
+        "description": "可组合的风险管理与跨模块无缝验证。",
+        "sub": ["多因子", "交叉验证", "无缝执行"]
       },
       "megaeth": {
-        "title": "MegaETH 兼容",
-        "description": "与 MegaETH 上的模块化基础设施原生集成。",
-        "sub": ["原生集成", "MegaETH"]
+        "title": "清算核心",
+        "description": "与模块化架构上的动态风险模型原生集成。",
+        "sub": ["风险模型", "清算优化", "原生集成"]
       }
     }
   }

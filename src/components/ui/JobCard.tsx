@@ -74,15 +74,15 @@ export default function JobCard({
       viewport={{ once: true }}
     >
       <Card
-        className={`text-center flex flex-col justify-between ${colorClasses.border}`}
+        className={`text-center flex flex-col min-h-[320px] ${colorClasses.border}`}
         glowClass={colorClasses.glow}
         interactiveHover
         onClick={onClick}
         style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05), 0 4px 6px -1px rgba(0,0,0,0.1)' }}
       >
-        {/* Icon with enhanced styling */}
-        <div className="relative z-10">
-          <div className={`w-16 h-16 mx-auto mb-6 flex items-center justify-center ${colorClasses.iconBg} rounded-xl transition-all duration-500 group-hover:scale-105`}
+        {/* Part 1: Icon */}
+        <div className="relative z-10 mb-6">
+          <div className={`w-16 h-16 mx-auto flex items-center justify-center ${colorClasses.iconBg} rounded-xl transition-all duration-500 group-hover:scale-105`}
                style={{
                  boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1), 0 2px 4px rgba(0,0,0,0.2)',
                }}>
@@ -92,17 +92,21 @@ export default function JobCard({
           </div>
         </div>
         
-        {/* Title */}
-        <h3 className="relative z-10 text-white font-semibold text-lg md:text-xl mb-4 group-hover:text-white/90 transition-colors duration-300">
-          {title}
-        </h3>
+        {/* Part 2: Title */}
+        <div className="relative z-10 mb-4">
+          <h3 className="text-white font-semibold text-lg md:text-xl group-hover:text-white/90 transition-colors duration-300">
+            {title}
+          </h3>
+        </div>
         
-        {/* Description */}
-        <p className="relative z-10 text-moosh-text-secondary text-base leading-relaxed mb-6 group-hover:text-moosh-text-primary transition-colors duration-300">
-          {description}
-        </p>
+        {/* Part 3: Description */}
+        <div className="relative z-10 mb-6 h-16">
+          <p className="text-moosh-text-secondary text-base leading-relaxed group-hover:text-moosh-text-primary transition-colors duration-300">
+            {description}
+          </p>
+        </div>
         
-        {/* Skills with enhanced styling */}
+        {/* Part 4: Skills */}
         <div className="relative z-10 flex flex-wrap gap-2 justify-center">
           {skills.map((skill, skillIndex) => (
             <m.span 
