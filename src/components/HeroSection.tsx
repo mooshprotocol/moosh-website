@@ -112,7 +112,7 @@ export default function HeroSection() {
           >
             <Typography.Text align="center" tone="secondary" size="lg">
               <span className="typewriter-container">
-                <span className="typewriter-text">{t('hero.subtitle', 'Modular liquidity infrastructure for the future of DeFi')}</span>
+                <span className="typewriter-text">{t('hero.subtitle', 'Smart, modular liquidity built for adaptive DeFi')}</span>
                 <span className="typewriter-cursor">|</span>
               </span>
             </Typography.Text>
@@ -126,8 +126,8 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 1.5, ease: "easeOut" }}
           >
             <div className="text-center group">
-              <div className="text-4xl md:text-5xl font-black text-moosh-green mb-3 group-hover:scale-105 transition-transform duration-300 subtle-shimmer">4</div>
-              <div className="text-xs text-moosh-text-muted tracking-widest uppercase font-medium">{t('hero.metrics.modularEngines', 'Modular Engines')}</div>
+              <div className="text-4xl md:text-5xl font-black text-moosh-green mb-3 group-hover:scale-105 transition-transform duration-300 subtle-shimmer">7</div>
+              <div className="text-xs text-moosh-text-muted tracking-widest uppercase font-medium">{t('hero.metrics.modularEngines', 'Modular Components')}</div>
             </div>
             <div className="text-center group">
               <div className="text-4xl md:text-5xl font-black text-moosh-green mb-3 group-hover:scale-105 transition-transform duration-300 subtle-shimmer">∞</div>

@@ -59,9 +59,9 @@
     "subtitle": "人类引领，智能体构建，社群协同。"
   },
   "hero": {
-    "subtitle": "面向 DeFi 未来的模块化流动性基础设施",
+    "subtitle": "为自适应 DeFi 构建的智能模块化流动性",
     "metrics": {
-      "modularEngines": "模块引擎",
+      "modularEngines": "模块组件",
       "composability": "可组合性",
       "friction": "摩擦"
     }
@@ -83,17 +83,17 @@
       "safety": {
         "title": "安全",
         "subtitle": "以韧性为设计初衷",
-        "description": "Moosh 通过动态边界与自适应执行保护资本。"
+        "description": "Moosh 通过自适应执行与动态风险边界保护资本。"
       },
       "flexibility": {
         "title": "灵活",
         "subtitle": "流动性应自由流动",
-        "description": "Moosh 无摩擦地跨协议、跨模块、跨市场状态流动。"
+        "description": "Moosh 流畅地在协议、模块与市场条件间路由资本。"
       },
       "intelligence": {
         "title": "智能",
         "subtitle": "模块化环境需要模块化思维",
-        "description": "Moosh 基于逻辑与数据实时自适应、有意图地执行。"
+        "description": "Moosh 通过逻辑驱动、有意图的执行实时响应。"
       }
     }
   },

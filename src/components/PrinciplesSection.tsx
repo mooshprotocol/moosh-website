@@ -11,7 +11,7 @@ export default function PrinciplesSection() {
     {
       title: t('principles.cards.safety.title', 'Safety'),
       subtitle: t('principles.cards.safety.subtitle', 'Resilient by design'),
-      description: t('principles.cards.safety.description', 'Moosh protects capital through dynamic boundaries and adaptive execution.'),
+      description: t('principles.cards.safety.description', 'Moosh preserves capital through adaptive execution and dynamic risk boundaries.'),
       color: "green",
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -22,7 +22,7 @@ export default function PrinciplesSection() {
     {
       title: t('principles.cards.flexibility.title', 'Flexibility'),
       subtitle: t('principles.cards.flexibility.subtitle', 'Liquidity should move freely'),
-      description: t('principles.cards.flexibility.description', 'Moosh flows across protocols, modules, and market states without friction.'),
+      description: t('principles.cards.flexibility.description', 'Moosh routes capital fluidly across protocols, modules, and market conditions.'),
       color: "blue",
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -34,7 +34,7 @@ export default function PrinciplesSection() {
     {
       title: t('principles.cards.intelligence.title', 'Intelligence'),
       subtitle: t('principles.cards.intelligence.subtitle', 'Modular environments demand modular thinking'),
-      description: t('principles.cards.intelligence.description', 'Moosh adapts through logic, data, and intent-aware execution in real time.'),
+      description: t('principles.cards.intelligence.description', 'Moosh responds in real time through logic-driven, intent-aware execution.'),
       color: "purple",
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -105,7 +105,7 @@ export default function PrinciplesSection() {
             return (
               <m.div 
                 key={principle.title}
-                className={`group p-8 bg-moosh-black-card rounded-2xl border border-moosh-black-lighter hover:scale-103 transition-all duration-300 ease-out ${colorClasses.glow} ${colorClasses.border}`}
+                className={`group p-8 bg-moosh-black-card rounded-2xl border border-moosh-black-lighter hover:scale-103 transition-all duration-300 ease-out ${colorClasses.glow} ${colorClasses.border} min-h-[320px] flex flex-col`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -135,12 +135,12 @@ export default function PrinciplesSection() {
                 </Typography.H3>
                 
                 {/* Enhanced Subtitle */}
-                <Typography.Text className={`text-sm mb-4 font-medium ${colorClasses.icon} transition-all duration-300 ease-out`}>
+                <Typography.Text className={`text-xs mb-4 font-semibold tracking-wider uppercase ${colorClasses.icon} transition-all duration-300 ease-out ${index < 2 ? 'mb-8' : ''}`}>
                   {principle.subtitle}
                 </Typography.Text>
                 
                 {/* Enhanced Description */}
-                <Typography.Text className="text-sm text-moosh-text-secondary leading-relaxed group-hover:text-moosh-text-primary transition-colors duration-300">
+                <Typography.Text className="text-sm text-moosh-text-secondary leading-relaxed group-hover:text-moosh-text-primary transition-colors duration-300 flex-1">
                   {principle.description}
                 </Typography.Text>
               </m.div>

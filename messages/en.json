@@ -64,9 +64,9 @@
     "subtitle": "Humans lead, agents build, communities align."
   },
   "hero": {
-    "subtitle": "Modular liquidity infrastructure for the future of DeFi",
+    "subtitle": "Smart, modular liquidity built for adaptive DeFi",
     "metrics": {
-      "modularEngines": "Modular Engines",
+      "modularEngines": "Modular Components",
       "composability": "Composability",
       "friction": "Friction"
     }
@@ -88,17 +88,17 @@
       "safety": {
         "title": "Safety",
         "subtitle": "Resilient by design",
-        "description": "Moosh protects capital through dynamic boundaries and adaptive execution."
+        "description": "Moosh preserves capital through adaptive execution and dynamic risk boundaries."
       },
       "flexibility": {
         "title": "Flexibility",
         "subtitle": "Liquidity should move freely",
-        "description": "Moosh flows across protocols, modules, and market states without friction."
+        "description": "Moosh routes capital fluidly across protocols, modules, and market conditions."
       },
       "intelligence": {
         "title": "Intelligence",
         "subtitle": "Modular environments demand modular thinking",
-        "description": "Moosh adapts through logic, data, and intent-aware execution in real time."
+        "description": "Moosh responds in real time through logic-driven, intent-aware execution."
       }
     }
   },
