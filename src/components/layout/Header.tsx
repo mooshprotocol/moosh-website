@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import TryMooshButton from '@/components/ui/TryMooshButton';
 import ClientText from '@/components/ui/ClientText';
+import LanguageSelector from '@/components/ui/LanguageSelector';
 
 export default function Header() {
   return (
@@ -13,7 +14,8 @@ export default function Header() {
             MOOSH
           </Link>
 
-          <div className="flex items-center">
+          <div className="flex items-center space-x-4">
+            <LanguageSelector />
             <TryMooshButton size="sm">
               <span suppressHydrationWarning>
                 <ClientText k="homepage.getStarted" defaultValue="Try Moosh" />

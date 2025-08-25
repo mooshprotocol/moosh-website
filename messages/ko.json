@@ -1,0 +1,174 @@
+{
+  "site": {
+    "name": "MOOSH",
+    "description": "MOOSH Protocol 공식 웹사이트"
+  },
+  "navigation": {
+    "home": "홈",
+    "about": "소개",
+    "services": "서비스",
+    "contact": "연락처",
+    "docs": "문서",
+    "discord": "Discord",
+    "twitter": "Twitter",
+    "github": "GitHub"
+  },
+  "homepage": {
+    "title": "MOOSH에 오신 것을 환영합니다",
+    "subtitle": "혁신적인 솔루션과 탁월한 서비스를 위한 최고의 목적지입니다.",
+    "getStarted": "지금 시작",
+    "learnMore": "더 알아보기"
+  },
+  "about": {
+    "title": "회사 소개",
+    "description": "MOOSH와 우리의 사명에 대해 더 알아보세요.",
+    "content1": "MOOSH는 고객의 성공을 이끄는 혁신적인 솔루션 제공에 전념하고 있습니다.",
+    "content2": "업계를 변화시키려는 비전으로 설립된 우리는 최첨단 기술과 깊은 전문 지식을 결합하여 탁월한 결과를 제공합니다."
+  },
+  "services": {
+    "title": "우리의 서비스",
+    "description": "포괄적인 서비스 범위를 탐색해보세요.",
+    "consulting": {
+      "title": "컨설팅",
+      "description": "비즈니스가 최대 잠재력에 도달할 수 있도록 돕는 전략적 컨설팅."
+    },
+    "development": {
+      "title": "개발",
+      "description": "특정 요구사항에 맞춘 맞춤형 소프트웨어 개발."
+    },
+    "support": {
+      "title": "지원",
+      "description": "시스템이 원활하게 작동하도록 하는 지속적인 지원 및 유지보수."
+    }
+  },
+  "contact": {
+    "title": "문의하기",
+    "description": "우리 팀과 연락하세요.",
+    "form": {
+      "name": "이름",
+      "email": "이메일",
+      "message": "메시지",
+      "submit": "메시지 보내기"
+    }
+  },
+  "careers": {
+    "title": "모듈형 유동성 운동에 참여하세요",
+    "subtitle": "우리는 의도를 가지고 구축하는 사람들과 함께 대출을 재구상하고 있습니다 — 시스템 사상가, 디자이너, 커뮤니티 촉매제들과 함께.",
+    "applyNow": "지금 지원"
+  },
+  "footer": {
+    "copyright": "© 2025 MOOSH Protocol. 모든 권리 보유."
+  },
+  "community": {
+    "title": "커뮤니티 우선.",
+    "subtitle": "인간이 이끈다. 에이전트가 구축한다. 커뮤니티가 조화를 이룬다."
+  },
+  "hero": {
+    "subtitle": "적응형 DeFi를 위해 구축된 스마트하고 모듈형인 유동성",
+    "metrics": {
+      "modularEngines": "모듈형 구성 요소",
+      "composability": "구성 가능성",
+      "friction": "마찰"
+    }
+  },
+  "manifesto": {
+    "line1": "미래는 모듈형이다.",
+    "line2": "자본은 움직여야 한다.",
+    "line3": "위험은 적응해야 한다.",
+    "line4": "대출은 진화해야 한다.",
+    "conclusion": "MOOSH가 이를 가능하게 한다."
+  },
+  "principles": {
+    "header": {
+      "eyebrow": "기반",
+      "title": "MOOSH는 세 가지 기본 원칙 위에 구축됩니다",
+      "subtitle": "각 원칙은 모듈형 유동성 인프라에 대한 우리의 접근 방식을 안내합니다."
+    },
+    "cards": {
+      "safety": {
+        "title": "안전성",
+        "subtitle": "탄력성을 염두에 둔 설계",
+        "description": "MOOSH는 적응형 실행과 동적 위험 경계를 통해 자본을 보호합니다."
+      },
+      "flexibility": {
+        "title": "유연성",
+        "subtitle": "유동성은 자유롭게 움직여야 한다",
+        "description": "MOOSH는 프로토콜, 모듈 및 시장 조건을 통해 자본을 유동적으로 라우팅합니다."
+      },
+      "intelligence": {
+        "title": "지능성",
+        "subtitle": "모듈형 환경에는 모듈형 사고가 필요하다",
+        "description": "MOOSH는 논리 기반의 의도 인식 실행을 통해 실시간으로 응답합니다."
+      }
+    }
+  },
+  "protocol": {
+    "header": {
+      "title": "핵심 모듈",
+      "subtitle": "초저지연 모듈형 인프라와 구성 가능한 유동성을 위해 구축되었습니다.",
+      "tagline": "MOOSH를 구동하는 네 가지 모듈형 엔진을 탐색하세요"
+    },
+    "modules": {
+      "liquidation": {
+        "title": "컨트롤러 엔진",
+        "description": "지능적인 라우팅 로직을 갖춘 실시간, 오케스트레이션 네이티브 실행.",
+        "sub": ["라우트 관리", "실행 엔진", "오케스트레이션 통합"]
+      },
+      "risk": {
+        "title": "볼트 커널",
+        "description": "유동성 조건에 동적으로 적응하는 AI 지원 로직.",
+        "sub": ["자산 모델", "유동성 분석", "적응형 로직"]
+      },
+      "liquidity": {
+        "title": "리스크 메시",
+        "description": "원활한 크로스 모듈 검증을 갖춘 구성 가능한 위험 관리.",
+        "sub": ["다중 요인", "교차 검증", "원활한 실행"]
+      },
+      "megaeth": {
+        "title": "청산 코어",
+        "description": "모듈형 아키텍처의 동적 위험 모델과 기본적으로 통합됩니다.",
+        "sub": ["위험 모델", "청산 최적화", "기본 통합"]
+      }
+    }
+  },
+  "builders": {
+    "eyebrow": "단순한 건축자가 아닙니다.",
+    "title": "예술가, 철학자, 시인 — 그리고 에이전트에 의해 구축됩니다.",
+    "subtitle": "MOOSH는 모듈형 마인드에 의해 형성됩니다: 원시 요소로 생각하고, 논리로 말하며, 구성되는 시스템을 구축하는 사람들.",
+    "categories": {
+      "systems": {
+        "title": "시스템",
+        "description": "정밀성, 구성 가능성, 신뢰를 위해 설계된 기반."
+      },
+      "research": {
+        "title": "연구",
+        "description": "시스템을 적응적으로 만드는 모델, 데이터 및 원칙 — 설계상 안전."
+      },
+      "expression": {
+        "title": "표현",
+        "description": "논리가 언어가 되는 곳 — 모듈형이며, 읽기 쉽고, 의도에 의해 형성됩니다."
+      },
+      "autonomy": {
+        "title": "자율성",
+        "description": "행동하는 에이전트 — 자율적이고, 정렬되며, 프로토콜 의도에 적응적입니다."
+      }
+    }
+  },
+  "jobs": {
+    "systemsArchitect": {
+      "title": "시스템 아키텍트",
+      "description": "계약부터 인터페이스까지 모듈형 시스템을 구축합니다.",
+      "skills": ["체계적 사고", "전략적 설계", "Solidity-to-UI 인식"]
+    },
+    "productDesigner": {
+      "title": "제품 디자이너",
+      "description": "온체인 및 오프체인 플로우에서 직관적인 경험을 만듭니다.",
+      "skills": ["의도 민감성", "협업 플로우", "감정적 명확성"]
+    },
+    "opsGrowth": {
+      "title": "운영 및 성장",
+      "description": "건축자들을 참여시키고, 서사를 만들며, 운동을 성장시킵니다.",
+      "skills": ["서사 감각", "사회 공학", "프로토콜 직관"]
+    }
+  }
+}

@@ -4,10 +4,11 @@ import React, { createContext, useContext, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 import en from "../../messages/en.json";
 import zh from "../../messages/zh.json";
+import ko from "../../messages/ko.json";
 
 type Messages = Record<string, any>;
 
-type Locale = "en" | "zh";
+type Locale = "en" | "zh" | "ko";
 
 interface I18nContextValue {
   locale: Locale;
@@ -19,6 +20,7 @@ const I18nContext = createContext<I18nContextValue | undefined>(undefined);
 const LOCALES: Record<Locale, Messages> = {
   en: en as Messages,
   zh: zh as Messages,
+  ko: ko as Messages,
 };
 
 function getByPath(obj: any, path: string): any {
@@ -28,7 +30,7 @@ function getByPath(obj: any, path: string): any {
 export default function I18nProvider({ children }: { children: React.ReactNode }) {
   const params = useSearchParams();
   const langParam = (params?.get("lang") || "").toLowerCase();
-  const locale: Locale = (langParam === "zh" ? "zh" : "en");
+  const locale: Locale = (langParam === "zh" ? "zh" : langParam === "ko" ? "ko" : "en");
 
   const messages = LOCALES[locale];
 

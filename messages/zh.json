@@ -1,43 +1,43 @@
 {
   "site": {
-    "name": "超级慕什",
-    "description": "超级慕什官方网站"
+    "name": "MOOSH",
+    "description": "MOOSH Protocol 官方网站"
   },
   "navigation": {
     "home": "首页",
-    "about": "关于我们",
+    "about": "关于",
     "services": "服务",
-    "contact": "联系我们",
+    "contact": "联系",
     "docs": "文档",
     "discord": "Discord",
-    "twitter": "推特",
+    "twitter": "Twitter",
     "github": "GitHub"
   },
   "homepage": {
-    "title": "欢迎来到超级慕什",
-    "subtitle": "您的创新解决方案和卓越服务的首选目的地。",
-    "getStarted": "开始使用",
+    "title": "欢迎来到 MOOSH",
+    "subtitle": "创新解决方案和卓越服务的首选目的地。",
+    "getStarted": "立即尝试",
     "learnMore": "了解更多"
   },
   "about": {
     "title": "关于我们",
-    "description": "了解更多关于超级慕什和我们的使命。",
-    "content1": "超级慕什致力于提供创新解决方案，助力客户取得成功。",
+    "description": "了解更多关于 MOOSH 和我们的使命。",
+    "content1": "MOOSH 致力于提供创新解决方案，助力客户取得成功。",
     "content2": "我们怀着改变行业的愿景而成立，将前沿技术与深厚专业知识相结合，提供卓越成果。"
   },
   "services": {
     "title": "我们的服务",
     "description": "探索我们全面的服务范围。",
     "consulting": {
-      "title": "咨询服务",
+      "title": "咨询",
       "description": "战略咨询，帮助您的企业充分发挥潜力。"
     },
     "development": {
-      "title": "开发服务",
+      "title": "开发", 
       "description": "量身定制的软件开发，满足您的特定需求。"
     },
     "support": {
-      "title": "支持服务",
+      "title": "支持",
       "description": "持续的支持和维护，确保您的系统平稳运行。"
     }
   },
@@ -51,17 +51,22 @@
       "submit": "发送消息"
     }
   },
+  "careers": {
+    "title": "加入模块化流动性运动",
+    "subtitle": "我们正在与有意构建的人一起重新构想借贷——系统思考者、设计师和社区催化剂。",
+    "applyNow": "立即申请"
+  },
   "footer": {
-    "copyright": "© 2025 Moosh 协议。保留所有权利。"
+    "copyright": "© 2025 MOOSH Protocol. 保留所有权利。"
   },
   "community": {
-    "title": "社群优先。",
-    "subtitle": "人类引领。智能体构建。社群协同。"
+    "title": "社区优先。",
+    "subtitle": "人类引领。代理构建。社区协同。"
   },
   "hero": {
     "subtitle": "为自适应 DeFi 构建的智能模块化流动性",
     "metrics": {
-      "modularEngines": "模块组件",
+      "modularEngines": "模块化组件",
       "composability": "可组合性",
       "friction": "摩擦"
     }
@@ -70,53 +75,53 @@
     "line1": "未来是模块化的。",
     "line2": "资本必须流动。",
     "line3": "风险必须适应。",
-    "line4": "出借必须进化。",
-    "conclusion": "Moosh 让这一切成为可能。"
+    "line4": "借贷必须演进。",
+    "conclusion": "MOOSH 让这一切成为可能。"
   },
   "principles": {
     "header": {
       "eyebrow": "基础",
-      "title": "Moosh 建立在三大基础原则之上",
-      "subtitle": "这些原则指导我们构建模块化流动性基础设施的方式。"
+      "title": "MOOSH 建立在三个基础原则之上",
+      "subtitle": "每个原则都指导着我们构建模块化流动性基础设施的方法。"
     },
     "cards": {
       "safety": {
-        "title": "安全",
-        "subtitle": "以韧性为设计初衷",
-        "description": "Moosh 通过自适应执行与动态风险边界保护资本。"
+        "title": "安全性",
+        "subtitle": "以韧性为设计理念",
+        "description": "MOOSH 通过自适应执行和动态风险边界保护资本。"
       },
       "flexibility": {
-        "title": "灵活",
+        "title": "灵活性",
         "subtitle": "流动性应自由流动",
-        "description": "Moosh 流畅地在协议、模块与市场条件间路由资本。"
+        "description": "MOOSH 在协议、模块和市场条件之间流畅地路由资本。"
       },
       "intelligence": {
-        "title": "智能",
+        "title": "智能性",
         "subtitle": "模块化环境需要模块化思维",
-        "description": "Moosh 通过逻辑驱动、有意图的执行实时响应。"
+        "description": "MOOSH 通过逻辑驱动、意图感知的执行实时响应。"
       }
     }
   },
   "protocol": {
     "header": {
       "title": "核心模块",
-      "subtitle": "为超低延迟的模块化基础设施与可组合流动性而生。",
-      "tagline": "探索驱动 Moosh 的四个模块引擎"
+      "subtitle": "为超低延迟模块化基础设施和可组合流动性而构建。",
+      "tagline": "探索驱动 MOOSH 的四个模块化引擎"
     },
     "modules": {
       "liquidation": {
         "title": "控制器引擎",
-        "description": "实时、编排原生的执行与智能路由逻辑。",
+        "description": "具有智能路由逻辑的实时、编排原生执行。",
         "sub": ["路由管理", "执行引擎", "编排集成"]
       },
       "risk": {
         "title": "金库内核",
-        "description": "随流动性条件动态调整的 AI 辅助逻辑。",
+        "description": "根据流动性条件动态适应的 AI 辅助逻辑。",
         "sub": ["资产模型", "流动性分析", "自适应逻辑"]
       },
       "liquidity": {
         "title": "风险网格",
-        "description": "可组合的风险管理与跨模块无缝验证。",
+        "description": "具有无缝跨模块验证的可组合风险管理。",
         "sub": ["多因子", "交叉验证", "无缝执行"]
       },
       "megaeth": {
@@ -124,6 +129,46 @@
         "description": "与模块化架构上的动态风险模型原生集成。",
         "sub": ["风险模型", "清算优化", "原生集成"]
       }
+    }
+  },
+  "builders": {
+    "eyebrow": "不仅仅是建造者。",
+    "title": "由艺术家、哲学家、诗人——以及代理构建。",
+    "subtitle": "MOOSH 由模块化思维塑造：那些以基元思考、用逻辑表达、构建可组合系统的人。",
+    "categories": {
+      "systems": {
+        "title": "系统",
+        "description": "为精确性、可组合性和信任而架构的基础。"
+      },
+      "research": {
+        "title": "研究",
+        "description": "使系统具有适应性的模型、数据和原则——设计安全。"
+      },
+      "expression": {
+        "title": "表达",
+        "description": "逻辑变成语言的地方——模块化、可读且由意图塑造。"
+      },
+      "autonomy": {
+        "title": "自主性",
+        "description": "行动的代理——自主、协调且适应协议意图。"
+      }
+    }
+  },
+  "jobs": {
+    "systemsArchitect": {
+      "title": "系统架构师",
+      "description": "从合约到接口构建模块化系统。",
+      "skills": ["系统性思维", "战略设计", "Solidity-to-UI 意识"]
+    },
+    "productDesigner": {
+      "title": "产品设计师",
+      "description": "在链上和链下流程中打造直观体验。",
+      "skills": ["意图敏感性", "协作流程", "情感清晰度"]
+    },
+    "opsGrowth": {
+      "title": "运营与增长",
+      "description": "吸引建造者，塑造叙事，推动运动发展。",
+      "skills": ["叙事感", "社会工程", "协议直觉"]
     }
   }
 }

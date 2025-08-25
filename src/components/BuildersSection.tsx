@@ -4,8 +4,10 @@ import { m, useReducedMotion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Card from './ui/Card';
 import { Typography } from './ui/Typography';
+import { useI18n } from '@/components/I18nProvider';
 
 export default function BuildersSection() {
+  const { t } = useI18n();
   const shouldReduceMotion = useReducedMotion();
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const sectionInView = useInView(sectionRef, { amount: 0.2 });
@@ -25,8 +27,8 @@ export default function BuildersSection() {
   };
   const categories = [
     {
-      title: "Systems",
-      description: "Architected foundations for precision, composability, and trust.",
+      title: t('builders.categories.systems.title', 'Systems'),
+      description: t('builders.categories.systems.description', 'Architected foundations for precision, composability, and trust.'),
       color: "blue",
       icon: (
         <svg viewBox="0 0 80 80" className="w-full h-full">
@@ -43,8 +45,8 @@ export default function BuildersSection() {
       )
     },
     {
-      title: "Research",
-      description: "Models, data, and principles that make systems adaptive — and secure by design.",
+      title: t('builders.categories.research.title', 'Research'),
+      description: t('builders.categories.research.description', 'Models, data, and principles that make systems adaptive — and secure by design.'),
       color: "purple",
       icon: (
         <svg viewBox="0 0 80 80" className="w-full h-full">
@@ -61,8 +63,8 @@ export default function BuildersSection() {
       )
     },
     {
-      title: "Expression",
-      description: "Where logic becomes language — modular, legible, and shaped by intent.",
+      title: t('builders.categories.expression.title', 'Expression'),
+      description: t('builders.categories.expression.description', 'Where logic becomes language — modular, legible, and shaped by intent.'),
       color: "green",
       icon: (
         <svg viewBox="0 0 80 80" className="w-full h-full">
@@ -75,8 +77,8 @@ export default function BuildersSection() {
       )
     },
     {
-      title: "Autonomy",
-      description: "Agents that act — autonomous, aligned, and adaptive to protocol intent.",
+      title: t('builders.categories.autonomy.title', 'Autonomy'),
+      description: t('builders.categories.autonomy.description', 'Agents that act — autonomous, aligned, and adaptive to protocol intent.'),
       color: "orange",
       icon: (
         <svg viewBox="0 0 80 80" className="w-full h-full">
@@ -158,16 +160,16 @@ export default function BuildersSection() {
           viewport={{ once: true }}
         >
           {/* Eyebrow Text */}
-          <Typography.Eyebrow className="mb-2">Not just builders.</Typography.Eyebrow>
+          <Typography.Eyebrow className="mb-2">{t('builders.eyebrow', 'Not just builders.')}</Typography.Eyebrow>
 
           {/* Main Title */}
           <Typography.H2 align="center" className="mb-4">
-            BUIDL by artists, philosophers, poets — and <span className="text-moosh-green">agents</span>.
+            {t('builders.title', 'BUIDL by artists, philosophers, poets — and agents.')}
           </Typography.H2>
 
           {/* Subtitle */}
           <Typography.Text align="center" className="max-w-2xl mx-auto mt-6">
-            Moosh is shaped by modular minds: those who think in primitives, speak in logic, and build systems that compose.
+            {t('builders.subtitle', 'Moosh is shaped by modular minds: those who think in primitives, speak in logic, and build systems that compose.')}
           </Typography.Text>
         </m.div>
         

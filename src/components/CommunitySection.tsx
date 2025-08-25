@@ -47,33 +47,28 @@ export default function CommunitySection() {
             className="mt-6"
           >
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-lg md:text-xl tracking-wider font-light">
-              <m.span 
-                className="text-moosh-text-secondary hover:text-white hover:scale-105 transition-all duration-300 cursor-default"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-                viewport={{ once: true }}
-              >
-                Humans lead.
-              </m.span>
-              <m.span 
-                className="text-moosh-text-secondary hover:text-white hover:scale-105 transition-all duration-300 cursor-default"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.0 }}
-                viewport={{ once: true }}
-              >
-                Agents build.
-              </m.span>
-              <m.span 
-                className="text-moosh-text-secondary hover:text-white hover:scale-105 transition-all duration-300 cursor-default"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 1.2 }}
-                viewport={{ once: true }}
-              >
-                Community aligns.
-              </m.span>
+              {(() => {
+                const subtitle = t('community.subtitle', 'Humans lead. Agents build. Community aligns.');
+                const parts = subtitle.includes('。') ? subtitle.split('。').filter(p => p.trim()) : subtitle.split('. ');
+                const isChineseOrKorean = subtitle.includes('。');
+                
+                return parts.map((part, index) => (
+                  <m.span 
+                    key={index}
+                    className="text-moosh-text-secondary hover:text-white hover:scale-105 transition-all duration-300 cursor-default"
+                    initial={{ 
+                      opacity: 0, 
+                      x: index === 0 ? -20 : index === 2 ? 20 : 0,
+                      y: index === 1 ? 20 : 0 
+                    }}
+                    whileInView={{ opacity: 1, x: 0, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.8 + index * 0.2 }}
+                    viewport={{ once: true }}
+                  >
+                    {part.trim()}{isChineseOrKorean ? '。' : '.'}
+                  </m.span>
+                ));
+              })()}
             </div>
           </m.div>
         </div>
