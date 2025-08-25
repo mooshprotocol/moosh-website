@@ -15,9 +15,9 @@ export default function Footer() {
           
           {/* Navigation links - Right */}
           <nav className="flex flex-col md:flex-row gap-4 md:gap-8">
-            <FooterLink labelKey="navigation.discord" />
-            <FooterLink labelKey="navigation.twitter" />
-            <FooterLink labelKey="navigation.github" />
+            <FooterLink labelKey="discord" href={process.env.NEXT_PUBLIC_DISCORD_URL || 'https://discord.gg/CYQd4WXE'} />
+            <FooterLink labelKey="twitter" href={process.env.NEXT_PUBLIC_TWITTER_URL || 'https://x.com/mooshprotocol'} />
+            <FooterLink labelKey="github" href={process.env.NEXT_PUBLIC_GITHUB_URL || 'https://github.com/mooshprotocol'} />
           </nav>
           
         </div>
@@ -31,22 +31,12 @@ export default function Footer() {
   );
 }
 
-function FooterLink({ labelKey }: { labelKey: string }) {
-  // Map label keys to actual URLs - make these configurable via environment variables
-  const getHref = (key: string) => {
-    const links = {
-      'navigation.discord': process.env.NEXT_PUBLIC_DISCORD_URL || '#',
-      'navigation.twitter': process.env.NEXT_PUBLIC_TWITTER_URL || '#',
-      'navigation.github': process.env.NEXT_PUBLIC_GITHUB_URL || '#',
-    };
-    return links[key as keyof typeof links] || '#';
-  };
-
+function FooterLink({ labelKey, href }: { labelKey: string; href: string }) {
   return (
     <a
-      href={getHref(labelKey)}
-      target={getHref(labelKey) !== '#' ? '_blank' : undefined}
-      rel={getHref(labelKey) !== '#' ? 'noopener noreferrer' : undefined}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       className="text-moosh-text-secondary hover:text-white text-base font-semibold tracking-wider transition-all duration-300 ease-out uppercase"
     >
       {/* render client text with hydration suppression to avoid mismatch */}
