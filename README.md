@@ -1,24 +1,45 @@
-# Moosh Website
+# MOOSH Protocol Website
 
-A modern, responsive website built with Next.js 14 and TypeScript, featuring multi-language support and optimized performance.
+[![Next.js](https://img.shields.io/badge/Next.js-15.4.5-black)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3-38B2AC)](https://tailwindcss.com/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-## Features
+A modern, responsive website for MOOSH Protocol built with Next.js 15 and TypeScript, featuring multi-language support, optimized performance, and cutting-edge web technologies.
 
-- **Next.js 14** with App Router
-- **TypeScript** for type safety
-- **Tailwind CSS** for styling
-- **Internationalization (i18n)** with next-intl
-- **Responsive design** for all devices
-- **SEO optimized** with proper metadata
-- **Modern architecture** with component-based design
+## ✨ Features
 
-## Tech Stack
+- **Next.js 15** with App Router and React 19
+- **TypeScript** for type safety and better DX
+- **Tailwind CSS** for utility-first styling
+- **Internationalization (i18n)** support for English and Chinese
+- **Responsive design** optimized for all devices
+- **SEO optimized** with proper metadata and sitemap
+- **Performance optimized** with lazy loading and code splitting
+- **Accessibility** compliant with WCAG guidelines
+- **Security headers** configured for production
+- **Modern animations** with Framer Motion
 
-- **Framework**: Next.js 14
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Internationalization**: next-intl
-- **Package Manager**: pnpm
+## 🛠️ Tech Stack
+
+### Core Technologies
+- **Framework**: Next.js 15 with App Router
+- **Runtime**: React 19 with concurrent features
+- **Language**: TypeScript 5.0 with strict configuration
+- **Styling**: Tailwind CSS 3.3 with custom design tokens
+- **Package Manager**: pnpm 10.12.2
+
+### Key Libraries
+- **Animation**: Framer Motion for smooth interactions
+- **Internationalization**: Custom i18n solution
+- **Smooth Scrolling**: Lenis for enhanced scroll experience
+- **Icons**: Custom SVG icons with accessibility support
+
+### Development Tools
+- **Linting**: ESLint with TypeScript and React rules
+- **Formatting**: Prettier with consistent code style
+- **Git Hooks**: Husky for pre-commit quality checks
+- **Type Checking**: TypeScript with strict mode enabled
 
 ## Project Structure
 
@@ -78,11 +99,21 @@ pnpm dev
 
 ### Available Scripts
 
-- `pnpm dev` - Start development server
-- `pnpm build` - Build for production
+#### Development
+- `pnpm dev` - Start development server with hot reload
+- `pnpm build` - Build for production with optimizations
 - `pnpm start` - Start production server
-- `pnpm lint` - Run ESLint
+- `pnpm clean` - Clean build artifacts and cache
+
+#### Code Quality
+- `pnpm lint` - Run ESLint for code quality checks
+- `pnpm lint:fix` - Run ESLint with automatic fixes
+- `pnpm format` - Format code with Prettier
+- `pnpm format:check` - Check code formatting without changes
 - `pnpm type-check` - Run TypeScript type checking
+
+#### Setup
+- `pnpm prepare` - Setup Git hooks (runs automatically after install)
 
 ## Internationalization
 
@@ -164,18 +195,133 @@ import { EmptyState } from '@/components/ui/EmptyState';
 <EmptyState title="No data yet" description="Please add your first item." />
 ```
 
-## Contributing
+## 🧪 Testing & Quality
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Run tests and linting
-5. Submit a pull request
+### Code Quality Tools
 
-## License
+This project uses several tools to maintain code quality:
 
-This project is licensed under the MIT License.
+- **ESLint**: Enforces coding standards and catches potential bugs
+- **Prettier**: Maintains consistent code formatting
+- **TypeScript**: Provides type safety and better IDE support
+- **Husky**: Runs pre-commit hooks to ensure quality
+- **lint-staged**: Runs linters on staged files only
 
-## Support
+### Before Committing
 
-For support or questions, please contact the development team.
+The project uses Git hooks to automatically run quality checks:
+
+```bash
+# These commands run automatically on pre-commit:
+pnpm lint-staged    # Lint only staged files
+pnpm type-check     # TypeScript type checking
+pnpm format:check   # Check formatting
+```
+
+### Manual Quality Checks
+
+```bash
+# Run all quality checks
+pnpm lint
+pnpm type-check
+pnpm format:check
+
+# Fix issues automatically
+pnpm lint:fix
+pnpm format
+```
+
+## 🤝 Contributing
+
+We welcome contributions! Here's how to get started:
+
+### Development Setup
+
+1. **Fork and Clone**
+   ```bash
+   git clone https://github.com/your-username/moosh-website.git
+   cd moosh-website
+   ```
+
+2. **Install Dependencies**
+   ```bash
+   pnpm install
+   ```
+
+3. **Setup Development Environment**
+   ```bash
+   cp .env.example .env.local
+   pnpm prepare  # Setup Git hooks
+   ```
+
+4. **Start Development**
+   ```bash
+   pnpm dev
+   ```
+
+### Contribution Guidelines
+
+1. **Create a Feature Branch**
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+2. **Follow Code Standards**
+   - Use TypeScript for all new code
+   - Follow the established component patterns
+   - Add proper TypeScript types
+   - Use the design tokens from `tailwind.config.js`
+
+3. **Code Quality**
+   ```bash
+   pnpm lint:fix      # Fix linting issues
+   pnpm format        # Format code
+   pnpm type-check    # Check types
+   ```
+
+4. **Testing**
+   - Test your changes across different screen sizes
+   - Verify accessibility compliance
+   - Check performance impact
+
+5. **Commit and Push**
+   ```bash
+   git add .
+   git commit -m "feat: add your feature description"
+   git push origin feature/your-feature-name
+   ```
+
+6. **Create Pull Request**
+   - Use conventional commit format
+   - Provide clear description of changes
+   - Reference any related issues
+
+### Commit Convention
+
+We use [Conventional Commits](https://conventionalcommits.org/):
+
+- `feat:` - New features
+- `fix:` - Bug fixes
+- `docs:` - Documentation changes
+- `style:` - Code style changes
+- `refactor:` - Code refactoring
+- `perf:` - Performance improvements
+- `test:` - Adding tests
+- `chore:` - Maintenance tasks
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🆘 Support
+
+- **Issues**: [GitHub Issues](https://github.com/Moosh-Finance/moosh-website/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/Moosh-Finance/moosh-website/discussions)
+- **Documentation**: Visit our [official website](https://moosh.finance)
+
+## 🙏 Acknowledgments
+
+- Built with [Next.js](https://nextjs.org/)
+- Styled with [Tailwind CSS](https://tailwindcss.com/)
+- Animated with [Framer Motion](https://www.framer.com/motion/)
+- Icons and graphics designed in-house
