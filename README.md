@@ -1,4 +1,4 @@
-# Mega Moosh Website
+# Moosh Website
 
 A modern, responsive website built with Next.js 14 and TypeScript, featuring multi-language support and optimized performance.
 
@@ -61,7 +61,7 @@ src/
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd mega-moosh-website
+cd moosh-website
 ```
 
 2. Install dependencies:

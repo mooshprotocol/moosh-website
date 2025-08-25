@@ -1,5 +1,5 @@
 {
-  "name": "mega-moosh-website",
+  "name": "moosh-website",
   "version": "0.1.0",
   "private": true,
   "description": "Modern, responsive website built with Next.js 15 and TypeScript",
@@ -10,8 +10,16 @@
     "website",
     "react"
   ],
-  "author": "Mega Moosh Team",
+  "author": "Moosh Protocol",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Moosh-Finance/moosh-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Moosh-Finance/moosh-website/issues"
+  },
+  "homepage": "https://github.com/Moosh-Finance/moosh-website#readme",
   "packageManager": "pnpm@10.12.2",
   "scripts": {
     "dev": "next dev",

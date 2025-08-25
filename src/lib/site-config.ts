@@ -1,9 +1,9 @@
 import { SiteConfig } from '@/types';
 
 export const siteConfig: SiteConfig = {
-  name: 'Mega Moosh',
-  description: 'Official website of Mega Moosh',
-  url: 'https://moosh.finance',
+  name: 'Moosh',
+  description: 'Official website of Moosh',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000',
   navigation: [
     { label: 'navigation.home', href: '/' },
   ],

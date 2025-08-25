@@ -32,10 +32,21 @@ export default function Footer() {
 }
 
 function FooterLink({ labelKey }: { labelKey: string }) {
-  // Keep Footer as server component and move i18n formatting client-side to a subcomponent
+  // Map label keys to actual URLs - make these configurable via environment variables
+  const getHref = (key: string) => {
+    const links = {
+      'navigation.discord': process.env.NEXT_PUBLIC_DISCORD_URL || '#',
+      'navigation.twitter': process.env.NEXT_PUBLIC_TWITTER_URL || '#',
+      'navigation.github': process.env.NEXT_PUBLIC_GITHUB_URL || '#',
+    };
+    return links[key as keyof typeof links] || '#';
+  };
+
   return (
     <a
-      href="#"
+      href={getHref(labelKey)}
+      target={getHref(labelKey) !== '#' ? '_blank' : undefined}
+      rel={getHref(labelKey) !== '#' ? 'noopener noreferrer' : undefined}
       className="text-moosh-text-secondary hover:text-white text-base font-semibold tracking-wider transition-all duration-300 ease-out uppercase"
     >
       {/* render client text with hydration suppression to avoid mismatch */}
