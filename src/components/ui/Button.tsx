@@ -15,12 +15,12 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 // Use shared mergeClassNames to keep class merging consistent across the codebase
 
 const sizeMap: Record<ButtonSize, string> = {
-  sm: 'px-4 py-2 text-sm',
-  md: 'px-6 py-3 text-sm',
-  lg: 'px-7 py-3.5 text-base',
+  sm: 'px-5 py-2 text-sm min-w-[130px]',
+  md: 'px-7 py-3 text-sm min-w-[150px]',
+  lg: 'px-8 py-3.5 text-base min-w-[170px]',
 };
 
-const baseClasses = 'group relative inline-flex items-center gap-2 rounded-lg font-medium tracking-wide transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent overflow-hidden';
+const baseClasses = 'group relative inline-flex items-center justify-center gap-2 rounded-lg font-medium tracking-wide transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent overflow-hidden whitespace-nowrap';
 
 const variantMap: Record<ButtonVariant, string> = {
   // Ghost outline white like TryMooshButton

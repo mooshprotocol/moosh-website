@@ -139,11 +139,14 @@ function ComingSoonModal({ isOpen, onClose, buttonRef, autoCloseDelay = 3000 }: 
             style={{
               fontSize: isMobile ? '17px' : '19px',
               fontWeight: 700,
-              letterSpacing: '0.06em',
+              letterSpacing: '0.03em',
               color: '#FFFFFF',
               textShadow: '0 0 8px rgba(0, 255, 138, 0.50)',
               textTransform: 'uppercase' as const,
               whiteSpace: 'nowrap' as const,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
           >
             COMING SOON

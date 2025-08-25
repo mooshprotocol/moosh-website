@@ -32,10 +32,10 @@ describe('Button', () => {
 
   it('applies correct size classes', () => {
     const { rerender } = render(<Button size="sm">Button</Button>);
-    expect(screen.getByRole('button')).toHaveClass('px-4', 'py-2');
+    expect(screen.getByRole('button')).toHaveClass('px-5', 'py-2', 'text-sm', 'min-w-[130px]');
 
     rerender(<Button size="lg">Button</Button>);
-    expect(screen.getByRole('button')).toHaveClass('px-7', 'py-3.5');
+    expect(screen.getByRole('button')).toHaveClass('px-8', 'py-3.5', 'text-base', 'min-w-[170px]');
   });
 
   it('renders with icon', () => {

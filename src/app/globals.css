@@ -379,6 +379,20 @@ section {
 }
 
 /* Enhanced glow shadows */
+.shadow-glow-green {
+  box-shadow: 
+    0 0 15px rgba(50, 196, 102, 0.15),
+    0 0 30px rgba(50, 196, 102, 0.08),
+    0 0 45px rgba(50, 196, 102, 0.03);
+}
+
+.shadow-glow-green-bright {
+  box-shadow: 
+    0 0 25px rgba(50, 196, 102, 0.3),
+    0 0 50px rgba(50, 196, 102, 0.15),
+    0 0 75px rgba(50, 196, 102, 0.08);
+}
+
 .hover\:shadow-glow-green:hover {
   box-shadow: 
     0 0 20px rgba(50, 196, 102, 0.2),

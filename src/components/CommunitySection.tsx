@@ -72,7 +72,7 @@ export default function CommunitySection() {
                 transition={{ duration: 0.6, delay: 1.2 }}
                 viewport={{ once: true }}
               >
-                Communities align.
+                Community aligns.
               </m.span>
             </div>
           </m.div>
