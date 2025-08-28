@@ -20,7 +20,7 @@ export default function JobCardsGrid({ loading = false, items }: JobCardsGridPro
     {
       title: t('jobs.systemsArchitect.title', 'Systems Architect'),
       description: t('jobs.systemsArchitect.description', 'Build modular systems from smart contracts to interfaces.'),
-      skills: t<string[]>('jobs.systemsArchitect.skills', ["System Thinking", "Strategic Judgment", "Problem Seeking"]),
+      skills: t<string[]>('jobs.systemsArchitect.skills', ["Systemic Thinking", "End-to-End Awareness", "Modular Design"]),
       color: "blue" as const,
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -30,8 +30,8 @@ export default function JobCardsGrid({ loading = false, items }: JobCardsGridPro
     },
     {
       title: t('jobs.productDesigner.title', 'Product Designer'), 
-      description: t('jobs.productDesigner.description', 'Craft intuitive experiences across onchain and offchain flows.'),
-      skills: t<string[]>('jobs.productDesigner.skills', ["Intent Sensitivity", "Collaborative Flow", "Emotional Clarity"]),
+      description: t('jobs.productDesigner.description', 'Design with vision. Craft experiences that bring modular liquidity to life.'),
+      skills: t<string[]>('jobs.productDesigner.skills', ["User Empathy", "Business Insight", "Refined Aesthetics"]),
       color: "purple" as const,
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -40,9 +40,9 @@ export default function JobCardsGrid({ loading = false, items }: JobCardsGridPro
       )
     },
     {
-      title: t('jobs.opsGrowth.title', 'Operation & Growth'),
-      description: t('jobs.opsGrowth.description', 'Engage builders, spark conversations, grow the movement.'),
-      skills: t<string[]>('jobs.opsGrowth.skills', ["Narrative Sense", "Social Engineering", "System Instinct"]),
+      title: t('jobs.opsGrowth.title', 'Ops & Growth Catalyst'),
+      description: t('jobs.opsGrowth.description', 'Drive momentum. Grow communities and ignite the movement.'),
+      skills: t<string[]>('jobs.opsGrowth.skills', ["Narrative Sense", "Community Building", "Ecosystem Insight"]),
       color: "green" as const,
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -52,8 +52,9 @@
     }
   },
   "careers": {
-    "title": "加入模块化流动性运动",
-    "subtitle": "我们正在与有意构建的人一起重新构想借贷——系统思考者、设计师和社区催化剂。",
+    "eyebrow": "加入这个运动",
+    "title": "献给那些满怀热爱、敢于梦想并勇于行动的人。",
+    "subtitle": "一起构建货币市场的未来。",
     "applyNow": "立即申请"
   },
   "footer": {
@@ -61,10 +62,10 @@
   },
   "community": {
     "title": "社区优先。",
-    "subtitle": "人类引领。代理构建。社区协同。"
+    "subtitle": "人类引领。智能体构建。社区协同。"
   },
   "hero": {
-    "subtitle": "为自适应 DeFi 构建的智能模块化流动性",
+    "subtitle": "为智能体时代而生的货币市场。",
     "metrics": {
       "modularEngines": "模块化组件",
       "composability": "可组合性",
@@ -72,41 +73,41 @@
     }
   },
   "manifesto": {
-    "line1": "未来是模块化的。",
-    "line2": "资本必须流动。",
-    "line3": "风险必须适应。",
-    "line4": "借贷必须演进。",
+    "line1": "未来，以模块为基石。",
+    "line2": "资本，无壁奔流。",
+    "line3": "风险，为生存而弯折。",
+    "line4": "借贷，重塑自身。",
     "conclusion": "MOOSH 让这一切成为可能。"
   },
   "principles": {
     "header": {
-      "eyebrow": "基础",
-      "title": "MOOSH 建立在三个基础原则之上",
-      "subtitle": "每个原则都指导着我们构建模块化流动性基础设施的方法。"
+      "eyebrow": "原则",
+      "title": "三大原则奠定了 Moosh 的根基。",
+      "subtitle": "它们塑造了模块化流动性的未来。"
     },
     "cards": {
       "safety": {
         "title": "安全性",
-        "subtitle": "以韧性为设计理念",
-        "description": "MOOSH 通过自适应执行和动态风险边界保护资本。"
+        "subtitle": "高于一切",
+        "description": "Moosh 通过自适应执行与动态风险控制，守护资本。"
       },
       "flexibility": {
         "title": "灵活性",
-        "subtitle": "流动性应自由流动",
-        "description": "MOOSH 在协议、模块和市场条件之间流畅地路由资本。"
+        "subtitle": "可组合的力量",
+        "description": "Moosh 让资本在模块间自由重组，并随市场环境动态适应。"
       },
       "intelligence": {
         "title": "智能性",
-        "subtitle": "模块化环境需要模块化思维",
-        "description": "MOOSH 通过逻辑驱动、意图感知的执行实时响应。"
+        "subtitle": "进化的智能",
+        "description": "Moosh 驱动智能体，使其能理解意图、即时执行，并持续进化。"
       }
     }
   },
   "protocol": {
     "header": {
-      "title": "核心模块",
-      "subtitle": "为超低延迟模块化基础设施和可组合流动性而构建。",
-      "tagline": "探索驱动 MOOSH 的四个模块化引擎"
+      "eyebrow": "核心模块",
+      "title": "模块化流动性的基石。",
+      "subtitle": "探索驱动 Moosh 的四大引擎。"
     },
     "modules": {
       "liquidation": {
@@ -132,43 +133,44 @@
     }
   },
   "builders": {
-    "eyebrow": "不仅仅是建造者。",
-    "title": "由艺术家、哲学家、诗人——以及代理构建。",
-    "subtitle": "MOOSH 由模块化思维塑造：那些以基元思考、用逻辑表达、构建可组合系统的人。",
+    "eyebrow": "建设者，被重新定义。",
+    "title": "艺术家、哲学家、诗人——以及智能体。",
+    "subtitle": "Moosh 由那些将逻辑化为语言、将系统化为艺术的思想所塑造。",
     "categories": {
       "systems": {
         "title": "系统",
-        "description": "为精确性、可组合性和信任而架构的基础。"
+        "description": "精确、信任与可组合性的基石。"
       },
       "research": {
         "title": "研究",
-        "description": "使系统具有适应性的模型、数据和原则——设计安全。"
+        "description": "让系统保持自适应与韧性的模型与逻辑。"
       },
       "expression": {
         "title": "表达",
-        "description": "逻辑变成语言的地方——模块化、可读且由意图塑造。"
+        "description": "逻辑化为语言——清晰、模块化，并由意图驱动。"
       },
       "autonomy": {
         "title": "自主性",
-        "description": "行动的代理——自主、协调且适应协议意图。"
+        "description": "能自主行动的智能体——自治、协同，并随意图进化。"
       }
     }
   },
   "jobs": {
     "systemsArchitect": {
       "title": "系统架构师",
-      "description": "从合约到接口构建模块化系统。",
-      "skills": ["系统性思维", "战略设计", "Solidity-to-UI 意识"]
+      "description": "构建基石，塑造持久的模块化系统。",
+      "skills": ["系统性思维", "端到端意识", "模块化设计"]
     },
     "productDesigner": {
       "title": "产品设计师",
-      "description": "在链上和链下流程中打造直观体验。",
-      "skills": ["意图敏感性", "协作流程", "情感清晰度"]
+      "description": "带着愿景去设计，打造让模块化流动性鲜活起来的体验。",
+      "skills": ["用户同理心", "业务洞察力", "精炼审美"]
     },
     "opsGrowth": {
-      "title": "运营与增长",
-      "description": "吸引建造者，塑造叙事，推动运动发展。",
-      "skills": ["叙事感", "社会工程", "协议直觉"]
+      "title": "运营与增长推动者",
+      "description": "推动势能，壮大社区，点燃这场运动。",
+      "skills": ["叙事感知", "社区建设", "生态洞察"]
     }
-  }
+  },
+  "comingSoon": "即将推出"
 }

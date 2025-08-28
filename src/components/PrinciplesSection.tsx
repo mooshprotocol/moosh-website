@@ -10,8 +10,8 @@ export default function PrinciplesSection() {
   const principles = [
     {
       title: t('principles.cards.safety.title', 'Safety'),
-      subtitle: t('principles.cards.safety.subtitle', 'Resilient by design'),
-      description: t('principles.cards.safety.description', 'Moosh preserves capital through adaptive execution and dynamic risk boundaries.'),
+      subtitle: t('principles.cards.safety.subtitle', 'Above All'),
+      description: t('principles.cards.safety.description', 'Moosh safeguards capital through adaptive execution and dynamic risk control.'),
       color: "green",
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -21,8 +21,8 @@ export default function PrinciplesSection() {
     },
     {
       title: t('principles.cards.flexibility.title', 'Flexibility'),
-      subtitle: t('principles.cards.flexibility.subtitle', 'Liquidity should move freely'),
-      description: t('principles.cards.flexibility.description', 'Moosh routes capital fluidly across protocols, modules, and market conditions.'),
+      subtitle: t('principles.cards.flexibility.subtitle', 'Composability in motion'),
+      description: t('principles.cards.flexibility.description', 'Moosh reconfigures capital across modules and adapts dynamically to evolving market conditions.'),
       color: "blue",
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -33,8 +33,8 @@ export default function PrinciplesSection() {
     },
     {
       title: t('principles.cards.intelligence.title', 'Intelligence'),
-      subtitle: t('principles.cards.intelligence.subtitle', 'Modular environments demand modular thinking'),
-      description: t('principles.cards.intelligence.description', 'Moosh responds in real time through logic-driven, intent-aware execution.'),
+      subtitle: t('principles.cards.intelligence.subtitle', 'Evolving Intelligence'),
+      description: t('principles.cards.intelligence.description', 'Moosh empowers agents to understand intent, act instantly, and evolve continuously.'),
       color: "purple",
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -91,9 +91,9 @@ export default function PrinciplesSection() {
           viewport={{ once: true }}
         >
           <SectionHeader
-            eyebrow={t('principles.header.eyebrow', 'Foundation')}
-            title={t('principles.header.title', 'Moosh is built on three foundational principles')}
-            subtitle={t('principles.header.subtitle', 'Each principle guides our approach to modular liquidity infrastructure.')}
+            eyebrow={t('principles.header.eyebrow', 'Principles')}
+            title={t('principles.header.title', 'Three principles define Moosh\'s foundation.')}
+            subtitle={t('principles.header.subtitle', 'They shape the future of modular liquidity.')}
           />
         </m.div>
         
@@ -135,7 +135,7 @@ export default function PrinciplesSection() {
                 </Typography.H3>
                 
                 {/* Enhanced Subtitle */}
-                <Typography.Text className={`text-xs mb-4 font-semibold tracking-wider uppercase ${colorClasses.icon} transition-all duration-300 ease-out ${index < 2 ? 'mb-8' : ''}`}>
+                <Typography.Text className={`text-xs mb-4 font-semibold tracking-wider uppercase ${colorClasses.icon} transition-all duration-300 ease-out`}>
                   {principle.subtitle}
                 </Typography.Text>
                 

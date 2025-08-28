@@ -106,21 +106,18 @@ export default function ProtocolSection() {
       
       <div className="container-custom relative z-10">
         {/* Section Header */}
-        <m.div 
-          className="text-center mb-24 max-w-4xl mx-auto"
+        <m.div
+          className="mb-24"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
           <SectionHeader
-            title={<span className="text-4xl md:text-5xl">{t('protocol.header.title', 'Core Modules')}</span>}
-            subtitle={<span className="font-light">{t('protocol.header.subtitle', 'Built for ultra-low latency modular infrastructure and composable liquidity.')}</span>}
-          >
-            <p className="text-xs font-semibold text-moosh-text-muted tracking-widest uppercase">
-              {t('protocol.header.tagline', 'Explore the four modular engines that power Moosh')}
-            </p>
-          </SectionHeader>
+            eyebrow={t('protocol.header.eyebrow', 'Core Modules')}
+            title={t('protocol.header.title', 'Built for ultra-low latency modular infrastructure and composable liquidity.')}
+            subtitle={t('protocol.header.subtitle', 'Explore the four modular engines that power Moosh')}
+          />
         </m.div>
         
         {/* Animated Protocol Modules Grid */}

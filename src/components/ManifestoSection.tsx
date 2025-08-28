@@ -6,10 +6,10 @@ import { useI18n } from '@/components/I18nProvider';
 export default function ManifestoSection() {
   const { t } = useI18n();
   const manifestoLines = [
-    t('manifesto.line1', 'The future is modular.'),
-    t('manifesto.line2', 'Capital must move.'),
-    t('manifesto.line3', 'Risk must adapt.'),
-    t('manifesto.line4', 'Lending must evolve.'),
+    t('manifesto.line1', 'The future builds in modules.'),
+    t('manifesto.line2', 'Capital flows without walls.'),
+    t('manifesto.line3', 'Risk bends to survive.'),
+    t('manifesto.line4', 'Lending reshapes itself.'),
   ];
 
   return (

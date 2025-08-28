@@ -112,7 +112,7 @@ export default function HeroSection() {
           >
             <Typography.Text align="center" tone="secondary" size="lg">
               <span className="typewriter-container">
-                <span className="typewriter-text">{t('hero.subtitle', 'Smart, modular liquidity built for adaptive DeFi')}</span>
+                <span className="typewriter-text">{t('hero.subtitle', 'The money market born for the agentic era.')}</span>
                 <span className="typewriter-cursor">|</span>
               </span>
             </Typography.Text>

@@ -4,6 +4,7 @@ import { m, useReducedMotion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Card from './ui/Card';
 import { Typography } from './ui/Typography';
+import SectionHeader from './ui/SectionHeader';
 import { useI18n } from '@/components/I18nProvider';
 
 export default function BuildersSection() {
@@ -28,7 +29,7 @@ export default function BuildersSection() {
   const categories = [
     {
       title: t('builders.categories.systems.title', 'Systems'),
-      description: t('builders.categories.systems.description', 'Architected foundations for precision, composability, and trust.'),
+      description: t('builders.categories.systems.description', 'The foundation for precision, trust, and composability.'),
       color: "blue",
       icon: (
         <svg viewBox="0 0 80 80" className="w-full h-full">
@@ -46,7 +47,7 @@ export default function BuildersSection() {
     },
     {
       title: t('builders.categories.research.title', 'Research'),
-      description: t('builders.categories.research.description', 'Models, data, and principles that make systems adaptive — and secure by design.'),
+      description: t('builders.categories.research.description', 'Models and logic that keep systems adaptive and resilient.'),
       color: "purple",
       icon: (
         <svg viewBox="0 0 80 80" className="w-full h-full">
@@ -64,7 +65,7 @@ export default function BuildersSection() {
     },
     {
       title: t('builders.categories.expression.title', 'Expression'),
-      description: t('builders.categories.expression.description', 'Where logic becomes language — modular, legible, and shaped by intent.'),
+      description: t('builders.categories.expression.description', 'Where logic turns into language — clear, modular, and intent-driven.'),
       color: "green",
       icon: (
         <svg viewBox="0 0 80 80" className="w-full h-full">
@@ -78,7 +79,7 @@ export default function BuildersSection() {
     },
     {
       title: t('builders.categories.autonomy.title', 'Autonomy'),
-      description: t('builders.categories.autonomy.description', 'Agents that act — autonomous, aligned, and adaptive to protocol intent.'),
+      description: t('builders.categories.autonomy.description', 'Agents that act — autonomous, aligned, and evolving with intent.'),
       color: "orange",
       icon: (
         <svg viewBox="0 0 80 80" className="w-full h-full">
@@ -153,28 +154,19 @@ export default function BuildersSection() {
       
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <m.div 
-          className="text-center max-w-screen-lg mx-auto"
-          {...fadeInUp}
+        <m.div
+          className="mb-24"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          {/* Eyebrow Text */}
-          <Typography.Eyebrow className="mb-2">{t('builders.eyebrow', 'Not just builders.')}</Typography.Eyebrow>
-
-          {/* Main Title */}
-          <Typography.H2 align="center" className="mb-4">
-            {t('builders.title', 'BUIDL by artists, philosophers, poets — and agents.')}
-          </Typography.H2>
-
-          {/* Subtitle */}
-          <Typography.Text align="center" className="max-w-2xl mx-auto mt-6">
-            {t('builders.subtitle', 'Moosh is shaped by modular minds: those who think in primitives, speak in logic, and build systems that compose.')}
-          </Typography.Text>
+          <SectionHeader
+            eyebrow={t('builders.eyebrow', 'Not just builders.')}
+            title={t('builders.title', 'BUIDL by artists, philosophers, poets — and agents.')}
+            subtitle={t('builders.subtitle', 'Moosh is shaped by modular minds: those who think in primitives, speak in logic, and build systems that compose.')}
+          />
         </m.div>
-        
-        {/* Breathing Space */}
-        <div className="h-20"></div>
         
         {/* Creative Archetypes Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">

@@ -51,9 +51,10 @@
       "submit": "Send Message"
     }
   },
-  "careers": {
-    "title": "Join the Modular Liquidity Movement",
-          "subtitle": "We're reimagining lending with those who build with intent — systems thinkers, designers, and community catalysts.",
+    "careers": {
+    "eyebrow": "Join the Movement",
+    "title": "For those who build with passion, dream boldly, and act courageously.",
+    "subtitle": "Together, we build the future of money markets.",
     "applyNow": "Apply Now"
   },
   "footer": {
@@ -64,7 +65,7 @@
     "subtitle": "Humans lead. Agents build. Communities align."
   },
   "hero": {
-    "subtitle": "Smart, modular liquidity built for adaptive DeFi",
+    "subtitle": "The money market born for the agentic era.",
     "metrics": {
       "modularEngines": "Modular Components",
       "composability": "Composability",
@@ -72,41 +73,41 @@
     }
   },
   "manifesto": {
-    "line1": "The future is modular.",
-    "line2": "Capital must move.",
-    "line3": "Risk must adapt.",
-    "line4": "Lending must evolve.",
+    "line1": "The future builds in modules.",
+    "line2": "Capital flows without walls.",
+    "line3": "Risk bends to survive.",
+    "line4": "Lending reshapes itself.",
     "conclusion": "Moosh makes it possible."
   },
   "principles": {
     "header": {
-      "eyebrow": "Foundation",
-      "title": "Moosh is built on three foundational principles",
-      "subtitle": "Each principle guides our approach to modular liquidity infrastructure."
+      "eyebrow": "Principles",
+      "title": "Three principles define Moosh's foundation.",
+      "subtitle": "They shape the future of modular liquidity."
     },
     "cards": {
       "safety": {
         "title": "Safety",
-        "subtitle": "Resilient by design",
-        "description": "Moosh preserves capital through adaptive execution and dynamic risk boundaries."
+        "subtitle": "Above All",
+        "description": "Moosh safeguards capital through adaptive execution and dynamic risk control."
       },
       "flexibility": {
         "title": "Flexibility",
-        "subtitle": "Liquidity should move freely",
-        "description": "Moosh routes capital fluidly across protocols, modules, and market conditions."
+        "subtitle": "Composability in motion",
+        "description": "Moosh reconfigures capital across modules and adapts dynamically to evolving market conditions."
       },
       "intelligence": {
         "title": "Intelligence",
-        "subtitle": "Modular environments demand modular thinking",
-        "description": "Moosh responds in real time through logic-driven, intent-aware execution."
+        "subtitle": "Evolving Intelligence",
+        "description": "Moosh empowers agents to understand intent, act instantly, and evolve continuously."
       }
     }
   },
   "protocol": {
     "header": {
-      "title": "Core Modules",
-      "subtitle": "Built for ultra-low latency modular infrastructure and composable liquidity.",
-      "tagline": "Explore the four modular engines that power Moosh"
+      "eyebrow": "Core Modules",
+      "title": "The building blocks of modular liquidity.",
+      "subtitle": "Discover the four engines that drive Moosh."
     },
     "modules": {
       "liquidation": {
@@ -132,25 +133,25 @@
     }
   },
   "builders": {
-    "eyebrow": "Not just builders.",
-    "title": "BUIDL by artists, philosophers, poets — and agents.",
-    "subtitle": "Moosh is shaped by modular minds: those who think in primitives, speak in logic, and build systems that compose.",
+    "eyebrow": "Builders, reimagined.",
+    "title": "Artists, philosophers, poets — and Agents.",
+    "subtitle": "Moosh is shaped by minds who turn logic into language, and systems into art.",
     "categories": {
       "systems": {
         "title": "Systems",
-        "description": "Architected foundations for precision, composability, and trust."
+        "description": "The foundation for precision, trust, and composability."
       },
       "research": {
         "title": "Research",
-        "description": "Models, data, and principles that make systems adaptive — and secure by design."
+        "description": "Models and logic that keep systems adaptive and resilient."
       },
       "expression": {
         "title": "Expression",
-        "description": "Where logic becomes language — modular, legible, and shaped by intent."
+        "description": "Where logic turns into language — clear, modular, and intent-driven."
       },
       "autonomy": {
         "title": "Autonomy",
-        "description": "Agents that act — autonomous, aligned, and adaptive to protocol intent."
+        "description": "Agents that act — autonomous, aligned, and evolving with intent."
       }
     }
   }
@@ -158,18 +159,19 @@
   "jobs": {
     "systemsArchitect": {
       "title": "Systems Architect",
-      "description": "Build modular systems from contracts to interfaces.",
-      "skills": ["Systemic Thinking", "Strategic Design", "Solidity-to-UI Awareness"]
+      "description": "Build the foundations. Shape modular systems that last.",
+      "skills": ["Systemic Thinking", "End-to-End Awareness", "Modular Design"]
     },
     "productDesigner": {
       "title": "Product Designer",
-      "description": "Craft intuitive experiences across onchain and offchain flows.",
-      "skills": ["Intent Sensitivity", "Collaborative Flow", "Emotional Clarity"]
+      "description": "Design with vision. Craft experiences that bring modular liquidity to life.",
+      "skills": ["User Empathy", "Business Insight", "Refined Aesthetics"]
     },
     "opsGrowth": {
-      "title": "Operations & Growth",
-      "description": "Engage builders, shape narratives, and grow the movement.",
-      "skills": ["Narrative Sense", "Social Engineering", "Protocol Intuition"]
+      "title": "Ops & Growth Catalyst",
+      "description": "Drive momentum. Grow communities and ignite the movement.",
+      "skills": ["Narrative Sense", "Community Building", "Ecosystem Insight"]
     }
-  }
+  },
+  "comingSoon": "COMING SOON"
 }

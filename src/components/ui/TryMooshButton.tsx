@@ -1,6 +1,7 @@
 // TryMooshButton.tsx
 import React, { useState, useEffect, useRef } from 'react';
 import Button from './Button';
+import { useI18n } from '@/components/I18nProvider';
 
 interface TryMooshButtonProps {
   onClick?: () => void;
@@ -18,6 +19,7 @@ interface ComingSoonModalProps {
 }
 
 function ComingSoonModal({ isOpen, onClose, buttonRef, autoCloseDelay = 3000 }: ComingSoonModalProps) {
+  const { t } = useI18n();
   const modalRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
@@ -149,7 +151,7 @@ function ComingSoonModal({ isOpen, onClose, buttonRef, autoCloseDelay = 3000 }: 
               justifyContent: 'center',
             }}
           >
-            COMING SOON
+            {t('comingSoon', 'COMING SOON')}
           </div>
         </div>
 

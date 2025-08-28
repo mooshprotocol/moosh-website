@@ -24,16 +24,17 @@ export default function CareersSection() {
       
       <div className="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <m.div 
-          className="text-center mb-8"
+        <m.div
+          className="mb-24"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
           <SectionHeader
-            title={<span className="text-2xl md:text-3xl">{t('careers.title', 'Join the Modular Liquidity Movement')}</span>}
-            subtitle={<span className="text-moosh-text-secondary">{t('careers.subtitle', "We're reimagining lending with those who build with intent — systems thinkers, designers, and community catalysts.")}</span>}
+            eyebrow={t('careers.eyebrow', 'Join the Modular Liquidity Movement')}
+            title={t('careers.title', "We're reimagining lending with those who build with intent — systems thinkers, designers, and community catalysts.")}
+            subtitle={t('careers.subtitle', 'Join the Modular Liquidity Movement')}
           />
         </m.div>
         
