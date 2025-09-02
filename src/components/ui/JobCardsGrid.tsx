@@ -18,9 +18,9 @@ export default function JobCardsGrid({ loading = false, items }: JobCardsGridPro
   const { t } = useI18n();
   const jobs = items ?? [
     {
-      title: t('jobs.systemsArchitect.title', 'Systems Architect'),
-      description: t('jobs.systemsArchitect.description', 'Build modular systems from smart contracts to interfaces.'),
-      skills: t<string[]>('jobs.systemsArchitect.skills', ["Systemic Thinking", "End-to-End Awareness", "Modular Design"]),
+      title: t('jobs.fullStackEngineer.title', '🧑‍💻 Full-Stack Engineer'),
+      description: t('jobs.fullStackEngineer.description', 'Build features from smart contracts to front-end. Ensure security, scalability, and smooth user experience.'),
+      skills: [] as string[], // Empty skills array to remove tags
       color: "blue" as const,
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -29,9 +29,9 @@ export default function JobCardsGrid({ loading = false, items }: JobCardsGridPro
       )
     },
     {
-      title: t('jobs.productDesigner.title', 'Product Designer'), 
-      description: t('jobs.productDesigner.description', 'Design with vision. Craft experiences that bring modular liquidity to life.'),
-      skills: t<string[]>('jobs.productDesigner.skills', ["User Empathy", "Business Insight", "Refined Aesthetics"]),
+      title: t('jobs.designer.title', '🎨 Designer'), 
+      description: t('jobs.designer.description', 'Create intuitive interfaces and clear visuals. Make modular finance simple, usable, and beautiful.'),
+      skills: [] as string[], // Empty skills array to remove tags
       color: "purple" as const,
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -40,9 +40,9 @@ export default function JobCardsGrid({ loading = false, items }: JobCardsGridPro
       )
     },
     {
-      title: t('jobs.opsGrowth.title', 'Ops & Growth Catalyst'),
-      description: t('jobs.opsGrowth.description', 'Drive momentum. Grow communities and ignite the movement.'),
-      skills: t<string[]>('jobs.opsGrowth.skills', ["Narrative Sense", "Community Building", "Ecosystem Insight"]),
+      title: t('jobs.growth.title', '🚀 Growth'),
+      description: t('jobs.growth.description', 'Grow adoption through campaigns, partnerships, and community. Turn users into advocates.'),
+      skills: [] as string[], // Empty skills array to remove tags
       color: "green" as const,
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -107,26 +107,28 @@ export default function JobCard({
         </div>
         
         {/* Part 4: Skills */}
-        <div className="relative z-10 flex flex-wrap gap-2 justify-center">
-          {skills.map((skill, skillIndex) => (
-            <m.span 
-              key={skillIndex} 
-              className="bg-white/5 backdrop-blur-sm text-white/60 text-sm font-light rounded-full px-3 py-1.5 transition-all duration-300 group-hover:bg-white/10 group-hover:text-white/80"
-              {...tagAnimation}
-              transition={{ 
-                ...tagAnimation.transition,
-                delay: skillIndex * 0.1
-              }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              style={{
-                willChange: 'opacity, transform, background-color, color, box-shadow'
-              }}
-            >
-              {skill}
-            </m.span>
-          ))}
-        </div>
+        {skills.length > 0 && (
+          <div className="relative z-10 flex flex-wrap gap-2 justify-center">
+            {skills.map((skill, skillIndex) => (
+              <m.span 
+                key={skillIndex} 
+                className="bg-white/5 backdrop-blur-sm text-white/60 text-sm font-light rounded-full px-3 py-1.5 transition-all duration-300 group-hover:bg-white/10 group-hover:text-white/80"
+                {...tagAnimation}
+                transition={{ 
+                  ...tagAnimation.transition,
+                  delay: skillIndex * 0.1
+                }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                style={{
+                  willChange: 'opacity, transform, background-color, color, box-shadow'
+                }}
+              >
+                {skill}
+              </m.span>
+            ))}
+          </div>
+        )}
       </Card>
     </m.div>
   );

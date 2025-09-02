@@ -157,20 +157,17 @@
   }
   ,
   "jobs": {
-    "systemsArchitect": {
-      "title": "Systems Architect",
-      "description": "Build the foundations. Shape modular systems that last.",
-      "skills": ["Systemic Thinking", "End-to-End Awareness", "Modular Design"]
+    "fullStackEngineer": {
+      "title": "🧑‍💻 Full-Stack Engineer",
+      "description": "Build features from smart contracts to front-end. Ensure security, scalability, and smooth user experience."
     },
-    "productDesigner": {
-      "title": "Product Designer",
-      "description": "Design with vision. Craft experiences that bring modular liquidity to life.",
-      "skills": ["User Empathy", "Business Insight", "Refined Aesthetics"]
+    "designer": {
+      "title": "🎨 Designer",
+      "description": "Create intuitive interfaces and clear visuals. Make modular finance simple, usable, and beautiful."
     },
-    "opsGrowth": {
-      "title": "Ops & Growth Catalyst",
-      "description": "Drive momentum. Grow communities and ignite the movement.",
-      "skills": ["Narrative Sense", "Community Building", "Ecosystem Insight"]
+    "growth": {
+      "title": "🚀 Growth",
+      "description": "Grow adoption through campaigns, partnerships, and community. Turn users into advocates."
     }
   },
   "comingSoon": "COMING SOON"

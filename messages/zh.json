@@ -156,20 +156,17 @@
     }
   },
   "jobs": {
-    "systemsArchitect": {
-      "title": "系统架构师",
-      "description": "构建基石，塑造持久的模块化系统。",
-      "skills": ["系统性思维", "端到端意识", "模块化设计"]
+    "fullStackEngineer": {
+      "title": "🧑‍💻 全栈工程师",
+      "description": "从智能合约到前端功能全流程开发，保障安全、可扩展与顺畅体验。"
     },
-    "productDesigner": {
-      "title": "产品设计师",
-      "description": "带着愿景去设计，打造让模块化流动性鲜活起来的体验。",
-      "skills": ["用户同理心", "业务洞察力", "精炼审美"]
+    "designer": {
+      "title": "🎨 设计师",
+      "description": "设计直观界面和清晰视觉，让模块化金融变得简单、好用且美观。"
     },
-    "opsGrowth": {
-      "title": "运营与增长推动者",
-      "description": "推动势能，壮大社区，点燃这场运动。",
-      "skills": ["叙事感知", "社区建设", "生态洞察"]
+    "growth": {
+      "title": "🚀 用户增长",
+      "description": "通过活动、合作与社区推动采用，把用户转化为积极的传播者。"
     }
   },
   "comingSoon": "即将推出"

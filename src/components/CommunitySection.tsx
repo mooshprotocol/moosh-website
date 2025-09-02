@@ -48,8 +48,16 @@ export default function CommunitySection() {
           >
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-lg md:text-xl tracking-wider font-light">
               {(() => {
-                const subtitle = t('community.subtitle', 'Humans lead. Agents build. Community aligns.');
-                const parts = subtitle.includes('。') ? subtitle.split('。').filter(p => p.trim()) : subtitle.split('. ');
+                const subtitle = t('community.subtitle', 'Humans lead. Agents build. Communities align.');
+                // Fix: Handle both Chinese/Korean and English punctuation properly
+                let parts;
+                if (subtitle.includes('。')) {
+                  // Chinese/Korean: split by 。 and filter empty parts
+                  parts = subtitle.split('。').filter(p => p.trim());
+                } else {
+                  // English: split by . and filter empty parts, but handle the last period correctly
+                  parts = subtitle.split('.').filter(p => p.trim());
+                }
                 const isChineseOrKorean = subtitle.includes('。');
                 
                 return parts.map((part, index) => (
