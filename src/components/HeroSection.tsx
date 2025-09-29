@@ -141,29 +141,7 @@ export default function HeroSection() {
         </m.div>
       </div>
 
-      {/* Enhanced Scroll Indicator */}
-      <m.div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 2.2, ease: "easeOut" }}
-      >
-                <div className="flex flex-col items-center gap-3">
-          <div className="relative">
-              <div className="w-px h-12 bg-gradient-to-b from-moosh-green to-transparent"></div>
-              <m.div 
-                className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 h-3 bg-moosh-green rounded-full"
-                animate={{ y: [0, 36, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              />
-            </div>
-          <div className="w-6 h-6 border border-moosh-green/30 rounded-full flex items-center justify-center group hover:border-moosh-green/60 transition-colors">
-            <svg className="w-3 h-3 text-moosh-green group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </div>
-        </div>
-      </m.div>
+      {/* Scroll indicator removed */}
     </section>
   );
 } 
