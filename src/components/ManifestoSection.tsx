@@ -1,6 +1,6 @@
 'use client';
 
-import { m } from 'framer-motion';
+import { m, useReducedMotion } from 'framer-motion';
 import { useI18n } from '@/components/I18nProvider';
 
 const PRINCIPLES = [
@@ -57,7 +57,7 @@ const PRINCIPLES = [
 
 export default function ManifestoSection() {
   const { t } = useI18n();
-  
+
   const manifestoLines = [
     t('manifesto.story.capital', 'Capital finds its own path.'),
     t('manifesto.story.risk', 'Risk bends, not breaks.'),
@@ -71,10 +71,9 @@ export default function ManifestoSection() {
   }));
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#0B0B0B] text-white">
+    <section className="relative min-h-screen overflow-hidden bg-[#080808] text-white">
+      <StageBackdrop />
       <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-[1200px] flex-col items-center justify-center gap-20 px-6 py-32 md:px-12 lg:px-20">
-        
-        {/* 顶层：大标题 - 宣言碑文 */}
         <m.div
           className="text-center"
           initial={{ opacity: 0, y: 40 }}
@@ -83,40 +82,31 @@ export default function ManifestoSection() {
           transition={{ duration: 1.2, ease: 'easeOut' }}
         >
           <m.h1
-            className="text-[clamp(2rem,4vw,3.5rem)] font-light leading-[1.1] tracking-tight text-white"
-            style={{ 
-              letterSpacing: '-0.02em',
-              textShadow: '0 0 40px rgba(43, 245, 164, 0.15)'
-            }}
+            className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-white"
+            style={{ letterSpacing: '0.01em' }}
           >
             {t('manifesto.headline', 'We believe finance must evolve.')}
           </m.h1>
         </m.div>
 
-        {/* 中层：三条宣言句 - 诗歌分行，节奏感展示 */}
         <m.div
-          className="space-y-12 text-center"
+          className="max-w-4xl space-y-12 text-center"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.6 }}
           variants={{
             hidden: {},
-            visible: {
-              transition: { staggerChildren: 0.3 }
-            }
+            visible: { transition: { staggerChildren: 0.28 } },
           }}
         >
-          {manifestoLines.map((line, index) => (
+          {manifestoLines.map((line) => (
             <m.p
               key={line}
-              className="text-[clamp(1rem,2vw,1.4rem)] font-light leading-relaxed text-white/90"
-              style={{ 
-                letterSpacing: '0.02em',
-                lineHeight: '1.6'
-              }}
+              className="text-2xl md:text-[2.1rem] font-normal leading-relaxed text-white/85"
+              style={{ letterSpacing: '0.005em' }}
               variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0 }
+                hidden: { opacity: 0, y: 18 },
+                visible: { opacity: 1, y: 0 },
               }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
             >
@@ -125,58 +115,40 @@ export default function ManifestoSection() {
           ))}
         </m.div>
 
-        {/* 下层：三原则 - 支柱式陈列 */}
-        <m.div
-          className="w-full"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.4 }}
-          variants={{
-            hidden: {},
-            visible: {
-              transition: { staggerChildren: 0.2 }
-            }
-          }}
-        >
-          <div className="grid gap-8 md:grid-cols-3">
-            {principleCards.map((principle, index) => (
-              <PillarCard key={principle.title} principle={principle} index={index} />
-            ))}
-          </div>
-        </m.div>
+        <PrinciplesStage cards={principleCards} />
 
-        {/* 收尾：签名/盖章 */}
         <m.div
           className="text-center"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ 
-            duration: 1.5, 
-            ease: 'easeOut', 
-            delay: 0.3
-          }}
-          animate={{ 
-            scale: [1, 1.02, 1],
-            transition: { 
-              duration: 3, 
-              repeat: Infinity, 
-              repeatType: 'reverse',
-              ease: 'easeInOut'
-            }
-          }}
+          transition={{ duration: 1, ease: 'easeOut', delay: 0.3 }}
         >
-          <m.p
-            className="text-[clamp(1.4rem,3vw,2rem)] font-light tracking-[0.2em] text-white/85"
-            style={{ 
-              letterSpacing: '0.15em'
-            }}
-          >
+          <m.div
+            className="mx-auto mb-6 h-px w-20 bg-gradient-to-r from-transparent via-moosh-green/50 to-transparent"
+            initial={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 0.7 }}
+          />
+          <p className="text-lg uppercase tracking-[0.35em] text-white/70">
             {t('manifesto.signature', 'This is Moosh.')}
-          </m.p>
+          </p>
         </m.div>
       </div>
     </section>
+  );
+}
+
+function PrinciplesStage({ cards }: { cards: PrincipleCardData[] }) {
+  return (
+    <div className="relative w-full max-w-5xl pb-20">
+      <StageBase />
+      <div className="relative z-10 flex flex-wrap items-end justify-center gap-10 md:gap-14">
+        {cards.map((card, index) => (
+          <PrincipleCard key={card.title} principle={card} index={index} />
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -191,45 +163,159 @@ interface PillarCardProps {
   index: number;
 }
 
-function PillarCard({ principle, index }: PillarCardProps) {
+function PrincipleCard({ principle, index }: PillarCardProps) {
+  const reduceMotion = useReducedMotion();
+  const emphasize = index === 1;
+  const scale = emphasize ? 1 : 0.94;
+  const heightClass = emphasize ? 'h-[360px]' : 'h-[320px]';
+
   return (
     <m.div
       className="group relative flex flex-col items-center text-center"
-      initial={{ opacity: 0, y: 60 }}
+      initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.4 }}
-      transition={{ 
-        duration: 0.8, 
-        ease: 'easeOut', 
-        delay: index * 0.2 
-      }}
+      viewport={{ once: true, amount: 0.45 }}
+      transition={{ duration: 0.9, ease: 'easeOut', delay: index * 0.18 }}
+      style={{ transform: `scale(${scale})` }}
     >
-      {/* 立宪支柱 - 极简线性设计 */}
-      <div className="relative flex h-[320px] w-full max-w-[240px] flex-col items-center justify-start rounded-lg border border-white/8 bg-gradient-to-b from-white/3 via-transparent to-white/3 p-6 backdrop-blur-sm">
-        
-        {/* 极简线性图标 */}
-        <div className="mb-8 flex h-12 w-12 items-center justify-center text-moosh-green/80">
-          {principle.icon}
+      <m.div
+        className="absolute inset-x-[10%] bottom-[-30px] h-8 rounded-full bg-[radial-gradient(circle_at_center,rgba(32,241,142,0.28),rgba(32,241,142,0)_70%)] blur-[18px]"
+        initial={{ opacity: 0.45 }}
+        animate={
+          reduceMotion
+            ? { opacity: 0.45 }
+            : { opacity: [0.35, 0.55, 0.35] }
+        }
+        transition={{ duration: 10, repeat: reduceMotion ? 0 : Infinity, ease: 'easeInOut' }}
+        aria-hidden
+      />
+
+      <m.div
+        className={`relative z-10 flex ${heightClass} w-full max-w-[260px] flex-col items-center justify-start overflow-hidden rounded-[24px] border border-white/10 bg-[rgba(12,16,14,0.82)] px-8 pt-10 pb-12 shadow-[0_18px_36px_rgba(0,0,0,0.5)] backdrop-blur-lg transition-all duration-500`}
+        animate={
+          reduceMotion
+            ? { opacity: 1 }
+            : {
+                boxShadow: [
+                  '0 18px 36px rgba(0,0,0,0.5)',
+                  '0 22px 44px rgba(32,241,142,0.16)',
+                  '0 18px 36px rgba(0,0,0,0.5)',
+                ],
+              }
+        }
+        transition={{ duration: 14, repeat: reduceMotion ? 0 : Infinity, ease: 'easeInOut' }}
+      >
+        <CardTexture />
+
+        <div className="absolute inset-0 rounded-[24px] bg-gradient-to-br from-white/4 via-transparent to-[#0c1511] opacity-[0.15]" />
+
+        <div className="relative mb-8 flex h-14 w-14 items-center justify-center text-moosh-green">
+          <m.div
+            className="absolute inset-0 rounded-full bg-moosh-green/16 blur-xl"
+            initial={{ opacity: 0.26 }}
+            animate={
+              reduceMotion
+                ? { opacity: 0.26 }
+                : { opacity: [0.2, 0.34, 0.2] }
+            }
+            transition={{ duration: 15, repeat: reduceMotion ? 0 : Infinity, ease: 'easeInOut' }}
+            aria-hidden
+          />
+          <div className="relative z-10 text-transparent bg-gradient-to-br from-[#3CF2A2] to-[#158457] bg-clip-text drop-shadow-[0_0_8px_rgba(32,241,142,0.35)]">
+            {principle.icon}
+          </div>
         </div>
-        
-        {/* 支柱标题 */}
-        <h3 className="mb-6 text-lg font-medium tracking-wide text-white">
+
+        <h3 className="mb-4 text-xl font-semibold tracking-wide text-white">
           {principle.title}
         </h3>
-        
-        {/* 简短副标题 - 1句落地解释 */}
-        <p className="text-sm leading-relaxed text-white/60 text-center">
+
+        <p className="text-sm leading-relaxed text-white/70">
           {principle.subtitle}
         </p>
-        
-        {/* 支柱底部装饰 */}
-        <div className="absolute bottom-4 left-1/2 h-px w-12 -translate-x-1/2 bg-gradient-to-r from-transparent via-moosh-green/30 to-transparent" />
-      </div>
-      
-      {/* 支柱编号 - 更简洁 */}
-      <div className="mt-6 flex h-6 w-6 items-center justify-center rounded-full border border-moosh-green/15 bg-moosh-green/5 text-xs font-mono text-moosh-green/50">
+
+        <div className="mt-auto flex w-full flex-col items-center gap-3" aria-hidden>
+          <m.div
+            className="h-px w-20 bg-gradient-to-r from-transparent via-moosh-green/45 to-transparent"
+            initial={{ opacity: 0.55 }}
+            animate={
+              reduceMotion
+                ? { opacity: 0.55 }
+                : { opacity: [0.4, 0.7, 0.4] }
+            }
+            transition={{ duration: 12, repeat: reduceMotion ? 0 : Infinity, ease: 'easeInOut' }}
+          />
+          <m.div
+            className="h-3 w-24 rounded-full bg-[radial-gradient(circle_at_center,rgba(32,241,142,0.32)_0%,rgba(32,241,142,0)_100%)]"
+            initial={{ opacity: 0.32, scale: 0.92 }}
+            animate={
+              reduceMotion
+                ? { opacity: 0.32, scale: 0.92 }
+                : { opacity: [0.22, 0.42, 0.22], scale: [0.9, 1.02, 0.9] }
+            }
+            transition={{ duration: 14, repeat: reduceMotion ? 0 : Infinity, ease: 'easeInOut' }}
+          />
+        </div>
+      </m.div>
+
+      <div className="mt-7 flex h-8 w-8 items-center justify-center rounded-full border border-moosh-green/25 bg-moosh-green/10 text-xs font-mono font-medium text-moosh-green/70">
         {String(index + 1)}
       </div>
     </m.div>
   );
-} 
+}
+
+function StageBase() {
+  const reduceMotion = useReducedMotion();
+
+  return (
+    <div className="pointer-events-none absolute inset-x-0 bottom-[-24px]" aria-hidden>
+      <div className="mx-auto h-px w-full max-w-[620px] bg-gradient-to-r from-transparent via-moosh-green/35 to-transparent" />
+      <m.div
+        className="mx-auto mt-3 h-10 w-[70%] rounded-full bg-[radial-gradient(circle_at_center,rgba(32,241,142,0.2),rgba(32,241,142,0)_75%)] blur-[24px]"
+        initial={{ opacity: 0.38, scale: 0.96 }}
+        animate={
+          reduceMotion
+            ? { opacity: 0.38, scale: 0.96 }
+            : { opacity: [0.3, 0.48, 0.3], scale: [0.94, 1.02, 0.94] }
+        }
+        transition={{ duration: 14, repeat: reduceMotion ? 0 : Infinity, ease: 'easeInOut' }}
+      />
+    </div>
+  );
+}
+
+function CardTexture() {
+  return (
+    <div className="pointer-events-none absolute inset-0" aria-hidden>
+      <div
+        className="absolute inset-0 opacity-15"
+        style={{
+          backgroundImage:
+            'linear-gradient(transparent 94%, rgba(255,255,255,0.03) 100%), linear-gradient(90deg, transparent 94%, rgba(255,255,255,0.03) 100%)',
+          backgroundSize: '120px 120px',
+        }}
+      />
+    </div>
+  );
+}
+
+function StageBackdrop() {
+  const reduceMotion = useReducedMotion();
+
+  return (
+    <div className="pointer-events-none absolute inset-0" aria-hidden>
+      <m.div
+        className="absolute inset-x-[-10%] top-[10%] h-[62%] rounded-[60px] bg-[radial-gradient(ellipse_at_center,rgba(32,241,142,0.1)_0%,rgba(0,0,0,0)_80%)]"
+        initial={{ opacity: 0.35 }}
+        animate={
+          reduceMotion
+            ? { opacity: 0.35 }
+            : { opacity: [0.3, 0.45, 0.3] }
+        }
+        transition={{ duration: 18, repeat: reduceMotion ? 0 : Infinity, ease: 'easeInOut' }}
+      />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_80%,rgba(32,241,142,0.06),rgba(0,0,0,0))]" />
+    </div>
+  );
+}
