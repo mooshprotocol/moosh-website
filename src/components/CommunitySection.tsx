@@ -1,10 +1,11 @@
 'use client';
 
-import { m } from 'framer-motion';
+import { m, useReducedMotion } from 'framer-motion';
 import { useI18n } from '@/components/I18nProvider';
 import ClientText from '@/components/ui/ClientText';
 import { Typography } from './ui/Typography';
 import CommunityBackgroundFX from './CommunityBackgroundFX';
+import GridPattern from '@/components/ui/GridPattern';
 
 export default function CommunitySection() {
   const { t } = useI18n();
@@ -12,6 +13,7 @@ export default function CommunitySection() {
   return (
     <section className="relative overflow-hidden bg-moosh-black text-white">
       <CommunityBackgroundFX />
+      <CommunityGridBackdrop />
       <div className="relative z-10 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[75vh] flex flex-col">
         <div className="flex-1 flex flex-col items-center justify-center gap-6 py-16">
           <m.div
@@ -94,6 +96,107 @@ function CommunityFooterContent() {
           <ClientText k="footer.copyright" />
         </span>
       </p>
+    </div>
+  );
+}
+
+function CommunityGridBackdrop() {
+  const reduceMotion = useReducedMotion();
+
+  return (
+    <div className="absolute inset-0 pointer-events-none z-5">
+      {/* 粗网格层 - 大格子 */}
+      <m.div
+        className="absolute inset-0"
+        initial={{ opacity: 0.4, transform: 'scale(1)' }}
+        animate={
+          reduceMotion
+            ? { opacity: 0.4 }
+            : {
+                opacity: [0.3, 0.5, 0.3],
+                transform: ['scale(1)', 'scale(1.02)', 'scale(1)']
+              }
+        }
+        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(32, 241, 142, 0.6) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(32, 241, 142, 0.6) 1px, transparent 1px)
+          `,
+          backgroundSize: '80px 80px',
+          maskImage: 'radial-gradient(ellipse 75% 65% at 50% 50%, rgba(255,255,255,1) 15%, rgba(255,255,255,0.5) 55%, rgba(255,255,255,0) 85%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 75% 65% at 50% 50%, rgba(255,255,255,1) 15%, rgba(255,255,255,0.5) 55%, rgba(255,255,255,0) 85%)',
+        }}
+      />
+
+      {/* 细网格层 - 小格子，轻微偏移动画 */}
+      <m.div
+        className="absolute inset-0"
+        initial={{ opacity: 0.3, x: 0, y: 0 }}
+        animate={
+          reduceMotion
+            ? { opacity: 0.3 }
+            : {
+                opacity: [0.2, 0.4, 0.2],
+                x: [0, 2, 0],
+                y: [0, 1, 0]
+              }
+        }
+        transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(32, 241, 142, 0.3) 0.5px, transparent 0.5px),
+            linear-gradient(90deg, rgba(32, 241, 142, 0.3) 0.5px, transparent 0.5px)
+          `,
+          backgroundSize: '40px 40px',
+          maskImage: 'radial-gradient(ellipse 65% 55% at 50% 50%, rgba(255,255,255,1) 25%, rgba(255,255,255,0.3) 65%, rgba(255,255,255,0) 85%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 65% 55% at 50% 50%, rgba(255,255,255,1) 25%, rgba(255,255,255,0.3) 65%, rgba(255,255,255,0) 85%)',
+        }}
+      />
+
+      {/* 能量交点 - 闪烁光点 */}
+      <div className="absolute inset-0">
+        <m.div
+          className="absolute w-1 h-1 bg-moosh-green rounded-full"
+          style={{ top: '35%', left: '30%' }}
+          animate={
+            reduceMotion
+              ? { opacity: 0.6 }
+              : { opacity: [0.3, 0.8, 0.3], scale: [1, 1.2, 1] }
+          }
+          transition={{ duration: 3, repeat: Infinity, delay: 0 }}
+        />
+        <m.div
+          className="absolute w-1.5 h-1.5 bg-moosh-green/80 rounded-full"
+          style={{ top: '45%', right: '35%' }}
+          animate={
+            reduceMotion
+              ? { opacity: 0.5 }
+              : { opacity: [0.2, 0.7, 0.2], scale: [1, 1.3, 1] }
+          }
+          transition={{ duration: 4, repeat: Infinity, delay: 1.5 }}
+        />
+        <m.div
+          className="absolute w-1 h-1 bg-moosh-green/60 rounded-full"
+          style={{ bottom: '40%', left: '40%' }}
+          animate={
+            reduceMotion
+              ? { opacity: 0.4 }
+              : { opacity: [0.2, 0.6, 0.2], scale: [1, 1.1, 1] }
+          }
+          transition={{ duration: 5, repeat: Infinity, delay: 2.5 }}
+        />
+        <m.div
+          className="absolute w-1 h-1 bg-moosh-green/70 rounded-full"
+          style={{ top: '60%', left: '60%' }}
+          animate={
+            reduceMotion
+              ? { opacity: 0.5 }
+              : { opacity: [0.3, 0.9, 0.3], scale: [1, 1.4, 1] }
+          }
+          transition={{ duration: 3.5, repeat: Infinity, delay: 1 }}
+        />
+      </div>
     </div>
   );
 }
