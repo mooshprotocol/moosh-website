@@ -10,7 +10,7 @@ export default function CareersSection() {
   const { t } = useI18n();
 
   return (
-    <section className="bg-moosh-black-light py-16 relative overflow-hidden">
+    <section className="bg-[#14161A] min-h-screen relative overflow-hidden">
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5" aria-hidden="true"></div>
       
@@ -22,7 +22,7 @@ export default function CareersSection() {
         <div className="dot" style={{ top: '50%', right: '8%', width: '3px', height: '0.6px', animationDelay: '0.5s' }}></div>
       </div>
       
-      <div className="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col justify-center min-h-screen py-24 md:py-32">
         {/* Header */}
         <m.div
           className="mb-24"

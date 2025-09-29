@@ -92,7 +92,7 @@ export default function ProtocolSection() {
   };
 
   return (
-    <section className="bg-moosh-black-light section-padding relative overflow-hidden">
+    <section className="bg-[#121212] min-h-screen relative overflow-hidden">
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5" aria-hidden="true"></div>
       
@@ -104,7 +104,7 @@ export default function ProtocolSection() {
         <div className="dot" style={{ top: '40%', right: '5%', width: '2px', height: '0.4px', animationDelay: '0.5s' }}></div>
       </div>
       
-      <div className="container-custom relative z-10">
+      <div className="container-custom relative z-10 flex flex-col justify-center min-h-screen py-24 md:py-32">
         {/* Section Header */}
         <m.div
           className="mb-24"

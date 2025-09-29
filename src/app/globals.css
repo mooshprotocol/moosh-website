@@ -30,22 +30,38 @@ body {
   @apply bg-moosh-black text-moosh-text-primary;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - hidden by default, show on hover */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #000;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #374151;
+  background: transparent;
   border-radius: 4px;
+  transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #4b5563;
+}
+
+/* Show scrollbar on scroll */
+body:hover ::-webkit-scrollbar-thumb {
+  background: #374151;
+}
+
+/* Auto-hide scrollbar for Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+html:hover {
+  scrollbar-color: #374151 transparent;
 }
 
 /* Performance optimizations */
