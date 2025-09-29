@@ -73,7 +73,7 @@ export default function CommunitySection() {
 
 function CommunityFooterContent() {
   return (
-    <div className="mt-auto border-t border-moosh-black-lighter pt-12 pb-4 flex flex-col items-center gap-4 text-moosh-text-secondary">
+    <div className="mt-auto border-t border-moosh-black-lighter pt-8 pb-8 flex flex-col items-center gap-4 text-moosh-text-secondary">
       <nav className="flex gap-6">
         <SocialIcon
           href={process.env.NEXT_PUBLIC_DISCORD_URL || 'https://discord.gg/CYQd4WXE'}
