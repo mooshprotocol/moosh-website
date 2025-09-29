@@ -6,12 +6,12 @@ import ClientText from '@/components/ui/ClientText';
 import { Typography } from './ui/Typography';
 import CommunityBackgroundFX from './CommunityBackgroundFX';
 import GridPattern from '@/components/ui/GridPattern';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 export default function CommunitySection() {
   const { t } = useI18n();
   const sectionRef = useRef<HTMLElement>(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [mousePos, setMousePos] = useState({ x: -1000, y: -1000 });
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!sectionRef.current) return;
@@ -21,11 +21,16 @@ export default function CommunitySection() {
     setMousePos({ x, y });
   };
 
+  const handleMouseLeave = () => {
+    setMousePos({ x: -1000, y: -1000 });
+  };
+
   return (
     <section
       ref={sectionRef}
       className="relative overflow-hidden bg-moosh-black text-white"
       onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
     >
       <CommunityBackgroundFX />
       <CommunityGridBackdrop mouseX={mousePos.x} mouseY={mousePos.y} />
@@ -116,25 +121,108 @@ function CommunityFooterContent() {
 }
 
 function CommunityGridBackdrop({ mouseX, mouseY }: { mouseX: any; mouseY: any }) {
+  const [isClient, setIsClient] = useState(false);
+  const [dimensions, setDimensions] = useState({ width: 1920, height: 1080 });
+
+  useEffect(() => {
+    setIsClient(true);
+    setDimensions({ width: window.innerWidth, height: window.innerHeight });
+  }, []);
+
+  if (!isClient) {
+    return (
+      <div className="absolute inset-0 pointer-events-none z-5">
+        <div
+          className="w-full h-full opacity-40"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(32, 241, 142, 0.6) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(32, 241, 142, 0.6) 1px, transparent 1px)
+            `,
+            backgroundSize: '80px 80px',
+          }}
+        />
+      </div>
+    );
+  }
+
+  const gridSize = 80;
+  const rows = Math.ceil(dimensions.height / gridSize) + 2;
+  const cols = Math.ceil(dimensions.width / gridSize) + 2;
+
+  const lines = [];
+
+  // 生成受磁场影响的网格线
+  for (let i = 0; i <= rows; i++) {
+    const y = i * gridSize;
+    const pathData = [];
+
+    for (let x = 0; x <= dimensions.width; x += 10) {
+      const distance = Math.sqrt((x - mouseX) ** 2 + (y - mouseY) ** 2);
+      const maxDistance = 150;
+      const influence = Math.max(0, 1 - distance / maxDistance);
+      const bend = influence * 15 * Math.sin((x - mouseX) / 30);
+
+      if (x === 0) {
+        pathData.push(`M ${x} ${y + bend}`);
+      } else {
+        pathData.push(`L ${x} ${y + bend}`);
+      }
+    }
+
+    lines.push(
+      <path
+        key={`h-${i}`}
+        d={pathData.join(' ')}
+        stroke="rgba(32, 241, 142, 0.6)"
+        strokeWidth="1"
+        fill="none"
+        opacity={0.6}
+      />
+    );
+  }
+
+  // 生成垂直线
+  for (let i = 0; i <= cols; i++) {
+    const x = i * gridSize;
+    const pathData = [];
+
+    for (let y = 0; y <= dimensions.height; y += 10) {
+      const distance = Math.sqrt((x - mouseX) ** 2 + (y - mouseY) ** 2);
+      const maxDistance = 150;
+      const influence = Math.max(0, 1 - distance / maxDistance);
+      const bend = influence * 15 * Math.sin((y - mouseY) / 30);
+
+      if (y === 0) {
+        pathData.push(`M ${x + bend} ${y}`);
+      } else {
+        pathData.push(`L ${x + bend} ${y}`);
+      }
+    }
+
+    lines.push(
+      <path
+        key={`v-${i}`}
+        d={pathData.join(' ')}
+        stroke="rgba(32, 241, 142, 0.6)"
+        strokeWidth="1"
+        fill="none"
+        opacity={0.6}
+      />
+    );
+  }
+
   return (
     <div className="absolute inset-0 pointer-events-none z-5">
-      {/* 静态绿色网格 */}
-      <div
-        className="w-full h-full opacity-45"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(32, 241, 142, 0.6) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(32, 241, 142, 0.6) 1px, transparent 1px)
-          `,
-          backgroundSize: '80px 80px',
-        }}
-      />
+      <svg width="100%" height="100%" className="absolute inset-0">
+        {lines}
+      </svg>
 
       {/* 跟随鼠标的光晕 */}
       <div
-        className="absolute w-80 h-80 rounded-full pointer-events-none opacity-70"
+        className="absolute w-60 h-60 rounded-full pointer-events-none opacity-20"
         style={{
-          background: 'radial-gradient(circle, rgba(32, 241, 142, 0.20) 0%, rgba(32, 241, 142, 0.08) 60%, transparent 80%)',
+          background: 'radial-gradient(circle, rgba(32, 241, 142, 0.3) 0%, rgba(32, 241, 142, 0.1) 50%, transparent 70%)',
           left: mouseX,
           top: mouseY,
           transform: 'translate(-50%, -50%)',
