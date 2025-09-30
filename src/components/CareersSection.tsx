@@ -47,12 +47,12 @@ export default function CareersSection() {
   }));
 
   return (
-    <section className="relative overflow-hidden bg-[#14161A] py-32 text-white md:py-40 lg:py-48 lg:min-h-[82vh]">
+    <section className="relative overflow-hidden bg-[#14161A] py-32 text-white md:py-40 lg:py-48 lg:min-h-screen lg:flex lg:items-center">
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(32,241,142,0.12),transparent_72%)] opacity-80"
         aria-hidden
       />
-      <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-20 px-6 sm:px-10 lg:flex-row lg:items-center">
+      <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-20 px-6 sm:px-10 lg:flex-row lg:items-center lg:justify-between">
         <m.div
           className="max-w-xl space-y-8"
           initial={{ opacity: 0, y: 32 }}
@@ -75,7 +75,7 @@ export default function CareersSection() {
         </m.div>
 
         <m.ul
-          className="flex-1 space-y-8"
+          className="flex-1 space-y-6 lg:space-y-8"
           initial={{ opacity: 0, y: 36 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
