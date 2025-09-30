@@ -168,6 +168,9 @@ function PrincipleCard({ principle, index }: PillarCardProps) {
   const emphasize = index === 1;
   const scale = emphasize ? 1 : 0.94;
   const heightClass = emphasize ? 'h-[360px]' : 'h-[320px]';
+  const beamWidth = emphasize ? 'w-[85%]' : 'w-[70%]';
+  const beamOpacity = emphasize ? 0.2 : 0.15;
+  const beamBlur = emphasize ? 'blur-[38px]' : 'blur-[32px]';
 
   return (
     <m.div
@@ -179,14 +182,33 @@ function PrincipleCard({ principle, index }: PillarCardProps) {
       style={{ transform: `scale(${scale})` }}
     >
       <m.div
-        className="absolute inset-x-[10%] bottom-[-30px] h-8 rounded-full bg-[radial-gradient(circle_at_center,rgba(32,241,142,0.28),rgba(32,241,142,0)_70%)] blur-[18px]"
-        initial={{ opacity: 0.45 }}
+        className="absolute inset-x-[10%] bottom-[-30px] h-8 rounded-full bg-[radial-gradient(circle_at_center,rgba(32,241,142,0.2),rgba(32,241,142,0)_70%)] blur-[14px]"
+        initial={{ opacity: 0.32 }}
         animate={
           reduceMotion
-            ? { opacity: 0.45 }
-            : { opacity: [0.35, 0.55, 0.35] }
+            ? { opacity: 0.36 }
+            : { opacity: [0.26, 0.44, 0.26] }
         }
-        transition={{ duration: 10, repeat: reduceMotion ? 0 : Infinity, ease: 'easeInOut' }}
+        transition={{ duration: 12, repeat: reduceMotion ? 0 : Infinity, ease: 'easeInOut' }}
+        aria-hidden
+      />
+
+      <m.div
+        className={`absolute top-[-10%] left-1/2 h-[120%] -translate-x-1/2 ${beamWidth} rounded-full ${beamBlur}`}
+        style={{
+          opacity: beamOpacity,
+          backgroundImage: 'radial-gradient(circle at 50% 60%, rgba(32,241,142,0.18), rgba(0,0,0,0) 75%)',
+        }}
+        initial={{ opacity: beamOpacity, scaleY: 0.92 }}
+        animate={
+          reduceMotion
+            ? { opacity: beamOpacity, scaleY: 0.92 }
+            : {
+                opacity: [beamOpacity * 0.75, beamOpacity * 1.05, beamOpacity * 0.75],
+                scaleY: [0.9, 1.01, 0.9],
+              }
+        }
+        transition={{ duration: 18, repeat: reduceMotion ? 0 : Infinity, ease: 'easeInOut', delay: emphasize ? 0.2 : 0 }}
         aria-hidden
       />
 
