@@ -73,7 +73,7 @@ export default function ManifestoSection() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#080808] text-white">
       <StageBackdrop />
-      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-[1200px] flex-col items-center justify-center gap-20 px-6 py-32 md:px-12 lg:px-20">
+      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-[1200px] flex-col items-center justify-center gap-24 px-6 py-36 md:px-12 lg:px-20 xl:py-44">
         <m.div
           className="text-center"
           initial={{ opacity: 0, y: 40 }}
@@ -118,6 +118,31 @@ export default function ManifestoSection() {
         <PrinciplesStage cards={principleCards} />
 
         <m.div
+          className="max-w-3xl text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.45 }}
+          transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
+        >
+          <p className="text-[0.8rem] uppercase tracking-[0.45em] text-moosh-green/70">
+            {t('manifesto.principles.label', 'Moosh principles')}
+          </p>
+          <p className="mt-4 text-base leading-relaxed text-white/65">
+            {t(
+              'manifesto.principles.description',
+              'Safety, Flexibility, and Intelligence interlock so liquidity adapts without surrendering resilience.'
+            )}
+          </p>
+          <div className="mt-7 flex items-center justify-center gap-5 text-moosh-green/65" aria-hidden>
+            <span className="h-px w-10 bg-current/40" />
+            <span className="text-xs uppercase tracking-[0.42em]">
+              {t('manifesto.principles.caption', 'Triad in constant calibration')}
+            </span>
+            <span className="h-px w-10 bg-current/40" />
+          </div>
+        </m.div>
+
+        <m.div
           className="text-center"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -141,9 +166,10 @@ export default function ManifestoSection() {
 
 function PrinciplesStage({ cards }: { cards: PrincipleCardData[] }) {
   return (
-    <div className="relative w-full max-w-5xl pb-20">
+    <div className="relative w-full max-w-5xl pb-28">
       <StageBase />
-      <div className="relative z-10 flex flex-wrap items-end justify-center gap-10 md:gap-14">
+      <StageNetwork />
+      <div className="relative z-10 grid grid-cols-1 place-items-center gap-12 md:grid-cols-3 md:gap-14">
         {cards.map((card, index) => (
           <PrincipleCard key={card.title} principle={card} index={index} />
         ))}
@@ -166,20 +192,23 @@ interface PillarCardProps {
 function PrincipleCard({ principle, index }: PillarCardProps) {
   const reduceMotion = useReducedMotion();
   const emphasize = index === 1;
-  const scale = emphasize ? 1 : 0.94;
   const heightClass = emphasize ? 'h-[360px]' : 'h-[320px]';
   const beamWidth = emphasize ? 'w-[85%]' : 'w-[70%]';
   const beamOpacity = emphasize ? 0.2 : 0.15;
   const beamBlur = emphasize ? 'blur-[38px]' : 'blur-[32px]';
+  const emphasisTransform = reduceMotion
+    ? ''
+    : emphasize
+      ? 'md:-translate-y-4 md:scale-[1.03]'
+      : 'md:translate-y-2 md:scale-[0.97]';
 
   return (
     <m.div
-      className="group relative flex flex-col items-center text-center"
+      className={`group relative flex flex-col items-center text-center transition-transform duration-500 ${emphasisTransform}`}
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.45 }}
       transition={{ duration: 0.9, ease: 'easeOut', delay: index * 0.18 }}
-      style={{ transform: `scale(${scale})` }}
     >
       <m.div
         className="absolute inset-x-[10%] bottom-[-30px] h-8 rounded-full bg-[radial-gradient(circle_at_center,rgba(32,241,142,0.2),rgba(32,241,142,0)_70%)] blur-[14px]"
@@ -307,6 +336,19 @@ function StageBase() {
   );
 }
 
+function StageNetwork() {
+  return (
+    <div className="pointer-events-none absolute inset-0 hidden md:block" aria-hidden>
+      <div className="absolute inset-x-[8%] top-[52%] h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-moosh-green/30 to-transparent" />
+      <div className="absolute left-1/2 top-[48%] h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-moosh-green/10" />
+      <div className="absolute left-[20%] top-[42%] h-[220px] w-[220px] -translate-y-1/2 rounded-full border border-moosh-green/5" />
+      <div className="absolute right-[20%] top-[42%] h-[220px] w-[220px] -translate-y-1/2 rounded-full border border-moosh-green/5" />
+      <div className="absolute left-[20%] top-[52%] h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-moosh-green/70 blur-[1.5px]" />
+      <div className="absolute right-[20%] top-[52%] h-2 w-2 translate-x-1/2 -translate-y-1/2 rounded-full bg-moosh-green/70 blur-[1.5px]" />
+    </div>
+  );
+}
+
 function CardTexture() {
   return (
     <div className="pointer-events-none absolute inset-0" aria-hidden>
@@ -336,6 +378,16 @@ function StageBackdrop() {
             : { opacity: [0.3, 0.45, 0.3] }
         }
         transition={{ duration: 18, repeat: reduceMotion ? 0 : Infinity, ease: 'easeInOut' }}
+      />
+      <div
+        className="absolute inset-0 opacity-[0.05]"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(32,241,142,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(32,241,142,0.08) 1px, transparent 1px)',
+          backgroundSize: '140px 140px',
+          maskImage: 'radial-gradient(circle at 50% 50%, rgba(0,0,0,0.9), rgba(0,0,0,0) 78%)',
+          WebkitMaskImage: 'radial-gradient(circle at 50% 50%, rgba(0,0,0,0.9), rgba(0,0,0,0) 78%)',
+        }}
       />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_80%,rgba(32,241,142,0.06),rgba(0,0,0,0))]" />
     </div>

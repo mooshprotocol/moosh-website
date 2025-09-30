@@ -1,107 +1,132 @@
 'use client';
 
+import type { ReactNode } from 'react';
 import { m } from 'framer-motion';
 import { useI18n } from '@/components/I18nProvider';
+
+const ROLES = [
+  {
+    key: 'careers.roles.engineer',
+    titleFallback: 'The Engineer',
+    descriptionFallback: 'Build resilient systems from complexity.',
+    icon: (
+      <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.6} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+      </svg>
+    ),
+  },
+  {
+    key: 'careers.roles.designer',
+    titleFallback: 'The Designer',
+    descriptionFallback: 'Translate finance into intuition and beauty.',
+    icon: (
+      <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.6} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
+      </svg>
+    ),
+  },
+  {
+    key: 'careers.roles.growth',
+    titleFallback: 'The Growth Agent',
+    descriptionFallback: 'Ignite adoption and networks.',
+    icon: (
+      <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.6} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+      </svg>
+    ),
+  },
+];
 
 export default function CareersSection() {
   const { t } = useI18n();
 
+  const roles = ROLES.map(({ key, titleFallback, descriptionFallback, icon }) => ({
+    title: t(`${key}.title`, titleFallback),
+    description: t(`${key}.description`, descriptionFallback),
+    icon,
+  }));
+
   return (
-    <section className="bg-[#14161A] text-white py-24 md:py-32 relative overflow-hidden">
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Title */}
+    <section className="relative overflow-hidden bg-[#14161A] py-32 text-white md:py-40 lg:py-48 lg:min-h-[82vh]">
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(32,241,142,0.12),transparent_72%)] opacity-80"
+        aria-hidden
+      />
+      <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-20 px-6 sm:px-10 lg:flex-row lg:items-center">
         <m.div
-          className="text-center mb-20"
-          initial={{ opacity: 0, y: 30 }}
+          className="max-w-xl space-y-8"
+          initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.65 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <h2 className="text-4xl md:text-6xl font-black text-white leading-tight">
-            We seek co-builders,
-            <br />
-            not employees.
+          <h2 className="text-4xl font-black leading-tight text-white md:text-[3rem]">
+            {t('careers.headline.top', 'We seek co-builders,')}
+            <br className="hidden md:block" />
+            {t('careers.headline.bottom', 'not employees.')}
           </h2>
+          <p className="text-lg leading-relaxed text-white/75 md:text-xl">
+            {t(
+              'careers.description',
+              'Bring curiosity, discipline, and strange ideas. Together we instrument credit systems that learn as fast as the markets they serve.'
+            )}
+          </p>
+          <JoinButton label={t('careers.cta', 'Build. Compose. Ship resilience.')} />
         </m.div>
 
-        {/* Role Cards */}
-        <m.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
-          initial={{ opacity: 0, y: 40 }}
+        <m.ul
+          className="flex-1 space-y-8"
+          initial={{ opacity: 0, y: 36 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.45 }}
+          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.15 }}
         >
-          <RoleCard
-            icon={
-              <svg className="w-8 h-8 text-moosh-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-              </svg>
-            }
-            title="The Engineer"
-            description="Build resilient systems from complexity."
-          />
-          <RoleCard
-            icon={
-              <svg className="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
-              </svg>
-            }
-            title="The Designer"
-            description="Translate finance into intuition and beauty."
-          />
-          <RoleCard
-            icon={
-              <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-              </svg>
-            }
-            title="The Growth Agent"
-            description="Ignite adoption and networks."
-          />
-        </m.div>
-
-        {/* CTA Button */}
-        <m.div
-          className="text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <button className="group relative px-8 py-3 border border-white/20 rounded-lg bg-transparent hover:border-moosh-green hover:text-moosh-green transition-all duration-300 hover:shadow-[0_0_20px_rgba(32,241,142,0.3)]">
-            <span className="relative z-10 font-medium">Join Us</span>
-          </button>
-        </m.div>
+          {roles.map((role, index) => (
+            <RoleListItem key={role.title} role={role} index={index} />
+          ))}
+        </m.ul>
       </div>
     </section>
   );
 }
 
-function RoleCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
+function RoleListItem({
+  role,
+  index,
+}: {
+  role: { title: string; description: string; icon: ReactNode };
+  index: number;
+}) {
   return (
-    <m.div
-      className="group relative p-8 rounded-xl bg-moosh-black-lighter border border-white/10 hover:border-white/20 hover:shadow-[0_8px_30px_rgba(0,0,0,0.3)] transition-all duration-300 hover:-translate-y-2"
-      whileHover={{ scale: 1.02 }}
-      transition={{ type: "spring", stiffness: 300, damping: 30 }}
-    >
-      {/* Icon */}
-      <div className="mb-6 flex justify-center">
-        <div className="p-3 rounded-full bg-white/5 group-hover:bg-white/10 transition-colors duration-300">
-          {icon}
+    <li className="relative overflow-hidden rounded-2xl border border-white/10 bg-[rgba(8,10,12,0.78)] p-6 shadow-[0_12px_36px_rgba(0,0,0,0.45)] backdrop-blur">
+      <div className="flex gap-5">
+        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/6 text-moosh-green">
+          {role.icon}
+        </span>
+        <div className="flex-1 space-y-2 text-left">
+          <div className="flex items-center justify-between gap-4">
+            <h3 className="text-lg font-semibold text-white">{role.title}</h3>
+            <span className="text-xs font-mono uppercase tracking-[0.3em] text-white/40">
+              {String(index + 1).padStart(2, '0')}
+            </span>
+          </div>
+          <p className="text-sm leading-relaxed text-white/70">{role.description}</p>
         </div>
       </div>
-
-      {/* Title */}
-      <h3 className="text-xl font-bold text-center mb-4 text-white group-hover:text-white transition-colors duration-300">
-        {title}
-      </h3>
-
-      {/* Description */}
-      <p className="text-moosh-text-secondary text-center leading-relaxed group-hover:text-moosh-text-primary transition-colors duration-300">
-        {description}
-      </p>
-    </m.div>
+    </li>
   );
-} 
+}
+
+function JoinButton({ label }: { label: string }) {
+  return (
+    <button
+      type="button"
+      className="group inline-flex items-center gap-3 rounded-full border border-moosh-green/50 px-7 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-moosh-green transition-colors duration-300 hover:border-moosh-green hover:text-moosh-green/90"
+    >
+      {label}
+      <svg viewBox="0 0 24 24" className="h-3.5 w-3.5">
+        <path d="M5 12h14m-6-6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </button>
+  );
+}
