@@ -3,190 +3,79 @@
 import { m } from 'framer-motion';
 import SectionHeader from './ui/SectionHeader';
 import { useI18n } from '@/components/I18nProvider';
-import { Typography } from './ui/Typography';
+import CoreModulesFocus from './CoreModulesFocus';
 
 export default function ProtocolSection() {
   const { t } = useI18n();
-  const modules = [
+
+  // Module data for CoreModulesFocus
+  const focusModules = [
     {
-      title: t('protocol.modules.liquidation.title', 'Liquidation Engine'),
-      description: t('protocol.modules.liquidation.description', 'Real-time, MEVM-native execution with intelligent risk logic.'),
-      subModules: t('protocol.modules.liquidation.sub', ['Risk Assessment', 'Execution Engine', 'MEVM Integration']),
-      color: "blue",
+      id: 'controller' as const,
+      title: t('protocol.modules.liquidation.title', 'Controller Engine'),
+      points: t('protocol.modules.liquidation.sub', ['Route Management', 'Execution Engine', 'Orchestration Integration']),
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 16l-1-1m0 0l-1-1 1-1 1 1m4 4l1 1m0 0l1-1-1-1-1 1" opacity={0.6} />
         </svg>
       )
     },
     {
-      title: t('protocol.modules.risk.title', 'Risk Kernel'),
-      description: t('protocol.modules.risk.description', 'AI-assisted logic that adapts dynamically to market conditions.'),
-      subModules: t('protocol.modules.risk.sub', ['AI Models', 'Market Analysis', 'Adaptive Logic']),
-      color: "green",
+      id: 'vault' as const,
+      title: t('protocol.modules.risk.title', 'Vault Kernel'),
+      points: t('protocol.modules.risk.sub', ['Asset Models', 'Liquidity Analysis', 'Adaptive Logic']),
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="8" strokeWidth={1.5} />
           <circle cx="12" cy="12" r="2" strokeWidth={1.5} />
         </svg>
       )
     },
     {
-      title: t('protocol.modules.liquidity.title', 'Liquidity Mesh'),
-      description: t('protocol.modules.liquidity.description', 'Composable liquidity with seamless cross-module execution.'),
-      subModules: t('protocol.modules.liquidity.sub', ['Composability', 'Cross-Module', 'Seamless Execution']),
-      color: "cyan",
+      id: 'risk' as const,
+      title: t('protocol.modules.liquidity.title', 'Risk Mesh'),
+      points: t('protocol.modules.liquidity.sub', ['Multi-Factor', 'Cross-Validation', 'Seamless Execution']),
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 4v16M12 4v16M18 4v16" opacity={0.7} />
         </svg>
       )
     },
     {
-      title: t('protocol.modules.megaeth.title', 'MegaETH Compatibility'),
-      description: t('protocol.modules.megaeth.description', 'Natively integrated with modular infrastructure on MegaETH.'),
-      subModules: t('protocol.modules.megaeth.sub', ['Native Integration', 'MegaETH']),
-      color: "purple",
+      id: 'liquidation' as const,
+      title: t('protocol.modules.megaeth.title', 'Liquidation Core'),
+      points: t('protocol.modules.megaeth.sub', ['Risk Models', 'Liquidation Optimization', 'Native Integration']),
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
         </svg>
       )
     }
   ];
 
-  const getColorClasses = (color: string) => {
-    const colorMap = {
-      blue: {
-        icon: "text-moosh-accent-blue",
-        glow: "hover:shadow-glow-blue",
-        border: "hover:border-moosh-accent-blue/30",
-        gradient: "text-gradient-blue",
-        hoverGradient: "group-hover:text-gradient-blue"
-      },
-      green: {
-        icon: "text-moosh-green",
-        glow: "hover:shadow-glow-green",
-        border: "hover:border-moosh-green/30",
-        gradient: "text-gradient",
-        hoverGradient: "group-hover:text-gradient"
-      },
-      cyan: {
-        icon: "text-moosh-accent-cyan",
-        glow: "hover:shadow-glow-cyan",
-        border: "hover:border-moosh-accent-cyan/30",
-        gradient: "text-gradient-cyan",
-        hoverGradient: "group-hover:text-gradient-cyan"
-      },
-      purple: {
-        icon: "text-moosh-accent-purple",
-        glow: "hover:shadow-glow-purple",
-        border: "hover:border-moosh-accent-purple/30",
-        gradient: "text-gradient-purple",
-        hoverGradient: "group-hover:text-gradient-purple"
-      }
-    };
-    return colorMap[color as keyof typeof colorMap] || colorMap.green;
-  };
-
   return (
-    <section className="bg-[#121212] min-h-screen relative overflow-hidden">
-      {/* Enhanced Background Pattern */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-5" aria-hidden="true"></div>
-      
-      {/* Green accent dots */}
-      <div className="green-dot-pattern" aria-hidden="true">
-        <div className="dot" style={{ top: '15%', left: '5%', width: '2px', height: '0.4px', animationDelay: '0s' }}></div>
-        <div className="dot" style={{ bottom: '20%', right: '10%', width: '3px', height: '0.6px', animationDelay: '1s' }}></div>
-        <div className="dot" style={{ top: '60%', left: '8%', width: '2px', height: '0.4px', animationDelay: '2s' }}></div>
-        <div className="dot" style={{ top: '40%', right: '5%', width: '2px', height: '0.4px', animationDelay: '0.5s' }}></div>
-      </div>
-      
-      <div className="container-custom relative z-10 flex flex-col justify-center min-h-screen py-24 md:py-32">
-        {/* Section Header */}
-        <m.div
-          className="mb-24"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <SectionHeader
-            eyebrow={t('protocol.header.eyebrow', 'Core Modules')}
-            title={t('protocol.header.title', 'Built for ultra-low latency modular infrastructure and composable liquidity.')}
-            subtitle={t('protocol.header.subtitle', 'Explore the four modular engines that power Moosh')}
-          />
-        </m.div>
-        
-        {/* Animated Protocol Modules Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {modules.map((module, index) => {
-            const colorClasses = getColorClasses(module.color);
-            
-            return (
-              <m.div 
-                key={module.title}
-                className={`group p-8 bg-moosh-black-card rounded-2xl border border-moosh-black-lighter hover:scale-105 transition-all duration-500 ease-out ${colorClasses.glow} ${colorClasses.border}`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ 
-                  scale: 1.05,
-                  transition: { duration: 0.3, ease: "easeOut" }
-                }}
-              >
-                <div className="flex items-start space-x-6">
-                  {/* Animated Icon Container */}
-                  <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-moosh-black-lighter rounded-xl group-hover:bg-opacity-80 transition-all duration-500 ease-out">
-                    <m.div 
-                      className={`${colorClasses.icon} ${colorClasses.hoverGradient} transition-all duration-500 ease-out`}
-                      whileHover={{ 
-                        rotate: [0, -5, 5, 0],
-                        scale: 1.1,
-                        transition: { duration: 0.6, ease: "easeInOut" }
-                      }}
-                    >
-                      {module.icon}
-                    </m.div>
-                  </div>
-                  
-                  {/* Enhanced Content */}
-                  <div className="flex-1">
-                    <Typography.H3 className={`text-xl font-bold mb-3 tracking-tight ${colorClasses.gradient} transition-all duration-500 ease-out`}>
-                      {module.title}
-                    </Typography.H3>
-                    <Typography.Text className="text-sm text-moosh-text-secondary leading-relaxed mb-4 group-hover:text-moosh-text-primary transition-colors duration-300">
-                      {module.description}
-                    </Typography.Text>
-                    
-                    {/* Sub-modules */}
-                    <div className="space-y-2">
-                      {module.subModules.map((subModule, subIndex) => (
-                        <m.div 
-                          key={subIndex} 
-                          className="flex items-center space-x-2"
-                          initial={{ opacity: 0, x: -10 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.4, delay: (index * 0.1) + (subIndex * 0.1) }}
-                          viewport={{ once: true }}
-                        >
-                          <div className="w-1 h-1 bg-moosh-text-muted rounded-full group-hover:bg-moosh-green transition-colors duration-300"></div>
-                          <Typography.Text className="text-xs text-moosh-text-muted tracking-wide group-hover:text-moosh-text-secondary transition-colors duration-300">
-                            {subModule}
-                          </Typography.Text>
-                        </m.div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </m.div>
-            );
-          })}
+    <>
+      {/* Section Header */}
+      <div className="bg-[#090A0A] py-16 md:py-20">
+        <div className="container mx-auto px-4">
+          <m.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <SectionHeader
+              eyebrow={t('protocol.header.eyebrow', 'Core Modules')}
+              title={t('protocol.header.title', 'The building blocks of modular liquidity.')}
+              subtitle={t('protocol.header.subtitle', 'Discover the four engines that drive Moosh.')}
+            />
+          </m.div>
         </div>
       </div>
-    </section>
+
+      {/* Core Modules Focus Section */}
+      <CoreModulesFocus modules={focusModules} defaultActive="controller" />
+    </>
   );
 } 
