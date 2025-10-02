@@ -27,6 +27,7 @@ export default function CommunitySection() {
 
   return (
     <section
+      id="community"
       ref={sectionRef}
       className="relative overflow-hidden bg-moosh-black text-white"
       onMouseMove={handleMouseMove}

@@ -292,8 +292,8 @@ export default function TryMooshButton({
           variant="ghost"
           size={size}
           withSlideBg
-          slideBgClassName="bg-moosh-green-bright"
-          className={`transform-gpu will-change-transform shadow-none hover:shadow-none border-white/70 uppercase text-xs md:text-sm tracking-wide rounded-md md:rounded-lg [text-rendering:optimizeLegibility] antialiased ${className}`}
+          slideBgClassName="bg-white"
+          className={`transform-gpu will-change-transform shadow-none hover:shadow-none border-white/70 uppercase text-xs md:text-sm tracking-[0.24em] rounded-md md:rounded-lg [text-rendering:optimizeLegibility] antialiased header-cta-wrapper ${className}`}
         >
           {children}
         </Button>

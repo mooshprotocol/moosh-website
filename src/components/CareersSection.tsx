@@ -47,7 +47,10 @@ export default function CareersSection() {
   }));
 
   return (
-    <section className="relative overflow-hidden bg-[#14161A] py-32 text-white md:py-40 lg:py-48 lg:min-h-screen lg:flex lg:items-center">
+    <section
+      id="careers"
+      className="relative overflow-hidden bg-[#14161A] py-32 text-white md:py-40 lg:py-48 lg:min-h-screen lg:flex lg:items-center"
+    >
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(32,241,142,0.12),transparent_72%)] opacity-80"
         aria-hidden

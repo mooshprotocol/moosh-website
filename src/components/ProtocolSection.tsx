@@ -55,7 +55,7 @@ export default function ProtocolSection() {
   ];
 
   return (
-    <>
+    <section id="core-modules" className="relative">
       {/* Section Header */}
       <div className="bg-[#090A0A] py-16 md:py-20">
         <div className="container mx-auto px-4">
@@ -76,6 +76,6 @@ export default function ProtocolSection() {
 
       {/* Core Modules Focus Section */}
       <CoreModulesFocus modules={focusModules} defaultActive="controller" />
-    </>
+    </section>
   );
-} 
+}

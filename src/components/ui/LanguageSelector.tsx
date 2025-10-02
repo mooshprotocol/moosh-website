@@ -114,7 +114,7 @@ export default function LanguageSelector() {
   };
 
   return (
-    <div className="relative" ref={dropdownRef}>
+    <div className="relative header-language" ref={dropdownRef}>
       {/* Trigger Button */}
       <button
         ref={triggerRef}
