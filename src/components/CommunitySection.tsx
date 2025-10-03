@@ -11,6 +11,8 @@ export default function CommunitySection() {
   const prefersReducedMotion = useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
   const [mousePos, setMousePos] = useState({ x: -1000, y: -1000 });
+  const mouseFrameRef = useRef<number | null>(null);
+  const pendingMouseRef = useRef({ x: -1000, y: -1000 });
 
   const title = t('community.title', 'Community First.');
   const titleGlyphs = useMemo(
@@ -37,12 +39,41 @@ export default function CommunitySection() {
     const rect = sectionRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    setMousePos({ x, y });
+    pendingMouseRef.current = { x, y };
+
+    if (mouseFrameRef.current !== null) {
+      return;
+    }
+
+    mouseFrameRef.current = window.requestAnimationFrame(() => {
+      mouseFrameRef.current = null;
+      setMousePos(prev => {
+        const next = pendingMouseRef.current;
+        if (prev.x === next.x && prev.y === next.y) {
+          return prev;
+        }
+        return next;
+      });
+    });
   };
 
   const handleMouseLeave = () => {
+    pendingMouseRef.current = { x: -1000, y: -1000 };
+    if (mouseFrameRef.current !== null) {
+      window.cancelAnimationFrame(mouseFrameRef.current);
+      mouseFrameRef.current = null;
+    }
     setMousePos({ x: -1000, y: -1000 });
   };
+
+  useEffect(() => {
+    return () => {
+      if (mouseFrameRef.current !== null) {
+        window.cancelAnimationFrame(mouseFrameRef.current);
+        mouseFrameRef.current = null;
+      }
+    };
+  }, []);
 
   return (
     <section
@@ -191,9 +222,14 @@ function CommunityGridBackdrop({ mouseX, mouseY }: { mouseX: number; mouseY: num
 
   const pulseNodes = useMemo(() => {
     const nodes = [] as Array<{ x: number; y: number; delay: number; radius: number; duration: number }>;
-    for (let x = gridSize; x < dimensions.width; x += gridSize * 2) {
+    const maxNodes = Math.max(18, Math.min(64, Math.floor((dimensions.width * dimensions.height) / 120000)));
+
+    outer: for (let x = gridSize; x < dimensions.width; x += gridSize * 2) {
       for (let y = gridSize; y < dimensions.height; y += gridSize * 2) {
-        if (Math.random() > 0.35) continue;
+        if (nodes.length >= maxNodes) {
+          break outer;
+        }
+        if (Math.random() > 0.3) continue;
         const distance = Math.hypot(x - centerX, y - centerY);
         const visibility = 1 - distance / maxRadius;
         if (visibility <= 0) continue;
@@ -201,11 +237,12 @@ function CommunityGridBackdrop({ mouseX, mouseY }: { mouseX: number; mouseY: num
           x,
           y,
           delay: Math.random() * 6,
-          radius: 3 + Math.random() * 2,
+          radius: 2.5 + Math.random() * 2.5,
           duration: 4.5 + Math.random() * 2.5,
         });
       }
     }
+
     return nodes;
   }, [centerX, centerY, dimensions.height, dimensions.width, gridSize, maxRadius]);
 
@@ -227,11 +264,13 @@ function CommunityGridBackdrop({ mouseX, mouseY }: { mouseX: number; mouseY: num
   }
 
   // 生成受磁场影响的网格线
+  const sampleStep = 16;
+
   for (let i = 0; i <= rows; i++) {
     const y = i * gridSize;
     const pathData = [];
 
-    for (let x = 0; x <= dimensions.width; x += 10) {
+    for (let x = 0; x <= dimensions.width; x += sampleStep) {
       const distance = Math.sqrt((x - mouseX) ** 2 + (y - mouseY) ** 2);
       const maxDistance = 150;
       const influence = Math.max(0, 1 - distance / maxDistance);
@@ -266,7 +305,7 @@ function CommunityGridBackdrop({ mouseX, mouseY }: { mouseX: number; mouseY: num
     const x = i * gridSize;
     const pathData = [];
 
-    for (let y = 0; y <= dimensions.height; y += 10) {
+    for (let y = 0; y <= dimensions.height; y += sampleStep) {
       const distance = Math.sqrt((x - mouseX) ** 2 + (y - mouseY) ** 2);
       const maxDistance = 150;
       const influence = Math.max(0, 1 - distance / maxDistance);
